@@ -9,7 +9,7 @@
 
 
 % Variable "\Otsikko" in LaTeX
-\newcommand{\Otsikko}{Microfluidic cancer cell sorting using dielectrophoresis)}
+\newcommand{\Otsikko}{Microfluidic cancer cell sorting using dielectrophoresis}
 
 
 %----------------------------------------------------------------------------------------
@@ -293,7 +293,7 @@ where $r$ , $d$ the thickness of the membrane, $\epsilon_{CP}^*$ and  $\epsilon_
     \qquad
     \begin{minipage}{1.2in}
     \end{minipage}%
-    \caption{Fig boo. (Left) Single shell modell, (Right) CM factor for Human colon cancer cells (HT-29) has been simulated with MyDEP tool \cite{cottet_mydep_2019}. The values used in the simulation are presented in table \ref{tab:cell_table}. A change in cell radius and a change in media was also simulated for comparison.}%
+    \caption{(Left) Single shell modell, (Right) CM factor for Human colon cancer cells (HT-29) has been simulated with MyDEP tool \cite{cottet_mydep_2019}. The values used in the simulation are presented in table \ref{tab:cell_table}. A change in cell radius and a change in media was also simulated for comparison.}%
     \label{fig:single_shell}%
 \end{figure}
 
@@ -428,15 +428,37 @@ PENDING: Wether to put electrodes first (as in fabrication) or channels
 
 \subsection{Design}
 \label{sec:xxx1}
-\begin{itemize}
-    \item Requirements for an operting chip
-    \item design image
-\end{itemize}
+The chip layout was designed using the electron microscopes own software (\textcolor{red}{Raith e-Line 150 ver. 5.0???}). There were two main considerations for the design; The important features required for the chip operation needed to be implemented and it needed to be simplistic allowing a low exposure time. When developing the fabrication steps, it is important to that all the features required can be produced, once the fabrication steps are mastered, the don’t need to be altered when changing the chip design. The most important features were the channels ranging between a depth of $(2-40) \mathrm{\micro \metre}$, a width of $(10-120) \mathrm{\micro \metre}$ and the manufacture of electrodes close as possible to the channels. E-beam was chosen as the lithography method for development to allow fast changes in design if necessary, without the need to create new masks as in photolithography. E-beam exposure time increases with area exposed, which had to be minimized for efficient development. 
+
+The three most important areas of the channel layout are visualised in Figure \ref{fig:design1}. A) The channels from the two inlets meet at a T-crossing. It allows droplet formation, if droplet-based sorting is to be used, or flow control. If cells are inserted from one of the inlets, the space/medium between the cells can be altered by tuning the second inlet pressure to cause a stationary or a high-speed flow. This flow adds medium in between the cells thus increasing the distance between them. B) Is a straight line starting with normal width expanding into a long and wide channel. !!!!\textcolor{red}{At the start the cells would be better confined serving as a place for spectroscopy analysis!!!!(UNSURE)}. At the wider part the flow would slow down due to higher volume, and the electrodes placed next to the channel would exert either a pushing or pulling force the cells. Assuming a laminar flow, the cells would then take the correct “lane” in the wide channel to be then sorted. C) At the Y-junction the cells would go left or right depending on their “lane” to be collected or to become waste (Figure \ref{fig:design_flow}). The junction would also require small channels where cells don’t fit across to stabilize pressure. A cell going in right channel would then increase the drag on the fluid thus causing the left channel to be more favourable for the next incoming cell independent of its lane.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[ht]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/chip_design.pdf} 
+        \caption{Chip layout.} \label{fig:design1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[ht]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/Separation.pdf} 
+        \caption{Deflection of cells to different lanes} \label{fig:flow1}
+    \end{subfigure}
+    \caption{The design for the layout of the microfluidic chip.} \label{fig:design_flow}
+\end{figure}  
+
+
+
+The layout was designed for a chip of $20x20 \milli \metre$, where the two inlets and two outlets were each $\SI{7}{\milli \metre}$ from the chips centre point (Figure \ref{fig:design1}).  The channels were designed to curve smoothly without rough edges and shapes to uphold laminar flow and reduce clogging. The channel width was \textcolor{red}{??50um??} for the transport of cells \textcolor{red}{(size ??-??)} and 5um for the pressure stabilizing channels. At the electrodes, the channel width was up to 100um to allow proper flow lanes for the cells. The width on the design needed to accommodate for isotropic etching. The channels were always wider than the exposed width. The increase is discussed in chapter \textcolor{red}{(?? WET ETCHING??))}. Knowing the correct width was critical in placing the electrodes close as possible. Concerning the length, the straight part in front of the electrodes needs to be long enough for the spectroscopy and the separation to take place. The inlet channels before the T-junction and the outlet channels after the Y-junction were designed to have matching lengths. Especially for the outlets it is essential because otherwise there would be a pressure difference that would make one channel more favourable for the flow.
+
+The design for the electrodes were reproduced for Borovsk’s thesis \cite{borovsky}. The tip shape originated from a paper by, where the electric fields were simulated to produce an ideal electric field for contactless DEP \cite{leman_droplet-based_2015}. The electrodes consisted of a half loop having contact pads at the end for allowing the test wether they were functional. The contact pads were split into vertical lines to reduce the exposure area and thus time significantly. The final optimal design would include uniform contact pads and four electrodes. If Same frequency pDEP or nDEP is to be achieved there need to be electrodes on both sides of the channel. For the process development only two electrodes were manufactured. 
+
 
 \subsection{Overview of the process}
 \label{sec:xxx2}
 
-The realization of the microfluidic chip was performed with conventional microfabrication-methods. Varying steps and methods were tried through trial and error until success. The fabrication steps for a successful chip are shown in Figure \ref{fig:processFULL}.
+The realization of the microfluidic chip was performed with conventional micro-fabrication-methods. Varying steps and methods were tried through trial and error until success. The fabrication steps for a successful chip are shown in Figure \ref{fig:processFULL}.
 1) Drilled Soda Lime-glass microscope coverslips are used as substrate. The glass chip is first cleaned \textcolor{red}{(section)} and treated with Piranha-solution prior to evaporation. 2) Using E-beam evaporation, a of $\SI{100}{\nano \metre}$ Cr thin film is evaporated to act as an etch mask. Next, PMMA of about $\SI{250}{\nano \metre}$ is spun before e-beam exposure. 3) The electrode design is then exposed and developed. 4) The Cr-mask etched followed by a dip into HF-HCL (10:1) solution to etch shallow grooves for the electrodes. After etching, a RIE O2 etch was used to activate the glass and clean PMMA residue from electrode channels. 5) Electrodes are then evaporated; a metal sandwich of $\SI{10}{\nano \metre}$ Ti +$\SI{50}{\nano \metre}$ Au +$\SI{10}{\nano \metre}$ Ti +$\SI{100}{\nano \metre}$ $\mathrm{SiO}_2$). 6) Lift-off is then carried out and the Cr-mask etched away. 7) A tougher RIE O2 treatment is used to activate the glass surface and $\SI{50}{\nano \metre}$ Cr + $(150 + 150) \,\nano \metre$ Au is evaporated in an $45^{\circ}$ angle while the wafer is rotated ensuring deposition to the walls of the trenches. 8) Now $\SI{2.2}{\micro \metre}$ of PMMA is spun to cover the shallow channels of the electrodes completely. 9) Alignment, exposure, and development of the Channels-layout is performed. 10) The Au and Cr masks are etched followed by a 55s HF-HCL etch of the channels. After removing the e-beam resist the gold mask is removed by etching the underlining Cr. 11) Last, the chip and its cover are cleaned and activated in Piranha so can be bonded. The bonding is performed in a furnace at $\SI{85}{\celsius}$ for 2h. The bonded chip is then treared with a RIE oxide etch to reveal the electrode pads for soldering and the chip is ready.
 
 

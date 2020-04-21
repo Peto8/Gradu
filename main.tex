@@ -16,7 +16,7 @@
 % LÄHDELUETTELON MUOTOILU
 %----------------------------------------------------------------------------------------
 \usepackage{csquotes}
-\usepackage[backend=biber,style=nejm,sorting=none,maxnames=3,minnames=1,giveninits=true]{biblatex}
+\usepackage[backend=biber,style=numeric,sorting=none,maxnames=3,minnames=1,giveninits=true]{biblatex}
 \usepackage{xcolor}
 
 
@@ -144,7 +144,7 @@ Microfluidics give the possibility for cell separation and analysis. Resulting f
 
 There are multiple ways for sorting and detecting cells. Optical, thermal, chemical, acoustic, mechanical, magnetic and electrical techniques have been used for cell sorting \cite{ahn_dielectrophoretic_2006,zhang_towards_2015, voldman_electrical_2006}. To differentiate between cells their intrinsic properties, such as size, refractivity or electrical properties can be exploited. One method is to label a cell with a biological marker.  For example, an antibody attached to a fluorophore can label specific proteins or cells selectively. The availability of various biological labels allows cells to be differentiated by fluorescence, radioactivity or by a change in their electromagnetic properties \cite{wilhelm_universal_2008}. Dielectrophoresis is a phenomenon where a force can be exerted on a polarisable particle using a non-uniform electric field. It allows control of unlabelled cells and is the one the fastest sorting methods \cite{zhang_towards_2015}.
 
-A highly popular method for microfluidic device fabrication is “soft lithography”. It includes the use of polymers such as Polymethylsiloxane (PDMS) to create mold of microstructures. Although it is an inexpensive and fast method capable of creating complex structures like valves and pumps, it has its limitations \cite{xia_soft_1998,tian_introduction_2009, pethig_review_2010, grover_monolithic_2003}. PDMS can swell because of organic solvents and be damagaed \cite{lee_solvent_2003}. Polymers also have limited chemical, mechanica and thermal resistance. In addition, they restrict low waveleght light ($\SI{400}{\nano \metre}$) required for laser induced fluorescence spectroscopy \cite{tian_introduction_2009,stankova_optical_2016}. Amongst the huge spectrum of microfluidic devices, rarely in a pure glass device is manufactured because of soft lithography methods being much easier and cheaper. Glass based microfluidics have three main advantages in biological analysis, they are chemically thermally and mechanically stable and are transparent in the visible light wavelength region. The mechanical stability allows to create high pressure, thus hight throughput systems. The chemicals stability together with thermal stability allows various solvent usage and cleaning possibility of clogged devices for repeatable use \cite{ofner_high-throughput_2017}. The isolating and heat dissipation properties of glass also allow for high-voltage and frequency dielectrophoretic sorting \cite{effenhauser_high-speed_1994}.
+A highly popular method for microfluidic device fabrication is “soft lithography”. It includes the use of polymers such as Polymethylsiloxane (PDMS) to create mold of microstructures. Although it is an inexpensive and fast method capable of creating complex structures like valves and pumps, it has its limitations \cite{xia_soft_1998,tian2008introduction, pethig_review_2010, grover_monolithic_2003}. PDMS can swell because of organic solvents and be damagaed \cite{lee_solvent_2003}. Polymers also have limited chemical, mechanica and thermal resistance. In addition, they restrict low waveleght light ($\SI{400}{\nano \metre}$) required for laser induced fluorescence spectroscopy \cite{tian2008introduction,stankova_optical_2016}. Amongst the huge spectrum of microfluidic devices, rarely in a pure glass device is manufactured because of soft lithography methods being much easier and cheaper. Glass based microfluidics have three main advantages in biological analysis, they are chemically thermally and mechanically stable and are transparent in the visible light wavelength region. The mechanical stability allows to create high pressure, thus hight throughput systems. The chemicals stability together with thermal stability allows various solvent usage and cleaning possibility of clogged devices for repeatable use \cite{ofner_high-throughput_2017}. The isolating and heat dissipation properties of glass also allow for high-voltage and frequency dielectrophoretic sorting \cite{effenhauser_high-speed_1994}.
 Sorting cells with a $100 \percent$ accuracy \cite{takahashi_non-destructive_2004, thomas_imagebased_2019} or high throughput methods \cite{zhang_towards_2015} have been developed in the past. Sciambi and R.Abate have even manufactured a device capable of $\SI{30}{\kilo \Hz}$ sorting with $>99 \percent$ accuracy. Regardless, high speed together with $100\percent$ accuracy has not yet been shown.
 
 Dielectrophoretic droplet sorting in a glass device has been demonstrated by Ján Borovský for sorting carbon nanotubes at a femtolitre scale \cite{borovsky}. The aim in this thesis is to upscale such a device to be capable of single cell, high throughput, dielectrophoretic sorting. It would be the a part of a microfluidic chip complex, where cells are pre-sorted to higher concentrations using inertial sorting (capable of sorting $\num{3e8}$ cells/s \cite{edd_microfluidic_2020}) and then individual sorting done with dielectrophoresis. Here, the process of fabrication is developed to realise a microfluidic chip suitable for dielectrophoretic sorting using fluorescence spectroscopy. The process is conducted using basic microfabrication methods; e-beam lithography, thin film evaporation, and wet etching.
@@ -384,16 +384,132 @@ Here I present all the relevant methods for the fabrication process. FOr each, a
 
 \subsection{Cleaning and activation}
 \label{sec:xx1}
-RCA-cleaing basics. Acetone+IPA, sonication, mechanic scrubbing, Cleanroom etiquettes for low particle contamination,
-DH2O. Pirahna solution explained (cleaning \& activation [activation by RIE menitioned])
 
-\subsection{Mask evaporation}
+Cleaning the glass chips before the fabrication steps is of critical importance. Many of the process steps require dust/particle contaminant free surfaces. The two main reasons are for good thin film adhesion and thermal bonding. Surface contaminants cause bad adhesion and pinholes in thin films. In thermal bonding of the chip and the cover-glass, they cause Newton-rings. Around the contaminant colourful ring shape can be perceived resulting from the opening between the two glass surfaces. This opening can lead to leakage and destruction of the chip.
+Cleaning the glass was done by scrubbing the surface with cotton tips in acetone, then sonicated and rinsed in Isopropyl Alcohol (IPA). Acetone is a good organic solvent for general cleaning, removing fingerprints and dissolving glue from tape residue. The mechanical scrubbing together with sonification loosens and removes solid contaminants. The final rinse with IPA removes the traces of acetone and evaporates quickly leaving a spotless surface. To ensure cleanliness, the glass can be dried with $\mathrm{N_2}$ blowing and checked against light for contamination.  To minimize particle contamination the chips should be transported in deionised water. Despite being in a cleanroom, ambient air is a potential risk for contamination. 
+For the removal of metal and organic contamination and glass surface activation, Piranha solution was used \cite{franssila2010introduction}. Piranha is a strong oxidizing agent consisting of sulfuric acid ($\mathrm{H_2 SO_4}$) and hydrogen peroxide ($\mathrm{H_2 O_2}$). The ratio can be tuned, but if the concentration of $\mathrm{H2O2}$ is over $50 \percent$ an explosion can occur [\textcolor{red}{REF.1}]. The solution is heated to $\SI{100}{\celsius}$ to increase the reaction speed but only after it is cooled after mixture because the reaction is highly exothermic. The solution also hydroxylates glass surface adding -OH groups \cite{klug2013chemical}. The hydroxylation helps thin-film adhesion and is necessary for the bonding of glass. Activating the glass surface can be also achieved with RIE ( Reactive Ion Etching)\cite{lazauskas2012float}. High frequency $\mathrm{O_2}$ plasma treatment can also remove contamination and  hydroxylate the glass surface. It is a faster method compared to Piranha clean but is not as effective than the highly reactive aforementioned chemical clean.
+
+
+[REF.1] https://www.chemistry.mcmaster.ca/moran-mirabal/resources/PIRANHA-CLEAN-5-2014.pdf
+
+
+
+
+
+
+
+
+\subsection{Thin film evaporation}
 \label{sec:xx2}
-Theory, possibilities for mask deposition (short), E-BEAM evaporation, pros and cons (Defects), IMAGES!!
 
-\subsection{Resist exposure and development}
+\textcolor{blue}{DO I NEED MORE EQUATIONS, film stress?, thickness dependence, Or any graphs, if yes ? How can I use someone elsess data, do I need to ? The order which these are explained in is not perfect!!!!}
+
+\textcolor{red}{AFTER WET ETCHING?}
+
+(EVAPORATION)
+
+The etch mask quality is crucial for etching, thus it is important to understand the deposition mechanism to fix film quality problems. Thin film deposition on a substrate is one of the key methods in microfabrication dating back to the 19th century \cite{ohring1992materials}.  Today, the production of thin films has been mastered mainly for the needs of the semiconductor industry. Thin films can become a permanent part of the substrate (e.g. electrodes, semiconductors, capacitors, insulators or protective elements) or act as etch masks \cite{franssila2010introduction}. One of the many methods of producing thin films on a substrate is Evaporation, where the material is evaporated from liquid form or sublimated. When the evaporated material hits a cooler surface it will deposit, forming an amorphous film. Evaporation requires the vapour pressure to be higher than of its surroundings. Naturally, there are two ways to achieve this; Either the material’s vapour pressure is increased by heating or the surrounding gas is vacuumed. The evaporation rate $\phi$ (flux of the material) can be expressed using the vapour pressure $P_V$ as 
+%
+\begin{equation}
+    \label{eq:fluxx}
+    \phi = \frac{P_v (T)}{2 \pi m k_b T}
+ \end{equation}
+where $k_b$ is the Boltzmann constant, $m$ the mass, and $T$ the temperature of the material \cite{franssila2010introduction}.
+
+(E-BEAM)
+
+The method used in this thesis was Electron-beam physical vapor deposition (EBPVD), or E-beam evaporation for short. In EBPVD the kinetic energy of electrons is used to heat the target material. An electron source is created by joule heating a tungsten ($\SI{3660}{\kelvin}$ melting point) filament to cause thermionic emission \cite{franssila2010introduction}. The released electrons are then accelerated by an applied voltage and guided into a crucible using a magnetic field (Figure \ref{fig:evaporator}). 
+
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[ht]{0.56\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/evaporatorr.pdf} 
+        \caption{Evaporator} \label{fig:evaporator}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[ht]{0.35\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/angle_evap.pdf} 
+        \caption{Line of sight coverage} \label{fig:angle_evap}
+    \end{subfigure}
+    \caption{a) Schematic of an e-beam evaporator. 1) Electron source 2) Crucible containing the target material 3) Substrate with variable angle 4) Shutter 5) Pump 6) Thickness detector 7) Water cooling. b) Comparison of dirct and angle ecaporation. } \label{fig:evap}
+\end{figure}
+
+
+
+
+(KEY phenomena)
+
+The biggest concern in thin film deposition is contamination. Impurities can cause bad film adhesion, pinholes and change in chemical composition of the film rendering it useless for its applications. The main sources for contamination arise from impurities in the evaporation material, the crucible, cleanliness of the chamber, or the gases present in the evaporation chamber. Evaporation materials are usually sold with high purity ($>99.99 \percent$), but they can contaminate if stored unproperly. In example Chromium oxidises quickly when in ambient air. To avoid the evaporated material colliding with gas molecules, their mean free path should be longer than the distance from crucible to substrate. The mean free path $\lambda$ can be derived from the kinetic theory of gases to be 
+%
+\begin{equation}
+    \label{eq:mean_free}
+    \lambda = \frac{k_b T}{\sqrt{2}\pi d^2 P}
+ \end{equation}
+ $T$ being the temperature, $P$ the pressure and $d$ the effective cross-section of the particle. In an ideal case, the evaporated material travels directly to the substrate. The main advantage of using an EBPVD is that the evaporation material inside the crucible is heated and not the crucible by the beam. Keeping the crucible at lower temperature prevents the evaporation of the crucible itself or unwanted chemical reactions between the crucible and the material. The localised heating allows evaporation of even tungsten. \cite{franssila2010introduction}
+
+Collisionless transport results in a line of sight coverage which can lead to non-uniform film thickness. The thickness uniformity depends on the position of the substrate to the source. The substrate edges being in a different angle or distance from the source will result in a different film thickness compared to the center of the substrate. Small are not important parameters for an etch mask. For that, the coverage is crucial. It can be influenced by the evaporator design. A longer distance between source and substrate, rotation and angle variation of the substrate can all affect the coverage (Figure \ref{fig:angle_evap}).
+To produce pure films, a low pressure in required with a high deposition rate \cite{ohring1992materials}. The deposition rate can be tailored by increasing the acceleration voltage of the electrons, consequently the temperature of the target material. The rate can be measured inside the chamber with almost atomic layer precision. A quartz crystal is used to measure the deposition rate. The deposited mass on the crystal changes its resonant frequency, which can be precisely measured \cite{franssila2010introduction}. 
+
+Before evaporation, adhesion and stress of the film should be considered. Unless special combinations of substrate and evaporation materials are picked, the adhesion will be poor. If the film material isn’t compatible with the target surface, adhesion layers can be used. Noble metals like Gold aren’t reactive and will not form bonds with the substrate, which is a necessity for good adhesion. In example the adhesion between Gold and glass is very poor, strong adhesion can be achieved with the use of $\mathrm{TiW}$, $\mathrm{Ti}$ or $\mathrm{Cr}$ adhesion layers \cite{chen2013study}. A few nanometres of an adhesion layer can already be sufficient. Substrate cleanliness is the next important factor for film adhesion because impurities will not allow bond formation. Internal stress of the film will weaken the adhesion. Although evaporated films do not suffer from stresses arising from a crystal structure, like other deposition methods, id does experience tensile stress from temperature difference. Heated material from the crucible depositing on a cool substrate will lead to stress from thermal expansion. Therefore, some evaporators have the possibility to heat the substrate. \cite{franssila2010introduction}
+
+
+\subsection{E-beam litography}
 \label{sec:xx3}
-Small intro to litography, E-beam litography, Choosing right resist and spin speed, Exposure, IMAGES!!
+
+The idea of lithography is print a pattern on a surface by changing the surface properties.  Photolithography is indeed the key method used in microfabrication. The idea is to use a photosensitive material (resist) and expose it to light through a mask, that allows light to penetrate only at desired areas. The exposed areas undergo a chemical reaction which is used to generate a pattern. The exposed areas (positive resist) or the unexposed areas (negative resist) can be then chemically removed (Figure \ref{fig:SEM}).  Photolithography serves well the microfabrication industry, because hundreds of copies can be printed using a single mask. Photolithography is the most popular method in microfabrication. The drive to imprint smaller features (Moore’s Law) has led to the development new methods.
+\cite{franssila2010introduction, lee2010microfabrication}
+
+
+\begin{figure}[h]%
+    \centering
+    \includegraphics[width=.48\linewidth]{images/pos_neg_resist.pdf}\quad\includegraphics[width=.43\linewidth]{images/SE.pdf}
+    \qquad
+    \begin{minipage}{1.2in}
+    \end{minipage}%
+    \caption{(Left) Positive and negative resist exposure and development (Right) SE generation. SE's can can escape from close to surface, an inclined surface will produce more SE's thus increasing the contrast.}%
+    \label{fig:SEM}%
+\end{figure}
+
+
+Electron microscope.
+
+Electron microscopes were developed to overcome the resolution of optical microscopes, which were limited by visible lights diffraction. The first Scanning Electron Microscope (SEM) was built by Max Knoll in $1935$ \cite{oatley1982early}. SEM follows the basic principles of an electron microscope. This means that it contains an electron source, usually a tungsten filament which emits electrons via thermionic emission when a sufficiently high voltage (\numrange[range-phrase = -]{100}{300} kV) is applied. Much like in optical microscopes the beam is then focused, but by the magnetic field of coils. SEM is not limited by the diffraction limit because of the small wavelength of electrons. Combining the de Broglie wavelength $\lambda = h/mv$ with kinetic energy $E_{kin} = 1/2 mv^2$, we can get an expression for their wavelength as 
+\begin{equation}
+    \label{eq:wavelength_electron}
+    \lambda = \frac{h}{\sqrt{2 m E_{kin}}}
+\end{equation}
+where $h$ is planks constant and $m$ the mass of an electron. The electrons can be accelerated by an applied electric field acquiring an energy of \numrange[range-phrase = -]{10}{100}$\;\kilo \electronvolt$ \cite{EBL_GOOD}. An electron with a kinetic energy of $\SI{20}{\kilo \electronvolt}$ would have a wavelength of $\SI{8.7}{\femto \metre}$. The electron beam is focused to an area of \numrange[range-phrase = -]{0.4}{5}$\;\nano\metre$ (pixel size) and the sample is raster scanned. Each pixel is then analysed separately, and the data recorded.  
+
+SEM uses mainly the detection of secondary electrons (SE) which have lower kinetic energies than the backscattered ones. The SE emission is caused near the sample surface due to inelastic scattering, when electrons manage to escape the sample surface. SE’s can escape the sample only from near the surface thus revealing information about the sample topology (Figure \ref{fig:SEM}). In a sharp surface, SE emission is increased leading to increased electrons in the detector, resulting in a brighter pixel. E-beam lithography has the same principle as photolithography, but instead of photons, the resist is exposed to electron bombardment which can be achieved with an electron microscope. When using a SEM, the sample needs to be able to withstand the vacuum inside the microscope. It also needs to be somewhat conducting to avoid accumulation of electrostatic charge.
+
+\textcolor{blue}{-Should proximity effects me talked about?}
+
+Resists, PMMA
+
+Resists consist of carbon-based polymer chains that react to exposure. As in photolithography the chemical reaction in e-beam resists is either the cross-linking or fragmentation of chains. In a positive resist the polymer chains are disrupted making them shorter, which can dissolve easier in an organic solvent (developer) (Figure \ref{fig:PMMA_chem}). Likewise, in negative resist longer chains are formed, thus making the exposed areal less soluble. One of the first developed and the most popular e-beam resist is Polymethyl methacrylate (PMMA). It has the capability of acting as both positive and negative resist. PMMA is highly sensitive (requires little exposure compared to other e-beam resists) and has a resolution of $\SI{10}{\nano \metre}$ but it has poor etch resistance. For the development of PMMA, MIBK:IPA (Methyl isobutyl ketone: Isopropyl alcohol) is used and for removal, Acetone. \cite{EBL_GOOD}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{images/PMMA_chem_eq.pdf}
+    \caption{The mechanism of PMMA polymer scission due to e-beam exposure. Adapted with permission from \cite{moore_degradation_1991}. Copyright 1991 American Chemical Society.}
+    \label{fig:PMMA_chem}
+\end{figure}
+
+Selection of the correct resist is important for achieving the desired result. Multiple resists are available with different sensitivities, contrast and developers. The composition of the resist itself can also be varied. For example, both PMMA 950K A4 and -A7 were used in this thesis.  950K refers to the molecular weight and “A” to the solvent ($4 \percent$ PMMA in Anisole). To achieve a good lithographic process these parameters should be optimized:
+\begin{enumerate}
+    \renewcommand{\labelenumi}{\roman{enumi}} 
+        \item Exposure dose
+        \item Development time
+        \item Resist adhesion to substrate
+        \item Resist thickness
+\end{enumerate}	
+In the case of a glass substrate solely PMMA cannot be used. It is not conductive and  will cause charge accumulation, which will have a repelling effect on the incoming electrons. Charge accumulation will lead to unpredictable exposure areas, ruining the sample. Usually a thin metal film or a layer of conductive resist is used to ground the sample.
+
+
+
 
 \subsection{Wet eching}
 \label{sec:xx4}

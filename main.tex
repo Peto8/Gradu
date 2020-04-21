@@ -513,11 +513,38 @@ In the case of a glass substrate solely PMMA cannot be used. It is not conductiv
 
 \subsection{Wet eching}
 \label{sec:xx4}
-\begin{itemize}
-    \item Basics of wet etching, isotropy etc...
-    \item Etching of metals, especially Cr, Au
-    \item Etching of glass
-\end{itemize}
+-Whats etching
+
+Etching is a the subtractive process in microfabrication. Material is removed in order to create cavities, patterns or just to remove unwanted material. Etching can be divided into physical or chemical methods. Physical methods consist of eroding the material, in example, with a focused ion beam. Chemical etching is based on chemical reactions removing the material. 
+
+-Wet etching 
+
+In wet etching the substrate is simply dipped into a chemical solution which will react with the target material. In most cases a mask is used to allow the chemical reaction to happen on at the desired areas. When choosing an etchant, selectivity is the key factor. The target is to have the etchant reacting specifically with the target material leaving the mask and other materials unspoilt. A faulty or deteriorated mask will lead to the destruction of the sample. 
+Wet etching is a highly tuneable process. Chemical information and reactions of different etchants are widely available thanks to the microfabrication industry \cite{williams2003etch}. After finding the correct etchant, the etch rate can be tuned by etchant concentration, temperature and stirring. Compared to physical etching wet chemical etching is faster. The drawback of wet etching is isotropy. Because the etchant etches ideally in all directions, the target material will be etched from the mask opening as much in depth as in the lateral dimension, meaning the ratio of depth:width will always be at least 1:2 \textcolor{red}{(FIGURE isotropy)}. In reality the etch rate can vary in the lateral direction. \cite{lee2010microfabrication}
+
+
+-Glass Wet Etching (HF)
+
+Wet etching of glass is difficult due to the chemical stability of glass. Glass is mainly etched with hydrofluoric acid (HF). The highly generalised etch mechanism is reportedly \cite{etch_formula}
+\begin{equation}
+    \label{eq:HF_etch}
+    \mathrm{SiO_2} + \mathrm{6HF} \rightarrow  \mathrm{2H_2 O} + \mathrm{H_2 Si F_6}
+\end{equation}
+
+The challenge with HF is that it is a highly dangerous chemical and for safety reasons, boiling and sonication is not recommended. Additionally, only a few mask materials are chemically inert to it.  Using a solely a photoresist as mask for HF etching has been reported \cite{lin2001fast,guanglong2012microfluidic}, but the most common mask for HF glass etching is the combination of Au and Cr, which are both inert to HF \cite{iliescu2005characterization,tay2006defect}. Other combinations like WTi/Cu and Cr/Cu have also been demonstrated as being able to act as a mask \cite{Hgglund2013CharacterizationOM,iliescu2008wet}.
+From equation \ref{eq:HF_etch} we can see that the reaction depends highly on the concentration of HF. But the formula is applicable only for pure quartz glass. The glass used in this thesis was Soda Lime, it was chosen because of its low cost and high etch rate compared to other glasses \cite{srivannavit2004design}. It consists of multiple components which are presented in Table \ref{tab:soda_lime}. 
+\begin{table}[h]
+    \centering
+    \caption{The composition of soda-lime glass slides according to manufacturer \cite{Soda_lime_ONLINE}.}
+    \label{tab:soda_lime}
+    \begin{tabular}{cccccccc} \toprule
+       $\mathrm{SiO_2}$  & $\mathrm{MgO}$   &  $\mathrm{Na_2 O}$ & $\mathrm{Al_2 O_3}$ &  $\mathrm{K_2 O}$ &  $\mathrm{Fe_2O3}$ &  $\mathrm{CaO}$ & $\mathrm{SO_3}$ \\ \midrule
+
+       $72.20 \percent$  &  $4.30 \percent$ &  $14.30 \percent$  & $1.20 \percent$     &  $1.20 \percent$  & $0.03 \percent$    & $6.40 \percent$ & $0.30 \percent$\\ \bottomrule
+    \end{tabular}
+\end{table} 
+$\mathrm{CaO}$, $\mathrm{MgO}$ and $\mathrm{Al_2 O_3}$ can form insoluble products together with HF, and they can leave precipitations and create “masked” areas for the etchant, which will result in a rough surface. Mixing HCL has proved to dissolve these molecules and result in a better etch surface\cite{iliescu2005characterization}. The etch rate and surface roughness quality can be further tuned by the addition of $\mathrm{HNO_3}$, $\mathrm{H_3 PO_4 }$  or $\mathrm{H_2SO_4}$ \cite{park2017review}. In the case of Deep etching (over $\SI{10}{\micro \metre}$) high etch rates are desirable. There is always a propability for mask defects and the etchant penetrating them. The penetration of the etchant through these defects is constant, so reducing the etch time by having a high etch rate will result in smaller defects \cite{tay2006defect}.
+
 
 
 \label{sec:xx5}
@@ -541,6 +568,10 @@ Thermal bonding explained, also chemical reaction Images. Requirements for a suc
 \label{sec:fabrication}
 
 PENDING: Wether to put electrodes first (as in fabrication) or channels
+
+"Menzel-Gläser 20x20 mm2 5 soda-lime glass co-
+verslips were used for fabrication of microfluidic chips throughout the whole 
+project. [JAN s86]"
 
 \subsection{Design}
 \label{sec:xxx1}
@@ -566,7 +597,7 @@ The three most important areas of the channel layout are visualised in Figure \r
 
 
 
-The layout was designed for a chip of $20x20 \milli \metre$, where the two inlets and two outlets were each $\SI{7}{\milli \metre}$ from the chips centre point (Figure \ref{fig:design1}).  The channels were designed to curve smoothly without rough edges and shapes to uphold laminar flow and reduce clogging. The channel width was \textcolor{red}{??50um??} for the transport of cells \textcolor{red}{(size ??-??)} and 5um for the pressure stabilizing channels. At the electrodes, the channel width was up to 100um to allow proper flow lanes for the cells. The width on the design needed to accommodate for isotropic etching. The channels were always wider than the exposed width. The increase is discussed in chapter \textcolor{red}{(?? WET ETCHING??))}. Knowing the correct width was critical in placing the electrodes close as possible. Concerning the length, the straight part in front of the electrodes needs to be long enough for the spectroscopy and the separation to take place. The inlet channels before the T-junction and the outlet channels after the Y-junction were designed to have matching lengths. Especially for the outlets it is essential because otherwise there would be a pressure difference that would make one channel more favourable for the flow.
+The layout was designed for a chip of $20x20 \milli \metre$, where the two inlets and two outlets were each $\SI{7}{\milli \metre}$ from the chips centre point (Figure \ref{fig:design1}).  The channels were designed to curve smoothly without rough edges and shapes to uphold laminar flow and reduce clogging. The channel width was \textcolor{red}{??50um??} for the transport of cells \textcolor{red}{(size ??-??)} and 5um for the pressure stabilizing channels. At the electrodes, the channel width was up to 100um to allow proper flow lanes for the cells. The design needed to accommodate for isotropic etching, meaning the channels were always wider than the exposed width. Knowing the correct width was critical in placing the electrodes close as possible. Concerning the length, the straight part in front of the electrodes needs to be long enough for the spectroscopy and the separation to take place. The inlet channels before the T-junction and the outlet channels after the Y-junction were designed to have matching lengths. Especially for the outlets it is essential because otherwise there would be a pressure difference that would make one channel more favourable for the flow.
 
 The design for the electrodes were reproduced for Borovsk’s thesis \cite{borovsky}. The tip shape originated from a paper by, where the electric fields were simulated to produce an ideal electric field for contactless DEP \cite{leman_droplet-based_2015}. The electrodes consisted of a half loop having contact pads at the end for allowing the test wether they were functional. The contact pads were split into vertical lines to reduce the exposure area and thus time significantly. The final optimal design would include uniform contact pads and four electrodes. If Same frequency pDEP or nDEP is to be achieved there need to be electrodes on both sides of the channel. For the process development only two electrodes were manufactured. 
 

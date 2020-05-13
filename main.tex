@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 
 \usepackage{caption}
+\captionsetup[figure]{format=plain, font=footnotesize, labelfont=bf,labelsep=period}
 \usepackage{subcaption}
 
 
@@ -266,6 +267,8 @@ The most important points arising from these equations are:
 
 \begin{enumerate}
 \renewcommand{\labelenumi}{\Roman{enumi}}  % <<<<<<<<<<<
+    \setlength{\itemsep}{1pt}
+    \setlength{\parskip}{1pt}
     \item The Force is zero in a uniform field $(\nabla E=0)$.
     \item The force depends non-linearly on the field magnitude $(E^2)$ and showing that both an AC and CD field can cause a DEP force.
     \item The dependence on particle volume $\propto R^3$ allows separation of particles based on size.
@@ -288,11 +291,11 @@ where $r$ , $d$ the thickness of the membrane, $\epsilon_{CP}^*$ and  $\epsilon_
 
 \begin{figure}[h]%
     \centering
-    \includegraphics[width=.27\linewidth]{images/single_shell.pdf}\quad\includegraphics[width=.61\linewidth]{images/plot_DEP.pdf}
+    \includegraphics[width=.70\linewidth]{images/plot_DEP2.pdf}\quad\includegraphics[width=.27\linewidth]{images/single_shell.pdf}
     \qquad
     \begin{minipage}{1.2in}
     \end{minipage}%
-    \caption{(Left) Single shell modell, (Right) CM factor for Human colon cancer cells (HT-29) has been simulated with MyDEP tool \cite{cottet_mydep_2019}. The values used in the simulation are presented in table \ref{tab:cell_table}. A change in cell radius and a change in media was also simulated for comparison.}%
+    \caption{(Right) CM factor for Human colon cancer cells (HT-29) has been simulated with MyDEP tool \cite{cottet_mydep_2019}. The values used in the simulation are presented in table \ref{tab:cell_table}. A change in cell radius and a change in media was also simulated for comparison. (Left) The single shell modell.}%
     \label{fig:single_shell}%
 \end{figure}
 
@@ -507,8 +510,8 @@ In wet etching the substrate is simply dipped into a chemical solution which wil
 Wet etching is a highly tuneable process. Chemical information and reactions of different etchants are widely available thanks to the microfabrication industry \cite{williams2003etch}. After finding the correct etchant, the etch rate can be tuned by etchant concentration, temperature and stirring. Compared to physical etching wet chemical etching is faster. The drawback of wet etching is isotropy. Because the etchant etches ideally in all directions, the target material will be etched from the mask opening as much in depth as in the lateral dimension, meaning the ratio of depth:width will always be at least 1:2 ( Figure\ref{fig:isotropy}). In reality the etch rate can vary in the lateral direction due to the availability of fresh etchant. \cite{lee2010microfabrication}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=1.0\textwidth]{images/isotrpy.png}
-    \caption{Isotropical etching. The etch rate from the mask opening is similar in all directions.}
+    \hspace*{1cm}\includegraphics[width=0.6\textwidth]{images/isotrpy.png}\hspace*{-1cm}
+    \caption{Isotropical etching. The etch rate from the mask opening is the same in all directions.}
     \label{fig:isotropy}
 \end{figure}
 \newline
@@ -581,7 +584,7 @@ The aim was to produce $\SI{30}{\micro \metre}$ deep channels cost and time effi
 \newline
 \textbf{Instrumentation:}
 
-For evaporation, Balzers Baltec BAE 250 e-beam evaporator was used at a vacuum of (\numrange[range-phrase = -]{1}{2})$\;\cdot 10^{-5} \milli \torr$. As SEM for EBL, Raith e-Line was used together with its proprietary software \textcolor{red}{[????]}, which includes a CAD tool for layout designing.  For plasma cleaning, activating and etching (RIE) Oxford Instruments Plasmalab80Plus was used. Imaging of the samples was done by Olympus BX51M   together with Q Imaging MicroPublisher 5.0 RTV camera. Chemical processes were conducted in fume hoods and spin-coating in laminar flow-hoods. To determine surface roughness and channel depth a KLA Tencor P-15 profilometer was used. 
+For evaporation, Balzers Baltec BAE 250 e-beam evaporator was used at a vacuum of (\numrange[range-phrase = -]{1}{2})$\;\cdot 10^{-5} \milli \torr$. As SEM for EBL, Raith e-Line was used together with its proprietary software \textcolor{red}{[????]}, which includes a CAD tool for layout designing.  For plasma cleaning, activating and etching (RIE) Oxford Instruments Plasmalab80Plus was used. Imaging of the samples was done by Olympus BX51M   together with Q Imaging MicroPublisher 5.0 RTV camera. Chemical processes were conducted in fume hoods and spin-coating in laminar flow-hoods. To determine surface roughness and channel depth a KLA Tencor P-15 profilometer was used. A Laurell WS-650MZ-23NPPB spinner was used for spin coating.
 
 \subsection{Design}
 \label{sec:xxx1}
@@ -589,15 +592,15 @@ The chip layout was designed using the electron microscopes own software (\textc
 
 The three most important areas of the channel layout are visualised in Figure \ref{fig:design1}. A) The channels from the two inlets meet at a T-crossing. It allows droplet formation, if droplet-based sorting is to be used, or flow control. If cells are inserted from one of the inlets, the space/medium between the cells can be altered by tuning the second inlet pressure to cause a stationary or a high-speed flow. This flow adds medium in between the cells thus increasing the distance between them. B) Is a narrow channel confining the cells for analysis then expanding into a long and wide channel. In the wider part the flow would slow down due to higher volume and the electrodes placed next to the channel would push or pull the cells based on the analysis result. Assuming a laminar flow, the cells would then take the correct “lane” in the wide channel to be then sorted. C) At the Y-junction the cells would go left or right depending on their “lane” to be collected or to become waste (Figure \ref{fig:design_flow}). The junction would also require small channels where cells don’t fit across to stabilize pressure. A cell going in right channel would then increase the drag on the fluid thus causing the left channel to be more favourable for the next incoming cell independent of its lane.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \begin{subfigure}[ht]{0.48\textwidth}
+    \begin{subfigure}[ht]{0.65\textwidth}
         \centering
         \includegraphics[width=\linewidth]{images/chip_design.pdf} 
         \caption{Chip layout.} \label{fig:design1}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[ht]{0.48\textwidth}
+    \begin{subfigure}[ht]{0.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{images/Separation.pdf} 
         \caption{Deflection of cells to different lanes} \label{fig:flow1}
@@ -708,7 +711,7 @@ The realization of the microfluidic chip was performed with conventional micro-f
 
 For etch mask deposition, the chips needed to be contaminant free. Glass residue and leftover protective tape from drilling were removed by mechanical scrubbing and hot acetone. The chips were then rinsed with IPA and dried with $\mathrm{N_2}$ gun. 
 To clean organic residue from Acetone+IPA and to Activate the glass surface, a piranha clean was performed. The piranha solution made from 3:1 Sulphuric acid and hydrogen peroxide and kept at $100 \celsius$ for 40 minutes. When done, the chips were dipped into $\mathrm{dH_2 O}$ for rinsing any Piranha residues. A layer of $\SI{50}{\nano \metre}$ Cr and $\SI{200}{\nano \metre}$ Au was then evaporated at a speed of $\SI{1.0}{\angstrom \per \sec}$.
-After evaporation, PMMA 950K A4 was spin coated at 3000 rpm and prebaked at 160*C for 2 min. A test pattern layout, containing traps and channel intersections was then exposed using EBL with $\SI{215}{\micro \coulomb \per \centi \metre^{2}}$, developed in MIBK:IPA for 45s and stopped in IPA. The resist was then hard baked at $200 \celsius$ for 2h on a hot plate. The gold layer was then etched using Gold etchant (Appendix \ref{sec:chemicals}) for 15s and Cr using Nichrome etchant (Appendix \ref{sec:chemicals}) for 10s.  The glass was then etched with 48\percent HF (Appendix \ref{sec:chemicals}) for 1 min. Finally, the resist was removed with acetone and both Cr and Au masks etched away completely within their corresponding etchants.
+After evaporation, PMMA 950K A4 was spin coated at 3000 rpm and prebaked at 160$\celsius$ for 2 min. A test pattern layout, containing traps and channel intersections was then exposed using EBL with $\SI{215}{\micro \coulomb \per \centi \metre^{2}}$, developed in MIBK:IPA for 45s and stopped in IPA. The resist was then hard baked at $200 \celsius$ for 2h on a hot plate. The gold layer was then etched using Gold etchant (Appendix \ref{sec:chemicals}) for 15s and Cr using Nichrome etchant (Appendix \ref{sec:chemicals}) for 10s.  The glass was then etched with 48\percent HF (Appendix \ref{sec:chemicals}) for 1 min. Finally, the resist was removed with acetone and both Cr and Au masks etched away completely within their corresponding etchants.
 
 The result was poor and barely enough for an operational chip. The channel surfaces were rough, and the chip was filled with pinholes (Figure \ref{fig:pinhole}). The mask was also in poor condition, containing a lot of pinholes and occasional blister like features underneath. The adhesion of the mask to the substrate was weak which was obvious from mask detachment during sonification. Fixing these issues was not trivial, because the process consisted of many fabrication steps and it was unknown what was the exact cause of these defects. It also took time to master basic cleanroom procedures like precise tweezer handling to minimize mechanically caused defects to the chips. 
 
@@ -755,18 +758,26 @@ Iliescu et al. (2005) found the optimal ratio for HF:HCl to be 10:1 concerning s
 
 
 \begin{flushleft}\textbf{Mask quality} \end{flushleft}
-To fix the mask quality to an acceptable level, almost every fabrication step had to be slightly improved. The two main reasons for bad mask quality were contaminated substrate surface and poor evaporation quality. To improve the cleanliness of the surface, the scrubbing and sonication in acetone -step was repeated multiple times. Sonication and rinse in IPA were also applied. The chips were the checked against light to see whether all visible contaminants have been removed. The chips were put in a flat beaker in $\mathrm{dH_20}$ to avoid any contamination from ambient air while transporting them between fabrication steps. 
-To improve the film adhesion activation step was altered. Different concentrations (2$\-$5):1 was tried with varying activation times (30 min $\-$ 1h), but they did not alter the outcome on an observable level. The piranha treatment was altered to last 30 min, then a thorough rinse (over 30 s) in $\mathrm{dH_20}$ and putting it back to the piranha (cool) solution for 10 min. The chips were then again thoroughly rinsed and put in $\mathrm{dH_2 0}$. This was done to increase hydroxyl groups on the surface and to rinse any contaminants. Careless cleaning of piranha residues from the chip leads to disastrous results (Figure \ref{fig:bad_piranha}). Prior to evaporation the chips were put on a hotplate at $\SI{130}{\celsius}$ for 2 min to evaporate all moisture. Higher temperatures were avoided to avoid the desorption of the carboxyl groups.
+To fix the mask quality to an acceptable level, almost every fabrication step had to be slightly improved. The two main reasons for bad mask quality were contaminated substrate surface and poor evaporation quality. To improve the cleanliness of the surface, the scrubbing and sonication in acetone -step was repeated multiple times. Sonication and rinse in IPA were also applied. The chips were the checked against light to see whether all visible contaminants have been removed. The chips were put in a flat beaker in $\mathrm{dH_2 O}$ to avoid any contamination from ambient air while transporting them between fabrication steps. 
+To improve the film adhesion activation step was altered. Different concentrations (2-5):1 were tried with varying activation times (30 min $\-$ 1h), but they did not alter the outcome on an observable level. The piranha treatment was altered to last 30 min, then a thorough rinse (over 30 s) in $\mathrm{dH_2 O}$ and putting it back to the piranha (cool) solution for 10 min. The chips were then again thoroughly rinsed and put in $\mathrm{dH_2 O}$. This was done to increase hydroxyl groups on the surface and to rinse any contaminants. Careless cleaning of piranha residues from the chip leads to disastrous results (Figure \ref{fig:bad_piranha}). Prior to evaporation the chips were put on a hotplate at $\SI{130}{\celsius}$ for 2 min to evaporate all moisture. Higher temperatures were avoided to avoid the desorption of the carboxyl groups.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \includegraphics[width=1.0\textwidth]{optical/bad_piranha.png}
-    \caption{Pirahna residue under mask layer.}
-    \label{fig:bad_piranha}
-\end{figure}
+    \begin{subfigure}[ht]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{optical/bad_piranha.png} 
+        \caption{} \label{fig:lil}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[ht]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{optical/faultyevap.png} 
+        \caption{} \label{fig:lell}
+    \end{subfigure}
+    \caption{1) Piranha residue under mask layer. Only visible after evaporation. 2) Bad mask quality due to failed evaporation.} \label{fig:bad_piranha}
+\end{figure}  
 
-A set of challenges were faced with the evaporator. Electrical conductivity problems were randomly present causing difficulties on setting a constant evaporation speed. Conductivity problems also caused current spikes that hit the crucible, thus evaporating crucible material and causing film contamination. The evaporator being under constant use, various evaporation materials accumulated around the crucible. By distorting the magnetic field, this led to the electrons missing the target material and hitting the crucible. Cleaning of the evaporator and sonication the target material and the crucible in IPA before evaporation, had a noticeable positive effect. The target Cr was also changed to fresh unoxidized pellets and there-on kept in $\mathrm{N_2}$ atmosphere cupboard to avoid oxidation. 
-
+A set of challenges were faced with the evaporator. Electrical conductivity problems were randomly present causing difficulties on setting a constant evaporation speed (Fig \ref{fig:bad_piranha}). Conductivity problems also caused current spikes that hit the crucible, thus evaporating crucible material and causing film contamination. The evaporator being under constant use, various evaporation materials accumulated around the crucible. By distorting the magnetic field, this led to the electrons missing the target material and hitting the crucible. Cleaning of the evaporator and sonication the target material and the crucible in IPA before evaporation, had a noticeable positive effect. The target Cr was also changed to fresh unoxidized pellets and there-on kept in $\mathrm{N_2}$ atmosphere cupboard to avoid oxidation. 
 
 Consequently, the number of pinholes were reduced but not completely eliminated. Multiple researches suggest having a double layer of gold to reduce pinholes \cite{iliescu2008wet,Hgglund2013CharacterizationOM,bu2004new}. The idea is that when pinholes are generated from contamination particles or the stress of the film, they will be generated randomly. Depositing a second layer on top, that will also have defects randomly, the second layer would mostly cover the pinholes generated in the 1st layer. Between the depositions the film would be cooled and the defects generated due to tensile stress (Figure \ref{fig:multilayer_mask}). 
 Combinations of $\SI{70}{\nano \metre} + \SI{70}{\nano \metre} + \SI{70}{\nano \metre}$, $\SI{150}{\nano \metre}+ \SI{150}{\nano \metre}$ and $\SI{200}{\nano \metre} + \SI{100}{\nano \metre}$ Au layers were tried. The triple $\SI{70}{\nano \metre}$ layer was weak with a lot of pinholes with the top layer detaching just from sonication (Figure Brittle layers). The $\SI{200}{\nano \metre} + \SI{100}{\nano \metre}$  Au with waiting 15 min between depositions yielded a very positive result, thus it was kept as the method for further development.
@@ -783,7 +794,7 @@ Combinations of $\SI{70}{\nano \metre} + \SI{70}{\nano \metre} + \SI{70}{\nano \
     \begin{subfigure}{0.48\textwidth}
         \centering
         \includegraphics[width=\linewidth]{optical/pinhole01.png} 
-        \caption{Focus within pinhole} \label{fig:pinholeee}
+        \caption{Focus within pinhole reveals bottom Au layer} \label{fig:pinholeee}
     \end{subfigure}
     
     \vspace{1cm}
@@ -837,7 +848,7 @@ The first decision in electrode fabrication was whether to do it before or after
 
 
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \begin{subfigure}[ht]{0.48\textwidth}
         \centering
@@ -848,7 +859,7 @@ The first decision in electrode fabrication was whether to do it before or after
     \begin{subfigure}[ht]{0.48\textwidth}
         \centering
         \includegraphics[width=\linewidth]{optical/electrodesideetch.png} 
-        \caption{Unwanted etch of sharp features} \label{fig:lell}
+        \caption{Unwanted etching of sharp features} \label{fig:lell}
     \end{subfigure}
     \caption{Using a PMMA layer thinner than electrode depth or not evaporationg at an angle will cause sharp edges to be etched.} \label{fig:coverage}
 \end{figure}  
@@ -859,9 +870,10 @@ Fabricating the electrodes firs meant that they need to be capable of withstandi
 
 
 As expected, the selectivity of the Nichrome etchant used to etch Cr was ideal; not harming the electrodes in any way \cite{williams2003etch}. This property was also exploited for the removal of the deep-etch mask. On top of the electrodes a Cr-Au was evaporated. After etching, the mask could be removed by using solely the Nichrome etchant. Using a gold etchant could have harmed the electrodes (also consisting of gold). 
+
 The “lift-off” of the gold mask happened a lot faster (5 min) than expected from the etch rate of nichrome etchant ($\SI{50}{\angstrom \per \sec}$ at $\SI{40}{\celsius}$). It was expected to last a long time, considering the large area of $20\times 20\; \milli \metre$. This is speculated due to an electrochemical effect between the Au/Cr interface and the etchant solution, which has been demonstrated by Nemirovsky et al. for undercutting of Au when iodine etchants are used. Although in this case beneficial, the fast under etching of the Cr layer caused destruction of the electrodes in a few experiments (Figure \ref{fig:underetch}). Another reason could be the stress within the deposited gold film. The tensile lifting the gold could lead to the detachment and peeling of either the Au/Cr or the Cr/glass interface allowing the Cr-etchant to etch the underlying chromium (Figure \ref{fig:underetch}).
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \begin{subfigure}[ht]{0.48\textwidth}
         \centering
@@ -871,30 +883,33 @@ The “lift-off” of the gold mask happened a lot faster (5 min) than expected 
     \hfill
     \begin{subfigure}[ht]{0.48\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{optical/underetch02.png} 
+        \includegraphics[width=\linewidth]{optical/tensilestress.png} 
         \caption{} \label{fig:lellqqq}
     \end{subfigure}
-    \caption{Overetching of Cr under Au mask. Images taken from the bottom of the chip. 1) The fast underetching of Cr ruined the electrodes. 2) Thensile stress visible when the gold mask is peeling upwards after channel etch.} \label{fig:underetch}
+    \caption{Overetching of Cr under Au mask. 1) The fast underetching of Cr ruined the electrodes. (Image taken from the bottom of the chip.) 2) Tensile stress visible when the gold mask is peeling upwards after channel etch.} \label{fig:underetch}
 \end{figure}  
 
 
 \textcolor{red}{desicion toward end}
 (Should the electrode blistering be talked about?  Compressive stress? Bubbling of the gold but the cR being attached to the glass)
 
+\newpage
 
 \begin{flushleft}\textbf{Composition} \end{flushleft}
 Other than good conductivity, the requirements for the electrode composition arise from the chip fabrication steps. The electrodes need to withstand:
 \begin{enumerate}
     \renewcommand{\labelenumi}{\Roman{enumi}} 
+    \setlength{\itemsep}{1pt}
+    \setlength{\parskip}{1pt}
     \item The etchants used in lift-off
     \item Good adhesion to glass, for cleaning steps (sonication)
     \item Can endure Piranha treatment for chip activation (for TADB)
-    \item Thermal endurance; not melting and retaining conductivity after being subjected for 590*C in TADB Can be soldered to connecting wires
+    \item Thermal endurance; not melting and retaining conductivity after being subjected for 590$\celsius$ in TADB Can be soldered to connecting wires
     \item Can be soldered to connecting wires
 \end{enumerate}
 
 An electrode composition meeting the requirements had already been demonstrated by Borovsky \cite{borovsky}; It was a sandwich of $\mathrm{SiO_{2}}$, Ti, Au, Ti and $\mathrm{SiO_{2}}$. Gold is chosen because its ideal conductivity and chemical resistance. As an adhesion layer between gold and glass, titanium was chosen. Although Ti is a slightly weaker adhesion layer than Cr \cite{chen2013study}, the annealing temperature in TADB causes chromium to diffuse into gold increasing its resistance significantly \cite{huang2003effect}. Titanium will also diffuse through Gold formig  $\mathrm{TiAu_2}$, TiAu and  $\mathrm{Ti_3 Au}$ compounds. The $\mathrm{Ti_3 Au}$ will  forms a thin (50-$\SI{100}{\angstrom}$) diffusion barrier preventing further diffusion \cite{tisone1972diffusion}. The initial $\mathrm{SiO_2}$ layer was designed to prevent diffusion between Ti and Glass which would lead to defective electrodes.  The first $\mathrm{SiO_2}$ layer was deemed unnecessary and working electrodes were manufactured without it. Adhesion problems between the deposited $\mathrm{SiO_2}$ and the electrodes drove towards this decision (Figure \ref{fig:eleproblem}). It can be speculated that the first $\mathrm{SiO_2}$ layer is indeed mandatory if the electrodes are placed between glass slides and subjected to pressure. The pressure may have lead to melting point depression and increased diffusion, which was not the case with our imbedded electrodes. After TADB a slight change in electrode color was observed but the electrode resistance (800-$\SI{1}{\kilo \ohm}$)was not affected.
-To further improve adhesion and to avoid Ti oxidation, All of the electrode material was evaporated consecutively. The final layer ($\mathrm{SiO_2}$), which served a purpose of protecting the electrodes against Pirahna treatment (Figure \ref{fig:eleproblem}), made the electrode surface non-conductive. As a final processing step after The cover-glass bonding, this layer was etched away using a RIE oxide etch. This etch did not visibly alter the glass cover transparency.
+To further improve adhesion and to avoid Ti oxidation, All of the electrode material was evaporated consecutively. The final layer ($\mathrm{SiO_2}$), which served a purpose of protecting the electrodes against Piranha treatment (Figure \ref{fig:eleproblem}), made the electrode surface non-conductive. As a final processing step after The cover-glass bonding, this layer was etched away using a RIE oxide etch. This etch did not visibly alter the glass cover transparency.
 
 
 \begin{table}[h]
@@ -925,7 +940,7 @@ To further improve adhesion and to avoid Ti oxidation, All of the electrode mate
         \includegraphics[width=\linewidth]{optical/piranha_ate.png} 
         \caption{} \label{fig:lellqqq}
     \end{subfigure}
-    \caption{1) Electrodes detaching from glass due to bad adhesion. 2) HF etched the protective $\mathrm{SiO_2}$ layer through a pinhole, which lead to pirahna corroding the gold.} \label{fig:eleproblem}
+    \caption{1) Electrodes detaching from glass due to bad adhesion. 2) HF etched the protective $\mathrm{SiO_2}$ layer through a pinhole, which lead to piranha corroding the gold.} \label{fig:eleproblem}
 \end{figure}  
 
 
@@ -954,61 +969,26 @@ To further improve adhesion and to avoid Ti oxidation, All of the electrode mate
     \item Deflection of fluorescent beads, maby even cells (TO BE MEASURED)
 \end{itemize}
 
-
+\begin{figure}
+    \centering
+    \begin{subfigure}[ht]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{optical/good2.png} 
+        \caption{} \label{fig:lileee}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[ht]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{optical/good5.png} 
+        \caption{} \label{fig:lellqqq}
+    \end{subfigure}
+    \caption{Add some of these final "good" result images.} \label{fig:ghj}
+\end{figure}  
 \section{Conclusions}
 \label{sec:conclusions}
 
-*** \textbf{Some example equations and references for latex} ***
-\newline
-Ideaalikaasun tilanyhtälön mukaan on komponentin $i$ osatiheys lil
-%
-\begin{equation}
-   \label{eq:ideaalikaasun-tilanyhtalo}
-   \rho_i = \frac{p_i M_i}{R T}\;,
-\end{equation}
-%
-missä $p_i$ on komponentin $i$ osapaine ja $R$ on yleinen kaasuvakio. 
 
-Komponentin $i$ mooliosuudelle $y_i = n_i/n$ saadaan yhtälöstä (\ref{eq:ideaalikaasun-tilanyhtalo}) Daltonin yhtälö
-%
-\begin{equation}
-   \label{eq:daltonin-yhtalo}
-   y_i = \frac{p_i}{p}\;.
-\end{equation}
-
-Koko seoksen tiheys ja kokonaispaine voidaan laskea vastaavasti kaavoilla~(\ref{eq:seoksen-tiheys}) ja (\ref{eq:seoksen-kokonaispaine}).
-
-\begin{eqnarray}
-   \rho & = & \sum_i \rho_i \label{eq:seoksen-tiheys} \\
-   p & = & \sum_i p_i \label{eq:seoksen-kokonaispaine}
-\end{eqnarray}
-
-
-
-
-Tulokset esittelee ja kommentoi tutkimuksen tuloksia normaalisti tutkimusongelmien esittämisjärjestyksessä.
-
-\begin{table}[h]
-   \centering
-   \caption{Selkeä hinnasto}
-   \begin{tabular}{llr} \toprule
-      \multicolumn{2}{c}{Artikkeli} \\ \cmidrule(r){1-2}
-      Eläin    & Kuvaus       & hinta (mk) \\ \midrule
-      Hyttynen & grammoittain &  41,50 \\
-               & kappaleelta  &   0,05 \\
-							
-      Gnu      & täytetty     & 360,00 \\
-      Emu      & täytetty     & 121,30 \\
-      Vyötiäinen & pakastettu &  38,40 \\ \bottomrule
-   \end{tabular}
-\end{table}
-
-\begin{figure}[htp]
-   \centering
-   \includegraphics[width=\textwidth]{tutkinnot}
-   \caption{Valmistuneiden kandidaatintutkielmien jakauma tekijän opiskeluvuoden mukaan Jyväskylän yliopiston fysiikan laitoksella 2014 ($n = 42$); tutkintojen jakauma opiskeluvuoden mukaan, kun tutkielma on valmistunut 2014 ($n = 29$; tilanne 4.3.2015). (Kuva: Jussi Maunuksela, 2015)}
-   \label{fig:esim-kuvio}
-\end{figure}
+Conclusions
 
 \nocite{*}
 
@@ -1022,7 +1002,7 @@ Tulokset esittelee ja kommentoi tutkimuksen tuloksia normaalisti tutkimusongelmi
 % --------------------------------------------------------------------------
 \appendix
 
-\section{Appendix 1}
+\section{Appendix}
 \label{sec:chemicals}
 
 \begin{table}[h]
@@ -1044,9 +1024,59 @@ Tulokset esittelee ja kommentoi tutkimuksen tuloksia normaalisti tutkimusongelmi
  \end{table}
 
 
-\section{Appendix 2}
+\section{Appendix}
 \label{sec:appendix2}
-Arduino code (If i get so far)
+Steps marked between with the same color must be done consecutively during the same day.
+*Developer1 = MIBK:IPA*
+
+1. (\textbf{Drilling}) Drill chip inlets and outlets using a Laser or mechanical drill bits.
+
+2. (\textbf{Annealing}) Start with 3-4 chips for time efficiency. Sonicate and scrub with cotton tips in acetone and rinse with IPA. After drying with $\mathrm{N_2}$-gun, put the chips in the furnace within the sample holder. Set Dwelling time 6h on $560\celsius$ and make sure there is an $\mathrm{N_2}$ flow within the furnace. When heating and cooling the furnace is set to $\SI{4}{\celsius  \per \min}$.
+
+\textcolor{orange}{3. (\textbf{Cleaning})} Take two flat beakers with Acetone and put one on a hotplate to boil. In the cool acetone, scrub chips with cotton tips holding them down with tweezers. Rinse with fresh acetone and put into the boiling one and Sonicate for 2 min. Repeat this step until no visible contamination/dust particles are present when dried with $\mathrm{N_2}$. Then Sonicate in IPA for 1 min and rinse with fresh IPA and put into $\mathrm{dH_2 O}$.
+
+\textcolor{orange}{4. (\textbf{Activation})} Prepare a big and a small beaker filled with $\mathrm{dH_2 O}$ and a beaker for piranha. Set hotplate to $\SI{100}{\celsius}$. Use acid gloves and metal tweezers! Pour Sulphuric acid ($\mathrm{H_2 SO_4}$) FIRST! and then Hydrogen Peroxide ($\mathrm{H_2 O_2}$) in a ration of 3:1. (For a flat beaker $\SI{6}{\milli \litre}$ $\mathrm{H_2 SO_4}$ and $\SI{2}{\milli \litre}$ $\mathrm{H_2 O_2}$ is enough to cover the chips). Pipet $\mathrm{H_2 O_2}$ slowly to avoid a too strong reaction and fast release of gases. Wait until the exothermic reaction has cooled and put it on the hot plate. Dry chips with $\mathrm{N_2}$ and put in piranha for 30 min, lifting them with tweezers from time to time to remove bubbles. Dip chips into $\mathrm{dH_2 O}$ and rinse under flowing $\mathrm{dH_2 O}$ properly. Put into beaker with $\mathrm{dH_2 O}$. When all chips are rinsed, Put back to piranha for 5 min. When done, wash the chips under flowing $\mathrm{dH_2 O}$ thoroughly, making sure that no piranha is left in the drilled holes. Contain chips in $\mathrm{dH_2 O}$.
+
+\textcolor{orange}{5. (\textbf{Evaporation, Mask})} Prepare evaporator fully; Clean crucibles and target materials ready, chamber de-vacuumed. In laminar flow room, dry chips with $\mathrm{N_2}$ and put on hot plate $130\celsius$ for 2 min to evaporate any moisture on chip surface. Put chips in evaporator (Care! High chance of contaminating chips!). Evaporate $\SI{100}{\nano \metre}$ of Cr with a slow rotation of the substrate.
+
+
+\textcolor{purple}{6. (\textbf{Spin-coating})} Properly blow chips with $\mathrm{N_2}$ and put on hotplate 2 min $160 \celsius$ to remove moisture. Let chip cool on a clean aluminium block and blow with $\mathrm{N_2}$. Place chip in spincoater and turn on suction. Pipette PMMA 950K A4 evenly on the chip, making sure there are no bubbles present. Use pipette to remove possible bubbles. Spin at 3000 rpm for $\SI{60}{\second}$ with a ramp up speed of 500 rpm/s. Postbake on $160 \celsius$ for 2 min to remove PMMA solvent and cool chip on an aluminium block.
+
+\textcolor{purple}{7. (\textbf{Exposure, Electrodes})} Scratch PMMA off a small area near where the evaporator holder was, to get the e-beam holder clamp in contact with the metal mask. Otherwise, serious charging and destruction of the resist might occur. You can scratch the mask also to generate “metal dust” that can be used for write field alignment. Set $\SI{120}{\micro \metre}$ aperture with $\SI{200}{\kilo \volt}$, because large areas are to be exposed. The beam current should measure about $\SI{10}{\nano \ampere}$. Use angle correction to align the pattern layout to the chip corners (avoiding any unnecessary exposure). Preform wright field alignment and expose Electrode layout, using a area dose of $\SI{215}{\micro \coulomb \per \centi\metre^2}$. Develop in Developer1 for 40s and then stir in IPA for 10s to stop and flush any developer on the chip. The chips were then Hardbaked at $180 \celsius$ for 1h.
+
+8. (\textbf{Etching}) The mask ($\SI{100}{\nano \metre}$ Cr) is etched by submerging the chip in Cr-etchant at $40 \celsius$ gently shaking for 25s, then dipping and rinsing with $\mathrm{dH_2 O}$. Put on HF-protective gear and prepare chemicals and equipment for HF-etch. Pour $18\;$ml of HF and pipette (glass) 2 ml of HCL and mix them with HF-tweezers. Dip the chip in HF for 2s and stop in $\mathrm{dH_2 O}$. Rinse in $\mathrm{dH_2 O}$ and store chips in fresh $\mathrm{dH_2 O}$. 
+
+\textcolor{orange}{9. (\textbf{Cleaning})}. An edge of a cleanroom sheet can be used to absorb water from the hydrophobic surface and then dry Gently with $\mathrm{N_2}$. Treat the chips with RIE $\mathrm{O_2}$ clean (60W for 45s) to remove any PMMA contaminants from electrode channels and to reactivate surface. Store chips in $\mathrm{dH_2 O}$.
+
+\textcolor{orange}{10. (\textbf{Evaporation, electrodes})} Prepare evaporator fully; Clean crucibles and target materials ready, chamber de-vacuumed. In laminar flow room, dry chips with $\mathrm{N_2}$ and put on hot plate $130 \celsius$ for 2 min to evaporate any moisture on chip surface. Put chips in evaporator (Care! High chance of contaminating chips!). Evaporate $\SI{10}{\nano \metre}$ Ti + $\SI{50}{\nano \metre}$ Au + $\SI{10}{\nano \metre}$ Ti + $\SI{100}{\nano \metre}$ $\mathrm{SiO_2}$ with no rotation and 0 angle. 
+
+
+11. (\textbf{Lift-off}) Remove PMMA in acetone, Don’t sonicate electrodes! Use Cr-etchant to remove the fully remove the mask. Make sure no residues are left in chip where they would matter. If must, sonication and mechanical scrubbing might be applied at the risk of destroying the electrodes. 
+
+\textcolor{purple}{12. (\textbf{Activation, RIE})} Rinse chips with $\mathrm{dH_2 O}$ and dry with $\mathrm{N_2}$ blowing. Treat chips with RIE $\mathrm{O_2}$ clean (200 W, 2 min, 40 mTorr). Contain chips in $\mathrm{dH_2 O}$.
+
+\textcolor{purple}{13. (\textbf{Evaporation, Mask})} Prepare evaporator fully; Clean crucibles and target materials ready, chamber de-vacuumed. In laminar flow room, dry chips with $\mathrm{N_2}$ and put on hot plate $130 \celsius$ for 2 min to evaporate any moisture on chip surface. Put chips in evaporator (Care! High chance of contaminating chips!). Using slow rotation at $45 \degree$ angle, evaporate $\SI{50}{\nano \metre}$ Cr wait 5 min, $\SI{200}{\nano \metre}$ Au, wait 10 min, $\SI{100}{\nano \metre}$ Au. Don’t evaporate Au over $\SI{1.2}{\angstrom \per \sec}$ or it will deposit large chunks wasting gold and reducing mask quality.
+
+\textcolor{orange}{14. (\textbf{Spin-coating})} Properly blow chips with $\mathrm{N_2}$ and put on hotplate 2 min $160 \celsius$ to remove moisture. Let chip cool on a clean aluminium block and blow with $\mathrm{N_2}$. Place chip in spincoater and turn on suction. Pipette PMMA 950K A11 evenly on the chip, making sure there are no bubbles present. Use pipette to remove possible bubbles. Spin at 3000 rpm for 60s with a ramp up speed of 500 rpm/s. Postbake on $160\celsius$ for 3 min to remove PMMA solvent and cool chip on an aluminium block.
+
+\textcolor{orange}{15. (\textbf{Exposure, Channels})} Same procedure as in step 5. Preform wright field alignment and expose Channel layout, using a area dose of $\SI{450}{\micro \coulomb \per \centi\metre^2}$. Develop in Developer1 for 55s and then stirl in IPA for 10s to stop and flush any developer on the chip. 
+
+16. (\textbf{Etching}) Protect the electrodes by covering them with tape. The mask ($\SI{50}{\nano \metre}$ Cr + $\SI{200}{\nano \metre}$ Au) is etched by submerging the chip in Au-etchant for 25s and gently shaking, stop in $\mathrm{dH_2 O}$. Next, dip in Cr-etchant  for 10s 40$\celsius$ gently shaking then dipping and rinsing with $\mathrm{dH_2 O}$. Check under microscope, make sure Cr  etchant didn’t under etch the Au mask by inspecting the chip upside-down under a microscope. Put on HF-protective gear and prepare chemicals and equipment for HF-etch. Pour 18 ml of HF and pipette (glass) 2 ml of HCL and mix them with HF-tweezers. Dip the chip in HF for 55s gently stirring and stop in $\mathrm{dH_2 O}$. Rinse in $\mathrm{dH_2 O}$ and remove PMMA in Acetone. Lift-off Au-mask using hot Cr-etchant. Mechanical help with tweezers should be applied to remove Au-mask. Rinse in $\mathrm{dH_2 O}$.
+
+17. (\textbf{TDAB}) This step is extremely susceptible to contamination, try to minimize contamination at all means (wear proper face mask etc.). Remember which side of the glass is to be bonded to avoid contaminating it. The chip and the $18\times18 \; \milli \metre^2$ coverslip is prepared for bonding.
+
+\textbf{For cover:}
+Take 2x cover glass. Scrub and sonicate (5 min) in hot acetone. Redo with fresh acetone and then rinse and sonicate (1 min) in IPA. Blow dry with $\mathrm{N_2}$. Preform activation as in step 4. Keep to be bonded side upwards. Sonicate in $\mathrm{dH_2 O}$ for 5 min and put into fresh $\mathrm{dH_2 O}$.
+
+\textbf{For chip with channels:}
+(If “bilsters” are present in electrodes, sonication will destroy them!) Rinse and Sonicate upside down (electrodes facing beaker bottom) for 30s in acetone. Rinse and sonicate 10s in IPA. (Sonication time is a tradeoff between successful TDAB and destroyed electrodes). Keep in $\mathrm{dH_2 O}$ until activation. Dry with $\mathrm{N_2}$ and Treat in fresh Room temperature piranha for (7 + 3) min rinsing with $\mathrm{dH_2 O}$ in between. Keep to be bonded side upwards. Before rinsing put in $\mathrm{dH_2 O}$ beaker first! Any piranha solution between tweezers and chip can cause it to slip and drop during rinsing! Contain chips in $\mathrm{dH_2 O}$.\newline
+
+Rinse the chips in $\mathrm{dH_2 O}$ and dry with $\mathrm{N_2}$ under laminar flow hood and put them on hotplate 130$\celsius$ for 2 min in laminar flow room. Cool chips on a clean Al-block. With the help of a tweezer, grab the back of the cover glass and place it on top of the channels-chip. To remove all newton-rings the glasses can be pushed together with your thumb. A force at full strength can be applied, IF the chip is on a completely flat solid surface. If newton rings still remain, or the glasses don’t stick together, the whole process step 17 needs to be redone. A properly bonded glass looks as of being one unit. Place the chip cover upwards into the stainless steel holder and put the weight on top. Place the holder in the furnace and set dwell time 585$\celsius$ for 2h under nitrogen flow.
+
+18.(\textbf{Finish}) Lastly, the protective layer ($\mathrm{SiO_2}$) on top of the electrodes will be removed. Treat the chip with Rie Oxide Etch (O2 -flash at 30$\celsius$ for 4 min (Etches $\SI{42}{\nano \metre \per \min}$). This will remove the top layer of protective $\mathrm{SiO_2}$ on the electrode pads and make them conductive.
+
+
+
 
 
 \end{document}

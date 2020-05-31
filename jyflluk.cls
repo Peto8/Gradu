@@ -101,7 +101,7 @@
 \RequirePackage[noindentafter,nobottomtitles,toctitles]{titlesec}
 \newcommand{\sectionbreak}{%
 	\cleardoublepage%
-	\vspace*{24pt}}
+	\vspace*{2pt}} %24 originally
 % xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 % TOCBIBIND --- Lähteet -otsikon lisääminen sisällysluettelon perään.
 %

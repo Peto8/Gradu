@@ -920,61 +920,94 @@ To connect the chip to a DEP source, thin wires were soldered to the electrodes 
 After numerous trials and errors, eventually a successful chip with smooth channels, correct channel depth and working electrodes was manufactured. A significant improvement in etch-mask and channel quality was achieved compared to the initial fabrication experiment. The resulting smooth channel surface and the lack of pinholes can bee seen in Figure \ref{fig:godbad}. 
 \begin{figure}[!h]
     \centering
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{optical/bad1.png} 
-        \caption{bad} \label{fig:bad0}
+    \begin{subfigure}{1.0\textwidth}
+        \includegraphics[width=.48\linewidth]{optical/bad1.png}\quad\includegraphics[width=.48\linewidth]{optical/bad2.png}
+        \qquad
+        \caption{Poor fabrication results.} \label{fig:bad0}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{optical/bad2.png} 
-        \caption{bad} \label{fig:bad1}
+
+    \begin{subfigure}{1.0\textwidth}
+        \includegraphics[width=.48\linewidth]{optical/good1.png}\quad\includegraphics[width=.48\linewidth]{optical/good2.png}
+        \qquad
+        \caption{Optimal results after developed fabrication steps.} \label{fig:bad0}
     \end{subfigure}
-    
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{optical/good1.png} 
-        \caption{good} \label{fig:good1}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{optical/good2.png} 
-        \caption{good} \label{fig:good2}
-    \end{subfigure}
-    \caption{\textcolor{red}{Bad and good example images}} \label{fig:godbad}
+
+    \caption{Optical images of the chips surface before (a) and after (b) the development and optimization of the fabrication steps. The amount of pinholes were reduced and channel roughness decreased.} \label{fig:godbad}
 \end{figure}  
+
 
 Decreased channel roughness was achieved by annealing the chips after the inlet/outlet drilling and by adding HCl to the HF etchant in a ratio of 10:1 (HF:HCl). Minimizing channel roughness is important when laminar flow is to be maintained and clogging of the channels avoided. The pinhole density was reduced by improving the cleaning procedure of the chip and by using a multilayer Au mask with a Cr adhesion layer. 
 
-Conductive electrodes that could withstand piranha treatment and the annealing temperatures of TADB were successfully fabricated (Figure \ref{fig:ghj}-1). The $\SI{100}{\nano \metre}$ of $\mathrm{SiO_2}$ was enough to protect the electrodes from room temperature piranha. Activating the electrode-channels surface by RIE $\mathrm{O_2}$ treatment, the adhesion between glass and titanium was increased which showed as endurance to sonication. During TADB the electrodes experienced a slight colour change to a slightly darker tone, which might result from Ti diffusion to Au, but no change in conductivity was observed. The only complication left in electrode-fabrication was the formation of blisters days after deposition, but before TADB annealing.  The blisters were observed to be between the Ti and the Au layers, the bottom Ti layer still adhering to glass while the top layers delaminating (Figure \ref{fig:ghj}-1). This is probably due to compressive stress resulting from gold having a higher temperature coefficient from the Ti layer on top of it. These defects might start from impurities deposited during evaporation, which reduce the adhesion between the bottom Ti and Au layers. The blisters did not cause complications when annealing or for conductivity, but sonication while blisters are visible resulted in destruction of the electrode.
+Conductive electrodes that could withstand piranha treatment and the annealing temperatures of TADB were successfully fabricated (Figure \ref{fig:lahella}). The $\SI{100}{\nano \metre}$ of $\mathrm{SiO_2}$ was enough to protect the electrodes from room temperature piranha. Activating the electrode-channels surface by RIE $\mathrm{O_2}$ treatment, the adhesion between glass and titanium was increased which resulted in better endurance to sonication. During TADB the electrodes experienced a slight colour change to a slightly darker tone, which might result from Ti diffusion to Au, but no change in conductivity was observed. The only complication left in electrode-fabrication was the formation of blisters days after deposition, but before TADB annealing.  The blisters were observed to be between the Ti and the Au layers, the bottom Ti layer still adhering to glass while the top layers delaminating (Figure \ref{fig:blisteeriii}). This is probably due to tensile stress resulting from gold having a higher thermal expansion coefficient than the Ti layer. These defects might start from impurities deposited during evaporation, which reduce the adhesion between the bottom Ti and Au layers. The blisters did not cause complications when annealing or for conductivity, but sonication while blisters are visible resulted in destruction of the electrode.
 \begin{figure}[!h]
     \centering
     \begin{subfigure}{0.48\textwidth}
         \centering
         \includegraphics[width=\linewidth]{optical/good5.png} 
-        \caption{} \label{fig:lileee}
+        \caption{} \label{fig:lahella}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.48\textwidth}
         \centering
         \includegraphics[width=\linewidth]{optical/blisters.png} 
-        \caption{} \label{fig:lellqqq}
+        \caption{} \label{fig:blisteeriii}
     \end{subfigure}
-    \caption{1) Image of a successfully fabricated electrode. 2) Blisters formed on electrodes (left) that will detach if sonicated (right).} \label{fig:ghj}
+    \caption{a) Image of a successfully fabricated electrode. b) Blisters formed on electrodes (left) that will detach if sonicated (right).} \label{fig:ghj}
 \end{figure}  
-
-\textcolor{red}{?images of blisters?, and maby add final bonded image of chip electrodes}
-?The electrode tips were at 30um from the main channel edge with no leakage ?
-
 
 \subsection{Overview of the process}
 \label{sec:xxx2}
 
+\newcommand{\vaali}
+    {
+    \vskip  0.05in
+    }
+
+
 Here the complete realisation of the working microfluidic chip is presented. A more precise recipe is presented in appendix \ref{sec:appendix2}. The fabrication steps for a successful chip are shown in Figure \ref{fig:processFULL}.
 
-1) Drilled Soda Lime-glass microscope coverslips are used as substrate. The glass chip is first cleaned and treated with Piranha-solution prior to evaporation. 2) Using E-beam evaporation, a of $\SI{100}{\nano \metre}$ Cr thin film is evaporated to act as an etch mask. Next, PMMA of about $\SI{250}{\nano \metre}$ is spun before e-beam exposure. 3) The electrode design is then exposed and developed. 4) The Cr-mask etched followed by a dip into HF-HCl (10:1) solution to etch shallow grooves for the electrodes. After etching, a RIE $\mathrm{O_2}$ etch was used to activate the glass and clean PMMA residue from electrode channels. 5) Electrodes are then evaporated; a metal sandwich of $\SI{10}{\nano \metre}$ Ti +$\SI{50}{\nano \metre}$ Au +$\SI{10}{\nano \metre}$ Ti +$\SI{100}{\nano \metre}$ $\mathrm{SiO}_2$). 6) Lift-off is then carried out and the Cr-mask etched away. 7) A tougher RIE $\mathrm{O_2}$ treatment is used to activate the glass surface and $\SI{50}{\nano \metre}$ Cr + $(150 + 150) \,\nano \metre$ Au is evaporated in an $45^{\circ}$ angle while the wafer is rotated ensuring deposition to the walls of the trenches. 8) Now $\SI{2.2}{\micro \metre}$ of PMMA is spun to cover the shallow channels of the electrodes completely. 9) Alignment, exposure, and development of the Channels-layout is performed. 10) The Au and Cr masks are etched followed by a 55s HF-HCl etch of the channels. After removing the e-beam resist the gold mask is removed by etching the underlining Cr. 11) Finally, the chip and its cover are cleaned and activated in Piranha so can be bonded. The bonding is performed in a furnace at $\SI{85}{\celsius}$ for 2h. The bonded chip is then treated with a RIE oxide etch to reveal the electrode pads for soldering and the chip is ready.
+\noindent
+1) Soda Lime-glass microscope coverslips are used as substrate, with holes with a diameter of $\SI{100}{\micro \metre}$ for inlets and outlets drilled prior to the cleanroom processing. The glass chip is cleaned and treated with Piranha-solution prior to thin film deposition. 
+\vaali
+
+\noindent
+2) Using E-beam evaporation, a of $\SI{100}{\nano \metre}$ Cr thin film is evaporated to act as an etch mask. Next, PMMA of about $\SI{250}{\nano \metre}$ is spun before e-beam exposure.
+\vaali
+
+\noindent
+3) The electrode design is then exposed with electron beam lithography and developed. 
+\vaali
+
+\noindent
+4) The Cr-mask is etched followed by a dip into HF-HCl (10:1) solution to etch shallow grooves for the electrodes. After etching, a RIE $\mathrm{O_2}$ etch is used to activate the glass and clean etching residue from electrode channels. 
+\vaali
+
+\noindent
+5) Electrodes are then evaporated; a metal sandwich of $\SI{10}{\nano \metre}$ Ti +$\SI{50}{\nano \metre}$ Au +$\SI{10}{\nano \metre}$ Ti +$\SI{100}{\nano \metre}$ $\mathrm{SiO}_2$). 
+\vaali
+
+\noindent
+6) Lift-off is then carried out and the Cr-mask etched away. 
+\vaali
+
+\noindent
+7) A tougher RIE $\mathrm{O_2}$ treatment is used to activate the glass surface and $\SI{50}{\nano \metre}$ Cr + $(150 + 150) \,\nano \metre$ Au is evaporated in an $45^{\circ}$ angle while the wafer is rotated ensuring deposition to the walls of the trenches. 
+\vaali
+
+\noindent
+8) Now $\SI{2.2}{\micro \metre}$ of PMMA is spun to cover the shallow channels of the electrodes completely. 
+\vaali
+
+\noindent
+9) Alignment, exposure, and development of the Channels-layout is performed. 
+\vaali
+
+\noindent
+10) The Au and Cr masks are etched followed by a 55s HF-HCl etch of the channels. After removing the e-beam resist the gold mask is removed by etching the underlining Cr. 
+\vaali
+
+\noindent
+11) Finally, the chip and its cover are cleaned and activated in Piranha so it can be bonded. The bonding is performed in a furnace at $\SI{585}{\celsius}$ for 2h. The bonded chip is then treated with a RIE oxide etch to reveal the electrode pads for soldering and the chip is ready.
 
 %Make numbers in figures go 1,2,3 instead of a b c
 \renewcommand{\thesubfigure}{\arabic{subfigure}}
@@ -1062,9 +1095,9 @@ Here the complete realisation of the working microfluidic chip is presented. A m
 
 \subsection{DEP using fluorescent beads}
 
-As the first measurement the flow through the channels were measured. Visible flow of the beads was observed between  $3-\SI{40}{\milli \bar}$ of pressure, higher pressures requiring a high speed camera due to the velocity of the beads. The huge variation was the result of pressure leaks within the tubes containing the beads and their holder. Because of clogs and gas leakage between the testing tube containing the beads and its holder the exact pressure within the channels remained unclear. Especially after testing with larger $10-\SI{14}{\micro \metre}$  Fluorescent Nile Red particles, clogging was observed at high (over $\SI{50}{\milli \bar}$) pressures. Even though all visible clogs within the channels were removed by injecting bubbles into the tubing using a pipette, clogs remained in the outlet tubes. This was obvious from the pressure difference present in the outlet channels. 
+As the first measurement the flow through the channels was measured. Visible flow of the beads was observed between  $3-\SI{40}{\milli \bar}$ of pressure, higher pressures requiring a high speed camera due to the velocity of the beads. The huge variation was the result of pressure leaks within the tubes containing the beads and their holder. Because of clogs and gas leakage between the testing tube containing the beads and its holder the exact pressure within the channels remained unclear. Especially after testing with larger $10-\SI{14}{\micro \metre}$  Fluorescent Nile Red particles, clogging was observed at high (over $\SI{50}{\milli \bar}$) pressures. Even though all visible clogs within the channels were removed by injecting bubbles into the tubing using a pipette, clogs remained in the outlet tubes. This was obvious from the pressure difference present in the outlet channels. 
 
-Despite having minor problems with pressure control laminar flow in front of the electrodes was achieved which was sufficient for testing DEP deflection. The laminar flow was obvious from the beads keeping constantly the same “lane” they were travelling and the applicability of a Poiseuille flow due to the beads speed difference based on their distance from the channel edges \textcolor{red}{[Supplementary video1]}. When the outlet pressures were similar, the beads travelled into the channel corresponding to their “lane”. When testing the effect of DEP, the beads were moves slowly back and forth in front of the electrodes to clearly see whether they experienced any deflection\textcolor{red}{[Supplementary video2]}. Square waves with a peak to peak voltage of $\SI{1}{\kilo \volt}$ were driven through the electrodes at frequencies of $\SI{1}{\kilo \Hz}$, $\SI{10}{\kilo \Hz}$ and $\SI{30}{\kilo \Hz}$, without any observable effect on the beads. The main reason is believed to be originating from faulty electrodes. Due to mistakes, the right electrode was soldered multiple times which lead to destruction of the connection pads. Although no current could be measured across the faulty electrode, the tests were still ran in hopes that at least one of the two bonding pads could be still operational, which would be enough to generate the necessary electric fields. Tian et al. have demonstrated an electrophoretic microtrap with the same fluorescent particles used in this thesis, electrodes at a $\SI{20}{\micro \metre}$ distance from channel edge and using electrodes at a potential of  700 to -700 V \cite{tian2018handy}. Although our electrodes were at a $\SI{30}{\micro \metre}$ distance, we are working in the same order of magnitude with dimensions and voltages. In our design the distance between the electrodes was $\SI{200}{\micro \metre}$ to spread the electric field gradient over a larger area (Figure \ref{fig:flow}). The purpose was to allow the fast travelling particles to experience DEP force over a longer distance compared to a stronger, short distance effect.
+Despite having minor problems with pressure control, laminar flow in front of the electrodes was achieved which was sufficient for testing DEP deflection. The laminar flow was obvious from the beads keeping constantly the same “lane” they were travelling and the applicability of a Poiseuille flow due to the beads speed difference based on their distance from the channel edges \textcolor{red}{[Supplementary video1]}. When the outlet pressures were similar, the beads travelled into the channel corresponding to their “lane”. When testing the effect of DEP, the beads were moved slowly back and forth in front of the electrodes to clearly see whether they experienced any deflection\textcolor{red}{[Supplementary video2]}. Square waves with a peak to peak voltage of $\SI{1}{\kilo \volt}$ were driven through the electrodes at frequencies of $\SI{1}{\kilo \Hz}$, $\SI{10}{\kilo \Hz}$ and $\SI{30}{\kilo \Hz}$, without any observable effect on the beads. The main reason is believed to be originating from faulty electrodes. The right electrode was soldered multiple times which likely led to the destruction of the connection pads. Although no current could be measured across the faulty electrode, the tests were still run in hopes that at least one of the two bonding pads could be still operational, which would be enough to generate the necessary electric fields. Tian et al. have demonstrated an electrophoretic microtrap with the same fluorescent particles used in this thesis, electrodes at a $\SI{20}{\micro \metre}$ distance from channel edge and using electrodes at a potential of  700 to -700 V \cite{tian2018handy}. Although our electrodes were at a $\SI{30}{\micro \metre}$ distance, we are working in the same order of magnitude with dimensions and voltages. In our design the distance between the electrodes was $\SI{200}{\micro \metre}$ to spread the electric field gradient over a larger area (Figure \ref{fig:flow}). The purpose was to allow the fast travelling particles to experience DEP force over a longer distance compared to a stronger, short distance effect.
 
 \begin{figure}[!h]
     \centering
@@ -1074,14 +1107,16 @@ Despite having minor problems with pressure control laminar flow in front of the
 \end{figure}
 
 To get the deflection of the beads to work the first step would me to manufacture a new chip and successfully solder the connecting wires to the connection pads. Oher troubleshooting ideas would be to redesign the signal generating circuit to produce higher frequencies (up to $\SI{100}{\kilo \Hz}$) with higher voltages (amplitude of $\SI{800}{V}$) to increase the DEP Force. Unfortunately, the manufacture of a new chip after the first successful one was not possible due to limited access to the cleanroom as a result of the COVID-19 pandemic.
-Considering the future development of the chip design and the DEP sorting multiple improvements can be made considering the results. To eliminate the pressure difference at the Y junction, the pressure stabilising channels could be etched together with the electrode-channels (depth $\SI{2}{\micro \metre}$). This would allow the pressure to stabilise, without letting the particles change their exit route through the pressure stabilising channels. The solution would only require a slightly increased exposure time with no extra fabrication steps. To increase the effectiveness of DEP force electrodes could be fabricated on both sides of the channels and tune the frequencies such that one side would push and the other pull the particles. To get the electrodes closer to the channel centre, which is limited by the mask adhesion, the channel itself could be contracted. 
 
-\textcolor{red}{
-(where this?). Placing the electrodes closer posed the danger of the HF etching the electrodes. The stress in the mask and the small adhesion area between the electrodes and the channels caused the Cr adhesion layer in the mask to get under etched.?!??!
-(where this?)}
 
--Microfluidic chip operation?
-\textcolor{blue}{-Discussion, For further development, the channels that would stabilize pressure could be created furing the electrode etch"! For final design 2x electrodes on both sides for pushing and pulling of electrodes during the shallow channel fabrication "sidechannels" could be etched at the area of analysis to slow down the current momentarily for sectroscopy analysis (trap)}
+\subsection{Future design improvements}
+
+Considering the future development of the chip design and the DEP sorting multiple improvements can be made. To eliminate the pressure difference at the Y junction, the pressure stabilising channels could be etched together with the electrode-channels (depth $\SI{2}{\micro \metre}$). This would allow the pressure to stabilise, without letting the particles change their exit route through the pressure stabilising channels. The solution would only require a slightly increased electron beam exposure time with no extra fabrication steps. The etching of shallow channels separately from the main channels allows design improvements for pressure and flow control. Besides pressure stabilising channels, the flow speed could be tuned. At the area of spectroscopic analysis, shallow side-channels separating from and flowing back to the main channel could be etched. The alternative route for the liquid would slow down the flow in the main channel in the desired area, thus creating a "speed trap" and allowing more time for analysis.
+
+To increase the effectiveness of the DEP force, electrodes could be fabricated on both sides of the channels and tune the frequencies such that one side would push and the other pull the particles. To get the electrodes closer to the channel centre, which is limited by the mask adhesion, the channel width could be minimised to a point where sorting is still achieved. Placing the electrodes closer posed the danger of the HF etching the electrodes. Even a small amount of HF breaching the electrode channels will quickly etch the evaporated $\mathrm{SiO_2}$ layer protecting the electrodes. The stress in the mask and the small adhesion area between the electrodes and the channels caused the Cr adhesion layer in the mask to get under etched. Further improving mask adhesion would allow for electrodes to be placed closer and granting a possibility for a higher DEP force.
+
+
+
 
 
 \section{Conclusions}
@@ -1090,15 +1125,15 @@ Considering the future development of the chip design and the DEP sorting multip
 
 In this thesis the successful fabrication of a glass microfluidic chip suitable for dielectrophoresis (DEP) and spectroscopy was demonstrated.  The chip contained $\SI{30}{\micro \metre}$ deep and 80-170 $\micro \metre$ wide channels connecting to laser-drilled inlets and outlets. Thermal assisted direct bonding at $\SI{585}{\celsius}$ was utilised to bond a cover glass to the chip, sealing the channels.  Electrodes were also imbedded at $\SI{2}{\micro \metre}$ depth at a distance of $\SI{30}{\micro \metre}$ from the channels to allow the utilisation of DEP. To imprint the channel and electrode design, E-beam lithography was used to allow fast alteration of the design.
 
-Many challenges were faced during the fabrication, most of which were solved. Etching defects caused by pinhole generation were minimised by multiple factors. Using a highly concentrated etchant ($\SI{48}{\percent}$ HF) increased the etch rate resulting in shorter etching time, which consequently reduced the time for defect formation. Reduced exposure to ambient air, an activation step with $\mathrm{dH_2 O}$ washing between piranha treatments and the maintenance of evaporator cleanliness further reduced pinhole generation. A HF etch mask of $\SI{50}{\nano \metre}$ Cr as adhesion layer with $\SI{200}{\nano \metre}$ + $\SI{100}{\nano \metre}$ of Au on top proved to be durable with little defects. While first Au layer adhered to the Cr layer and protected the sample from HF etchant, the second Au layers purpose was to cover the pinholes generated in the first one. Channel roughness was addressed by adding HCl to the HF etchant to remove the insoluble products generated by etching of soda-lime glass.
+Many challenges were faced during the fabrication, most of which were solved. Etching defects caused by pinhole generation were minimised by multiple factors. Using a highly concentrated etchant ($\SI{48}{\percent}$ HF) increased the etch rate resulting in shorter etching time, which consequently reduced the time for defect formation. Reduced exposure to ambient air, an activation step with $\mathrm{dH_2 O}$ washing between piranha treatments and the maintenance of evaporator cleanliness further reduced pinhole generation. A HF etch mask of $\SI{50}{\nano \metre}$ Cr as adhesion layer with $\SI{200}{\nano \metre}$ + $\SI{100}{\nano \metre}$ of Au on top proved to be durable with little defects. While the first Au layer adhered to the Cr layer and protected the sample from HF etchant, the second Au layer's purpose was to cover the pinholes generated in the first one. Channel roughness was addressed by adding HCl to the HF etchant to remove the insoluble products generated by etching of soda-lime glass.
 
 Gold electrodes were fabricated with Ti adhesion layer both on bottom and top which were then covered with a protective $\mathrm{Si O_2}$ layer. A short RIE $\mathrm{O_2}$ treatment was used after the $\SI{2}{\micro \metre}$ deep electrode-channel etching to improve adhesion. The electrodes were durable enough to withstand sonication, piranha treatment and the high temperatures of TADB. The slight depth of the electrode channels enabled protection against 1 min of HF etching by using a mask evaporated at an angle and PMMA. After the cover was bonded to the chip, the protective layer was etched from the electrode contact pads using RIE. 
 
-The fabrication parameter for all the necessary elements required in a microfluidic chip capable of DEP sorting were optimized and a cook-book was created (Appendix \ref{sec:appendix2}). The design was created with fast development of the fabrication steps in mind. Improvements such as the addition of more electrodes and pressure stabilising channels should be considered when fabricating an operating chip.
+The fabrication parameters for all the necessary elements required in a microfluidic chip capable of DEP sorting were optimized and a cook-book was created (Appendix \ref{sec:appendix2}). The design was created with fast development of the fabrication steps in mind. Improvements such as the addition of more electrodes and pressure stabilising channels should be considered when fabricating an operating chip.
 
-The first successfully manufactured chip was tested with driving fluorescent beads through the channels. There were no observable leaks from the channels and laminar flow was achieved. Deflection of the beads with a peak to peak voltage of $\SI{1}{\kilo \volt}$ and frequencies between 1-30 $\kilo \Hz$ with no result due to a faulty contact pad soldering. Further experimentation and fabrication of a new chip with the already established recipe was not possible due to the COVID-19 pandemic. 
+The first successfully manufactured chip was tested with driving fluorescent beads through the channels. There were no observable leaks from the channels and laminar flow was achieved. Deflection of the beads with a peak to peak voltage of $\SI{1}{\kilo \volt}$ and frequencies between 1-30 $\kilo \Hz$ was attempted with no measurable result, most likely due to a faulty contact pad soldering. Further experimentation and fabrication of a new chip with the already established recipe was not possible due to the COVID-19 pandemic. 
 
-Altogether, the developed fabrication recipe and the setup for testing grants a basis for future experiments. Once DEP is achieved, testing with living cells should be initiated. The change of the design would be easy and fast due to the utilisation of E-beam lithography. The glass chips allow for high pressures (over 2 bars) and transparency for high speed sorting using spectroscopy to differentiate between cells. Such a device would have a significant impact on cancer research and through the capability of sorting metastatic cancer cells directly from blood at a high frequency.
+Altogether, the developed fabrication recipe and the setup for testing grants a basis for future experiments. Once DEP is achieved, testing with living cells should be initiated. Development of the design would be easy and fast due to the utilisation of E-beam lithography. The glass chips allow for high pressures (over 2 bars) and transparency for high speed sorting using spectroscopy to differentiate between cells. Such a device would have a significant impact on cancer research and through the capability of sorting metastatic cancer cells directly from blood at a high frequency.
 
 
 \nocite{*}

@@ -8,6 +8,9 @@
 \captionsetup[figure]{format=plain, font=footnotesize, labelfont=bf,labelsep=period}
 \usepackage{subcaption}
 
+\usepackage{float} % for allowing [H] at figures
+
+
 
 
 % Variable "\Otsikko" in LaTeX
@@ -73,21 +76,22 @@
 
 % Bibliografiset tiedot
 Balogh Peter\\ 
-\Otsikko\\
+Microfluidic cancer cell sorting using dielectrophoresis\\
 Master's Thesis\\ 
 Department of Physics, University of Jyväskylä, 2020, \pageref{LastPage}~pages
 
 \bigskip
 
-\textbf{Some filler text, abstract will be done LAST}
-\newline
-% Tiivistelmän teksti
-\noindent Heti opinnäytteen nimiölehden jälkeen sijoitettava tiivistelmä on yhdelle paperille mahtuva ja tavallisesti enintään 250 sanaa sisältävä yhteenveto, joka hyvin tiiviissä muodossa informoi kirjoituksesta. On tärkeää, että tiivistelmä laaditaan huolellisesti, koska sen välityksellä tieto kirjoituksesta leviää eri tietokantojen kautta. Sen tulee olla laadittu niin, että se sellaisenaan voidaan julkaista tietokannoissa. Tiivistelmään alkuun on merkittävä opinnäytteen bibliografiset tiedot ja sen lopussa mainitaan sitä kuvaavat avainsanat. Tiivistelmiä on kahta tyyppiä. Informatiivinen tiivistelmä on tärkein. Se kertoo, mitä ja miten on tutkittu ja mitkä ovat tulokset. Indikatiivinen tiivistelmä osoittaa, mitä kirjoituksessa on käsitelty. Se on sisällöltään yleisempi kuin informatiivinen tiivistelmä, eikä se kerro tuloksista. Tiivistelmän loppuun liitetään aihetta kuvaavat 3--5 avainsanaa helpottamaan tietokantajärjestelmien työtä. Avainsanat voidaan antaa vapaasti asiasisällön mukaan tai poimia termit alan kontrolloiduista sanastoista kuten Yleisestä suomalaisesta asiasanastosta YSA. Opinnäytteen tunnistamiseksi tarvittavat bibliografiset tiedot annetaan tiivistelmän alussa. Tarvittavat tiedot ovat kirjoittajan suku- ja etunimi, opinnäytteen otsikko, opinnäytteen tyyppi, ainelaitoksen nimi, yliopiston nimi, valmistumisvuosi ja työn sivujen lukumäärä (ilman liitesivuja).
+\noindent Microfluidics grant the possibility for the analysis of microbiological particles such cells, viruses, proteins, and DNA. It can fulfil the strict requirements for temperature, pressure, and chemical composition set by samples in vivo environment. The aim was to develop the fabrication of a microfluidic chip that would be capable of single cell sorting, fluorescently labelled cancer cells to be more precise. Cells flowing through the system would be analysed using spectroscopy to detect fluorescence. Depending on the result, a dielectrophoretic force would be exerted on the target cell guiding it to a corresponding channel to be collected or discarded. Achieving a high throughput device that could analyse thousands of cells a second while sorting individual cancer cells from blood samples would have a significant impact on cancer research.
+
+Glass, being transparent and chemically inert, is an optimal material for spectroscopic analysis and as a microfluidic environment. Thus, a fabrication recipe for a glass (Soda-lime) microfluidic chip including electrodes was developed. Using electron beam lithography and thin film deposition, such a chip was realised with minimised defects. The electrodes consisted of a sandwich of Ti, Au, Ti and $\mathrm{SiO_2}$. They could withstand the highly corrosive Piranha treatment for surface activation and the temperature of $\SI{585}{\celsius}$ required for the glass bonding. The cleaning procedure of the chip, etch mask, and etching parameters were optimized to minimize pinhole generation and channel roughness. As an etch mask, thin film layers of $\SI{50}{\nano \metre}$ Cr and  $\SI{200}{\nano \metre} + \SI{100}{\nano \metre}$ Au were used. It enabled a near defect free etching of $\SI{30}{\micro \metre}$ deep channels in HF while protecting the underlining electrodes. An experimental setup was assembled to demonstrate deflection of fluorescent polystyrene particles illustrating cells. It was unsuccessful most likely due to a faulty electrode. The fabrication of a new chip was unfortunately not possible because of the facility lockdown during a pandemic. However, the fabrication recipe and design improvement ideas presented here grant a good foundation for future continuations on this project.
+
+
 
 \bigskip
 
 % Avainsanat
-\noindent Avainsanat: 
+\noindent Keywords: Glass microfluidics, Wet etching of glass, Dielectrophoresis (DEP), Cell sorting, Fabrication
 
 %----------------------------------------------------------------------------------------
 %	ABSTRACT
@@ -116,18 +120,18 @@ Fysiikan laitos, Jyväskylän yliopisto, 2020, \pageref{LastPage}~pages.
 % --------------------------------------------------------------------------
 % ESIPUHE
 % --------------------------------------------------------------------------
-\section*{Preface}
-\addcontentsline{toc}{section}{Preface}
+%\section*{Preface}
+%\addcontentsline{toc}{section}{Preface}
 
-Esipuheen teksti tulee tähän.
+%Esipuheen teksti tulee tähän.
 
-\bigskip
+%\bigskip
 
-Jyväskylässä "DATE HERE"
+%Jyväskylässä "DATE HERE"
 
-\bigskip
+%\bigskip
 
-Peter Balogh
+%Peter Balogh
 
 % --------------------------------------------------------------------------
 % SISÄLLYS
@@ -137,6 +141,14 @@ Peter Balogh
 % --------------------------------------------------------------------------
 % VARSINAINEN TEKSTIOSA
 % --------------------------------------------------------------------------
+\newcommand{\vaali}
+    {
+    \vskip  0.05in
+    }
+
+
+
+
 \section{Introduction}
 \label{sec:introduction}
 
@@ -231,11 +243,11 @@ A characteristic binding site is required achieve targeted protein labelling, bu
 Dielectrophoresis (DEP) is a phenomenon, where a non-uniform electric field can cause a force on a polarizable particle. This phenomenon can be used to move and separate label-free particles. A uniform electric field would cause a uniform charge-distribution on an polarizable particle therefore creating a net-force equal to zero. Respectively, a non-uniform electric field will cause the positive and negative charge accumulation inside the particle to be uneven, causing a net force (Figure \ref{fig:DEP1}b). The direction and the magnitude of the force will depend on the particle’s and mediums polarizability and the electric field \cite{shafiee_contactless_2009}. The term dielectrophoresis was already introduced in 1951 by Herbert A. Pohl \cite{pohl_motion_1951}. It has since gained popularity in microsystems because of its simplicity and favourable scalability $F_{dep} \propto V^{2}/L^{3}$. Here $V$ is the applied voltage and $L$ the distance from particle to electrodes. Meaning, on a smaller system, less voltage is required to achieve the same force $F_{dep}$ \cite{castellanos_electrohydrodynamics_2003}.
 \begin{figure}[h]%
     \centering
-    \includegraphics[width=.32\linewidth]{images/pooolar.pdf}\quad\includegraphics[width=.61\linewidth]{images/merged.pdf}
+    \includegraphics[width=.324\linewidth]{images/pooolar.pdf}\quad\includegraphics[width=.61\linewidth]{images/merged.pdf}
     \qquad
-    \begin{minipage}{1.2in}
+    \begin{minipage}{0.5in}
     \end{minipage}%
-    \caption{Visualisation of DEP. A) A Polarised sphere has a dipole moment B) Net force in a uniform and non-uniform electric field C) Particle and medium permittivity effect on electric field }%
+    \caption{Visualisation of DEP. A) A Polarised sphere has a dipole moment $(\vec{p})$. B) The net force in a uniform and non-uniform electric field C) Particle and medium permittivity effect on electric field }%
     \label{fig:DEP1}%
 \end{figure}
 
@@ -468,10 +480,12 @@ The method used in this thesis was Electron-beam physical vapor deposition (EBPV
         \includegraphics[width=\linewidth]{images/evaporatorr.pdf} 
         \caption{Evaporator} \label{fig:evaporator}
     \end{subfigure}
-    \hfill
+    \hfill  
     \begin{subfigure}{0.35\textwidth}
         \centering
+        \vspace{1.6cm}
         \includegraphics[width=\linewidth]{images/angle_evap.pdf} 
+        \vspace{0.6cm}
         \caption{Line of sight coverage} \label{fig:angle_evap}
     \end{subfigure}
     \caption{a) Schematic of an e-beam evaporator. 1) Electron source 2) Crucible containing the target material 3) Substrate with variable angle 4) Shutter 5) Pump 6) Thickness detector 7) Water cooling. b) Comparison of direct and angle evaporation. } \label{fig:evap}
@@ -479,7 +493,7 @@ The method used in this thesis was Electron-beam physical vapor deposition (EBPV
 
 
 
-The biggest concern in thin film deposition is contamination. Impurities can cause bad film adhesion, pinholes and change in chemical composition of the film rendering it useless for its applications. The main sources for contamination arise from impurities in the evaporation material, the crucible, cleanliness of the chamber, or the gases present in the evaporation chamber. Evaporation materials are usually sold with high purity (over $99.99 \percent$), but they easily contaminate if stored improperly. For example chromium oxidises quickly when in ambient air. 
+The biggest concern in thin film deposition is contamination. Impurities can cause bad film adhesion, pinholes and change in chemical composition of the film rendering it useless for its applications. The main sources for contamination arise from impurities in the evaporation material, the crucible, cleanliness of the chamber, or the gases present in the evaporation chamber. Evaporation materials are usually sold with high purity (over $\SI{99.99}{\percent}$), but they easily contaminate if stored improperly. For example chromium oxidises quickly when in ambient air. 
 
 To avoid the evaporated material colliding with gas molecules, their mean free path should be longer than the distance from the crucible to the substrate. The mean free path $\lambda$ can be derived from the kinetic theory of gases to be 
 %
@@ -492,14 +506,30 @@ $T$ being the temperature, $P$ the pressure and $d$ the effective cross-section 
 Collisionless transport results in a line of sight coverage which can lead to non-uniform film thickness. The thickness uniformity depends on the position of the substrate to the source. The substrate edges with a different angle or distance from the source will result in a different film thickness compared to the centre of the substrate. Small thickness variations are not important parameters for an etch mask, but the coverage is crucial. It can be influenced by the evaporator design. A longer distance between source and substrate, rotation and angle variation of the substrate can all affect the coverage (Figure \ref{fig:angle_evap}).
 To produce pure films, a low pressure is required with a high deposition rate \cite{ohring1992materials}. The deposition rate can be tailored by increasing the acceleration voltage of the electrons and hence the temperature of the target material. The rate can be measured inside the chamber with almost atomic layer precision by using a quartz crystal. The deposited mass on the crystal changes its resonant frequency, which can be precisely measured \cite{franssila2010introduction}. 
 
-Before evaporation, adhesion and stress of the film should be considered. Unless special combinations of substrate and evaporation materials are picked, the adhesion will be poor. If the film material isn’t compatible with the target surface, adhesion layers can be used. Noble metals like gold aren’t reactive and will not form metal-oxide bonds, which are a necessity for good oxide surfaces adhesion. For example the adhesion between gold and glass is very poor. A strong adhesion can be achieved with the use of $\mathrm{TiW}$, $\mathrm{Ti}$ or $\mathrm{Cr}$ adhesion layers, with a few nanometres of an adhesion layer being sufficient \cite{chen2013study}. Substrate cleanliness is the next important factor for film adhesion because impurities will not allow bond formation. Internal stress of the film will weaken the adhesion. Although evaporated films do not suffer from stresses arising from a crystal structure, they experience tensile stress during cooldown after deposition due to having higher temperature during deposition and typically higher thermal expansion coefficient than the substrate.  Therefore, some evaporators have the possibility to heat the substrate. \cite{franssila2010introduction}
+Before evaporation, adhesion and stress of the film should be considered. Unless special combinations of substrate and evaporation materials are picked, the adhesion will be poor. If the film material isn’t compatible with the target surface, adhesion layers can be used. Noble metals like gold aren’t reactive and will not form metal-oxide bonds, which are a necessity for good oxide surfaces adhesion. For example the adhesion between gold and glass is very poor. A strong adhesion can be achieved with the use of $\mathrm{TiW}$, $\mathrm{Ti}$ or $\mathrm{Cr}$ adhesion layers, with a few nanometres of an adhesion layer being sufficient \cite{chen2013study}. Substrate cleanliness is the next important factor for film adhesion because impurities will not allow bond formation. Internal stress of the film will weaken the adhesion. Although evaporated films do not suffer from stresses arising from a crystal structure, they experience tensile stress during cooldown after deposition due to having higher temperature during deposition and typically higher thermal expansion coefficient than the substrate (Figure \ref{fig:stresa}).  Therefore, some evaporators have the possibility to heat the substrate. \cite{franssila2010introduction}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=1.0\textwidth]{images/tensile.pdf}
-    \caption{Tensile stress in evaporated thin-films. a) When evaporated, the target material is hot. b) Deposition on a cool substrate will lead to stress from thermal expansion. c) If a hole is made in the film (by pinhole or etching) the stress will bend the film from the surface.}
-    \label{fig:stresa}
-\end{figure}
+    \begin{subfigure}[ht]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/tensile1.pdf} 
+        \caption{} \label{fig:desisdfsdfgn1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[ht]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/tensile2.pdf} 
+        \caption{} \label{fig:flosdfsdfw1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[ht]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/tensile3.pdf} 
+        \caption{} \label{fig:desisdfsdfgn1}
+    \end{subfigure}
+    \hfill
+    \caption{Tensile stress in evaporated thin-films. a) When evaporated, the target material is hot. b) Cooling on the substrate will cause the film to shrink, resulting in stress. c) If a hole is made in the film (by pinhole or etching) the stress will bend the film from the surface.} \label{fig:stresa}
+\end{figure}  
 
 \subsection{Lithography}
 \label{sec:xx3}
@@ -510,11 +540,10 @@ The idea of lithography is print a pattern on a surface by changing the surface 
 
 \begin{figure}[hb]%
     \centering
-    \includegraphics[width=.40\linewidth]{images/pos_neg_resist.pdf}\quad\includegraphics[width=.43\linewidth]{images/SE.pdf}
-    \qquad
-    \begin{minipage}{1.2in}
-    \end{minipage}%
-    \caption{(Left) Positive and negative resist exposure and development (Right) SE generation. SE's can can escape from close to surface, an inclined surface will produce more SE's thus increasing the contrast.}%
+    \includegraphics[width=.42\linewidth]{images/pos_neg_resist.pdf}
+    \hfill
+    \includegraphics[width=.43\linewidth]{images/SE.pdf}
+    \caption{(Left) Positive and negative resist exposure and development (Right) SE generation. SE's can can escape from close to surface, an inclined surface will produce more SE's thus increasing the contrast.}
     \label{fig:SEM}%
 \end{figure}
 
@@ -541,7 +570,7 @@ Resists consist of carbon-based polymer chains that react to electromagnetic wav
     \label{fig:PMMA_chem}
 \end{figure}
 
-Selection of the correct resist is important for achieving the desired result. Multiple resists are available with different sensitivities, contrast and developers. The composition of the resist itself can also be varied. For example, both PMMA 950K A4 and -A11 were used in this thesis.  950K refers to the molecular weight and “A” to the solvent ($4 \percent$ PMMA in Anisole). To achieve a good lithographic process these parameters should be optimized:
+Selection of the correct resist is important for achieving the desired result. Multiple resists are available with different sensitivities, contrast and developers. The composition of the resist itself can also be varied. For example, both PMMA 950K A4 and -A11 were used in this thesis.  950K refers to the molecular weight and “A” to the solvent ($\SI{4}{\percent}$ PMMA in Anisole). To achieve a good lithographic process these parameters should be optimized:
 \begin{enumerate}
     \renewcommand{\labelenumi}{\Roman{enumi}} 
     \setlength{\itemsep}{1pt}
@@ -601,14 +630,14 @@ $\mathrm{CaO}$, $\mathrm{MgO}$ and $\mathrm{Al_2 O_3}$ can form insoluble produc
 \subsection{RIE}
 Reactive ion etching (RIE) is a dry chemical and physical etching method where a reactive plasma is used to etch material. In RIE, the substrate is placed within a vacuum chamber, which is then filled with a suitable reactive gas. Capacitively (or inductively) coupled electrodes are connected to a radio frequency (RF) voltage source, generating a plasma in the chamber. The changing electric field ionises the gas molecules and causes the free electrons to accelerate and hit the chamber walls and the substrate.  The substrate is kept on an electrode that is capacitively coupled to the source, thus it will accumulate negative charge (negative DC bias), causing the positive ions in the gas to drift towards it (Figure \ref{fig:RIE}). The gas reacts with the substrate material and forms a volatile product which is then pumped from the chamber. This directional particle bombardment is the reason for the anisotropic nature of RIE. The ion bombardment causes physical-  and the reactive gas chemical etching. \cite{Franssila2008}
 
-\begin{figure}[h]
+\begin{figure}[hb]
     \centering
     \includegraphics[width=1.0\textwidth]{images/RIE.pdf}
-    \caption{Operation principle of a capacitively coupled RIE system and the anisotropic etching profile.}
+    \caption{Operation principle of a capacitively coupled RIE system (left) and the anisotropic etching profile (right).}
     \label{fig:RIE}
 \end{figure}
 
-
+\newpage
 This is only the basic principle of RIE. Multiple parameters such as, RF-power, DC-bias, pressure, gas flow rate and temperature all affect the etching process. All of these need to be tuned, to achieve good anisotropy, correct etch rate, and selectivity. The etch chemistry is defined by the gas chosen. Correct selectivity between mask and substrate, and volatile product formation is critical. There are already many well known recipes for RIE, for example, fluoride based gases (like $\mathrm{SF_6}$) are used for silicon etching. For silicon dioxide, $\mathrm{CHF_3}$ is a common choice because of its selectivity to silicon. It will produce $\mathrm{SiF_4}$ and $\mathrm{CO_2}$ as products which are both volatile (boiling points $\SI{-90}{\celsius}$, $\SI{-56}{\celsius}$).  \cite{franssila2010introduction}
 RIE equipment can be used for cleaning or activating wafers. An oxygen ($\mathrm{O_2}$) treatment can be used to oxidize and remove organic contamination, which can be residues from organic solvents (acetone) or resists. An $\mathrm{O_2}$ plasma treatment will create a silicon oxide surface on the surface of silicon, or in our case, glass. A following rinse in DI water will then grant a hydroxylated surface. Even wafer bonding has been demonstrated with plasma activated surfaces \cite{plach2013mechanisms,poulsen2003towards}
 
@@ -616,20 +645,37 @@ RIE equipment can be used for cleaning or activating wafers. An oxygen ($\mathrm
 \subsection{Glass bonding}
 \label{sec:xx6}
 Wafer bonding is often used in microfabrication when two or more wafers need to be merged together. Bonding mechanisms between two materials can be anodic, direct, or adhesive.  In our case the cover glass needs to be bonded to the patterned glass to form complete channels. In the case of two glass surfaces, direct bonding can be applied. Activating both to-be-bonded surfaces will cause the surfaces to be saturated with hydroxyl groups. Bringing the surfaces close enough (under $\SI{2}{\nano \metre}$) van der Waals bonding will occur (Figure \ref{fig:TADB}) \cite{iliescu2012practical}.  The bond strength depends on surface roughness; the number of bonds depends on the area where distance is short enough between the wafers. This weak bonding can be increased significantly by annealing. High temperatures cause the water molecules to diffuse from the surface into the bulk material, thus allowing covalent bonding between the surfaces;
-\newline 
+\vaali
 \centerline{$\mathrm{Si-OH + HO-Si \rightarrow \;\; Si-O-Si} $}
-\newline
-The formed bond between the wafers will be as strong as the bulk material itself, hence Thermal Assisted Direct Bonding (TADB). Bonding glass to glass has also the benefit of both surfaces having the same thermal coefficients, thus stress can be avoided. \cite{franssila2010introduction}
+\vaali
+\noindent The formed bond between the wafers will be as strong as the bulk material itself, hence Thermal Assisted Direct Bonding (TADB). Bonding glass to glass has also the benefit of both surfaces having the same thermal coefficients, thus stress can be avoided. \cite{franssila2010introduction}
+
+The bonding procedure consists of substrate cleaning and activation, room temperature bonding, and annealing under slight pressure. The cleaning procedure is extremely delicate because any contaminant will increase the distance between the surfaces and will lead to unsuccessful bonding. The temperature and pressure for TADB needs to be optimised for good bonding strength. The optimised temperature and pressure for Soda-lime glass bonding is determined to be $\SI{580}{\celsius}$, $\SI{28}{\kilo \pascal}$ \cite{chen2009thermal}. To achieve the correct pressure, small weights can be used on top of the substrate while in the furnace.
+
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=1.0\textwidth]{images/TADB.pdf}
-    \caption{Stages occouring during direct bonding. 1) At room temperature (RT)$-110 \celsius$. 2) At $110 \celsius - 150\celsius$ water molecules diffuse away. At $150 \celsius - 800\celsius$ the hydroxyl groups in in close contact form covalent bonds. Adapted from John Wiley and Sons \cite{tong1999semiconductor}.}
-    \label{fig:TADB}
-\end{figure}
+    \begin{subfigure}[ht]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/TDAB3.pdf} 
+        \caption{} \label{fig:dessdfsdfisdfsdfgn1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[ht]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/TDAB2.pdf} 
+        \caption{} \label{fig:flossdfsdfdfsdfw1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[ht]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/TDAB1.pdf} 
+        \caption{} \label{fig:desissdfsdfdfsdfgn1}
+    \end{subfigure}
+    \hfill
+    \caption{Stages occurring during direct bonding. a) At room temperature (RT)$-110 \celsius$. b) At $110 \celsius - 150\celsius$ water molecules diffuse away. c) At $150 \celsius - 800\celsius$ the hydroxyl groups in in close contact form covalent bonds. Adapted from John Wiley and Sons \cite{tong1999semiconductor}.} \label{fig:TADB}
+\end{figure}  
 
-
-The bonding procedure consists of substrate cleaning and activation, room temperature bonding, and annealing under slight pressure. The cleaning procedure is extremely delicate because any contaminant will increase the distance between the surfaces and will lead to unsuccessful bonding. The temperature and pressure for TADB needs to be optimised for good bonding strength. The optimised temperature and pressure for Soda-lime glass bonding is determined to be $\SI{580}{\celsius}$, $\SI{28}{\kilo \pascal}$ \cite{chen2009thermal}. To achieve the correct pressure, small weights can be used on top of the substrate while in the furnace.
 
 \section{Fabrication}
 \label{sec:fabrication}
@@ -654,7 +700,9 @@ The chip layout was designed using the electron microscopes own software, Nanosu
     \hfill
     \begin{subfigure}[ht]{0.33\textwidth}
         \centering
+        \vspace{1.9cm}
         \includegraphics[width=\linewidth]{images/Separation.pdf} 
+        \vspace{0.6cm}
         \caption{Deflection of cells to different lanes} \label{fig:flow1}
     \end{subfigure}
     \caption{The design for the layout of the microfluidic chip.} \label{fig:design_flow}
@@ -697,13 +745,13 @@ The result was poor and barely enough for an operational chip. The channel surfa
         \caption{Pinholes} \label{fig:pinhole2}
     \end{subfigure}
     
-    \vspace{1cm}
+    \vspace{0.1cm}
     \begin{subfigure}{\textwidth}
     \centering
         \includegraphics[width=\linewidth]{optical/roughness2.png} 
         \caption{Channel roughness} \label{fig:roughness}
     \end{subfigure}
-    \caption{The defects present in the initial fabrication.} \label{fig:pinhole}
+    \caption{Optical images of the defects present in the initial fabrication.} \label{fig:pinhole}
 \end{figure}
 
 
@@ -712,12 +760,13 @@ The result was poor and barely enough for an operational chip. The channel surfa
 
 \begin{flushleft}\textbf{Channel roughness} \end{flushleft}
 The channel roughness was addressed first. It seemed to have a sort of randomness, some chips having smoother channels than others. Although, it did appear more consistently in thinner channels ($\SI{5}{\micro \metre}$ in design) and was almost non-existent in wide areas (over $\SI{30}{\micro \metre}$ in design). After a thorough literature search, it was obvious that soda-lime glass forms insoluble products with HF. The impurities (CaO, $\mathrm{Al_2 O_3}$, MgO) present in soda lime will form precipitates \cite{lin2001fast,iliescu2005characterization}:
-\newline
+\vaali
 \centerline{$\mathrm{ CaO \rightarrow CaF_2,\; MgO \rightarrow MgF, \; Al_2 O_3 \rightarrow AlF_3}$}
-\newline
+\vaali
 By adding HCl into the etchant, these products can be made soluble:
-\newline
+\vaali
 \centerline{$\mathrm{CaF_2 \rightarrow CaCl_2, \; MgF \rightarrow MgCl_2, \; AlF_3 \rightarrow AlCl_3}$}
+\vaali
 
 Iliescu et al. (2005) found the optimal ratio for HF:HCl to be 10:1 concerning surface roughness and etch rate \cite{iliescu2005characterization}. Due to practical convenience (beaker size) $\SI{48}{\percent}$ HF was mixed with $\SI{37}{\percent}$ HCl (Appendix \ref{sec:chemicals}) in a ratio 9:1 ($\SI{18}{\milli \litre}:\SI{2}{\milli \litre}$). This caused a significant improvement in surface roughness. These roughness defects were still present in the thinner channels and at the outlines of the channels that were isotopically etched under the mask. This is probably a result from fresh etchant not being able to reach small corners and areas as efficiently, thus the mixing of the insoluble products with the bulk solution was slowed. Gentle mixing was applied during HF-etching to overcome the problem. The gentle wiggling of the chip during etching did yield better results but to totally overcome the problem sonication would be required. Sonication was not applied due to safety reasons of the toxic HF.
 
@@ -753,7 +802,7 @@ Combinations of $\SI{70}{\nano \metre} + \SI{70}{\nano \metre} + \SI{70}{\nano \
     \begin{subfigure}{0.49\textwidth}
         \centering
         \includegraphics[width=\linewidth]{optical/pinhole00.png} 
-        \caption{Pinhole} \label{fig:pinholee}
+        \caption{Optical image of a pinhole} \label{fig:pinholee}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.50\textwidth}
@@ -762,7 +811,7 @@ Combinations of $\SI{70}{\nano \metre} + \SI{70}{\nano \metre} + \SI{70}{\nano \
         \caption{Focus within pinhole reveals underlining Au layer} \label{fig:pinholeee}
     \end{subfigure}
     
-    \vspace{0.2cm}
+    \vspace{0.8cm}
     \begin{subfigure}{\textwidth}
     \centering
         \includegraphics[width=\linewidth]{images/pinhol.pdf} 
@@ -774,23 +823,20 @@ Combinations of $\SI{70}{\nano \metre} + \SI{70}{\nano \metre} + \SI{70}{\nano \
 \begin{flushleft}\textbf{Channels etch} \end{flushleft}
 To get the right channel depth, the etch rate of the HF:HCl solution was determined. The channel depth and profile for various etching times were measured with a Profilometer and it was found to be $\SI{0.55}{\micro \metre \per \s}$ (Figure \ref{fig:etch_rate}). The isotropy of the etch profile was important in placing the electrodes close to the channels (Figure \ref{fig:sideetch}). The lateral etch rate was found to be the same as the vertical rate. 
 
-The only requirement for embedding the electrodes within the chip was the electrode-channel being deeper than the electrode thickness (over $\SI{170}{\nano \metre}$). Because high lateral precision was not required, a HF dip was deployed using only PMMA as mask. With the absence of a metal mask, the charging of the sample during EBL was solved using a conductive resist on top (Electra 92, Appendix \ref{sec:chemicals}). It is water soluble, meaning that it can be removed before development by dipping in $\mathrm{dH_2O}$ and the hydrophobic PMMA will go unaltered.  Dipping times of $\SI{1.5}{\s}$ and $\SI{10}{\s}$ with concentrations of HF ($48\percent$ and $20\percent$) were tested, all leading to failure. The resists didn’t get destroyed but it peeled off from the glass. PMMA is resistant to HF but the adhesion layer between glass and PMMA is not. Its adhesion to glass results from its the basic carbonyl groups and the acidic silanol (Si-OH) groups on glass surface \cite{tan2008fundamentals}. Either by diffusing through PMMA or between the interface, HF will react with the hydroxyl groups and detach the resist from the glass.
+The only requirement for embedding the electrodes within the chip was the electrode-channel being deeper than the electrode thickness (over $\SI{170}{\nano \metre}$). Because high lateral precision was not required, a HF dip was deployed using only PMMA as mask. With the absence of a metal mask, the charging of the sample during EBL was solved using a conductive resist on top (Electra 92, Appendix \ref{sec:chemicals}). It is water soluble, meaning that it can be removed before development by dipping in $\mathrm{dH_2O}$ and the hydrophobic PMMA will go unaltered.  Dipping times of $\SI{1.5}{\s}$ and $\SI{10}{\s}$ with concentrations of HF ($48\percent$ and $20\percent$) were tested, all leading to failure. The resists didn’t get destroyed but it peeled off from the glass. PMMA is resistant to HF but the adhesion layer between glass and PMMA is not. Its adhesion to glass results from its the basic carbonyl groups and the acidic silanol (Si-OH) groups on glass surface \cite{tan2008fundamentals}. Either by diffusing through PMMA or between the interface, HF will react with the hydroxyl groups and detach the resist from the glass. In order to improve the adhesion, a $\SI{100}{\nano \metre}$ Cr layer was used as etch mask under the PMMA. With hardbaking the resist, the Cr mask proved sufficient for shallow channel etching (etch time 2s).
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=.7\textwidth]{images/EtchRate.pdf}
+    \includegraphics[width=.78\textwidth]{images/EtchRate.pdf}
     \caption{Etch rate of soda-lime with HF:HCl 10:1. The rate variation is a result of differing channel width. A depth variation up to $\pm 5 \; \micro \metre$ was measured for  channels, wide ones being deeper and vice versa.}
     \label{fig:etch_rate}
 \end{figure}
 
-In order to improve the adhesion, a $\SI{100}{\nano \metre}$ Cr layer was used as etch mask under the PMMA. With hardbaking the resist, the Cr mask proved sufficient for shallow channel etching (etch time 2s).
-\begin{figure}
+\begin{figure}[!h]
     \centering
     \includegraphics[width=1.0\textwidth]{optical/sideetch.png}
     \caption{The etch profiles of channels with mask openings of $\SI{10}{\micro \metre}$ (left) and $\SI{50}{\micro \metre}$ (right) taken with an optical microscope.}
     \label{fig:sideetch}
 \end{figure}
-\newline
-\newline
 
 \subsection{Electrodes}
 \label{sec:xxx4}
@@ -816,9 +862,7 @@ The first decision in electrode fabrication was whether to do it before or after
     \caption{Using a PMMA layer thinner than electrode depth or not evaporating at an angle will cause sharp edges to be etched.} \label{fig:coverage}
 \end{figure}  
 
-
 Arguably, the problem of covering properly the $\SI{30}{\micro \metre}$ deep channels could have been solved using a photoresist and photolithography or by spray coating PMMA to have ideal step coverage. These methods not being readily available at the facility, the second option was chosen, which was to manufacture the electrodes first. Fabricating the electrodes first meant that they need to be capable of withstanding the etching of the deep main-channels and the removal of the Cr-Au mask. Shallow (1-2$\; \micro \metre$) deep channels were etched for the electrodes using a $\SI{100}{\nano \metre}$ chromium mask. The electrode material could be then deposited without removing the etch mask. This meant that the electrode material had a “double lift-off” by the removal of the resist and the Cr-mask. It made sure that no unwanted electrode material was left on the surface. The shallow depth also allowed the use of PMMA. Spin coating PMMA A11 at 3000 rpm results in a thickness of $\SI{2.25}{\micro \metre}$, which grants complete coverage of the electrodes. Evaporation of the deep-etch Cr/Au mask at $45^{\circ}$ with wafer rotation ensured mask coverage as well.
-
 
 For the removal of the Cr-mask, a Nichrome etchant was used. Its selectivity was ideal; not harming the electrodes in any way \cite{williams2003etch}. This property was also exploited for the removal of the deep-etch mask. On top of the electrodes a Cr-Au was evaporated. After etching, the mask could be removed by using solely the Nichrome etchant. Using a gold etchant could have harmed the electrodes which contained gold. 
 
@@ -840,8 +884,7 @@ The “lift-off” of the gold mask happened a lot faster (5 min) than expected 
     \caption{Over etching of Cr under Au mask. a) The fast under etching of Cr ruined the electrodes. (Image taken from the bottom of the chip) b) Tensile stress visible when the gold mask is peeling upwards after channel etch.} \label{fig:underetch}
 \end{figure}  
 
-
-\newpage
+\vaali
 
 \begin{flushleft}\textbf{Composition} \end{flushleft}
 Besides good conductivity, the requirements for the electrode composition arise from the chip fabrication steps. The electrodes need to withstand:
@@ -857,7 +900,25 @@ Besides good conductivity, the requirements for the electrode composition arise 
 \end{enumerate}
 
 An electrode composition meeting the requirements had already been demonstrated by Borovsky \cite{borovsky}; It was a sandwich of $\mathrm{SiO_{2}}$, Ti, Au, Ti and $\mathrm{SiO_{2}}$. Gold was chosen because its ideal conductivity and chemical resistance. As an adhesion layer between gold and glass, titanium was chosen. Although Ti is a slightly weaker adhesion layer than Cr \cite{chen2013study}, the annealing temperature in TADB causes chromium to diffuse into gold increasing its resistance significantly \cite{huang2003effect}. Titanium will also diffuse through Gold forming  $\mathrm{TiAu_2}$, TiAu and  $\mathrm{Ti_3 Au}$ compounds. The $\mathrm{Ti_3 Au}$ forms a thin (50$- \SI{100}{\angstrom}$) diffusion barrier preventing further diffusion \cite{tisone1972diffusion}. The initial $\mathrm{SiO_2}$ layer was designed to prevent diffusion between Ti and Glass which would lead to defective electrodes.  The first $\mathrm{SiO_2}$ layer was deemed unnecessary and working electrodes were manufactured without it. Adhesion problems between the deposited $\mathrm{SiO_2}$ and the electrodes drove towards this decision (Figure \ref{fig:eleproblem}). It can be speculated that the first $\mathrm{SiO_2}$ layer is indeed mandatory if the electrodes are placed between glass slides and subjected to pressure. The pressure may have lead to melting point depression and increased diffusion, which was not the case with our embedded electrodes. After TADB a slight change in electrode colour was observed but the electrode resistance ($\SI{800}{\ohm}$ to $\SI{1}{\kilo \ohm}$) was not affected.
-To further improve adhesion and to avoid Ti oxidation, all of the electrode materials were evaporated consecutively. The final layer ($\mathrm{SiO_2}$), which served a purpose of protecting the electrodes against Piranha treatment (Figure \ref{fig:eleproblem}), made the electrode surface non-conductive. As a final processing step after cover-glass bonding, this layer was etched away using a RIE oxide etch. This etch did not visibly alter the glass cover transparency.
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[h]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{optical/eledetach.png} 
+        \caption{} \label{fig:lileee}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[h]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{optical/piranha_ate.png} 
+        \caption{} \label{fig:lellqqq}
+    \end{subfigure}
+    \caption{a) Electrodes detaching from glass due to bad adhesion. b) HF etched the protective $\mathrm{SiO_2}$ layer through a pinhole, which lead to piranha corroding the gold.} \label{fig:eleproblem}
+\end{figure}  
+
+
+To further improve adhesion and to avoid Ti oxidation, all of the electrode materials were evaporated consecutively. The final layer ($\mathrm{SiO_2}$), which served a purpose of protecting the electrodes against Piranha treatment (Figure \ref{fig:eleproblem}), made the electrode surface non-conductive. As a final processing
+g step after cover-glass bonding, this layer was etched away using a RIE oxide etch. This etch did not visibly alter the glass cover transparency. To summarise, the final composition of the electrodes is displayed in Table \ref{tab:electrde}.
 
 
 \begin{table}[h]
@@ -875,29 +936,15 @@ To further improve adhesion and to avoid Ti oxidation, all of the electrode mate
  \end{table}
 
 
- \begin{figure}
-    \centering
-    \begin{subfigure}[ht]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{optical/eledetach.png} 
-        \caption{} \label{fig:lileee}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[ht]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{optical/piranha_ate.png} 
-        \caption{} \label{fig:lellqqq}
-    \end{subfigure}
-    \caption{a) Electrodes detaching from glass due to bad adhesion. b) HF etched the protective $\mathrm{SiO_2}$ layer through a pinhole, which lead to piranha corroding the gold.} \label{fig:eleproblem}
-\end{figure}  
-
+ 
 
 
 \subsection{Experiment setup}
 \label{sec:xxx5}
 
-The aim of the experimental setup was to observe whether the deflection of cells using DEP is successful. For the setup a custom-made chip holder was used with four tubes acting as inlets and outlets. The connections between the tubes and the chip itself were secured by Viton rubber O-rings to prevent leakage. A pressure driven flow was achieved by connecting the inlet tubes to a Fluigent MFCS-EZ pressure controlling device, which was driven by $\mathrm{N_2}$ flow capable of producing up to 2 bars of pressure. To model fluorescing cancer cells, $\mathrm{SPHERO^{TM}}$ Fluorescent Yellow Particles (FP-6052-2) with a size of 5.0-7.9 $\micro \metre$ and an excitation and emission spectra of 430-480 $\nano \metre$, 470-520 $\nano \metre$.  These particles consist of polystyrene cores that are covered with fluorophores. The beads original concentration of 1$\percent$ w/v was diluted 1/10 in $10^{-4} \; \percent$ Tween-20\textsuperscript{\textregistered}, which is a Surfact-Amps Detergent. The setup is displayed in Figure \ref{fig:settup}.
+The aim of the experimental setup was to observe whether the deflection of cells using DEP is successful. For the setup a custom-made chip holder was used with four tubes acting as inlets and outlets. The connections between the tubes and the chip itself were secured by Viton rubber O-rings to prevent leakage. A pressure driven flow was achieved by connecting the inlet tubes to a Fluigent MFCS-EZ pressure controlling device, which was driven by $\mathrm{N_2}$ flow capable of producing up to 2 bars of pressure. To model fluorescing cancer cells, $\mathrm{SPHERO^{TM}}$ Fluorescent Yellow Particles (FP-6052-2) with a size of 5.0-7.9 $\micro \metre$ and an excitation and emission spectra of 430-480 $\nano \metre$, 470-520 $\nano \metre$.  These particles consist of polystyrene cores that are covered with fluorophores. The beads original concentration of 1$\percent$ w/v was diluted 1/10 in $10^{-4} \; \percent$ Tween-20\textsuperscript{\textregistered}, which is a Surfact-Amps Detergent. The detergent molecules, having a hydrophilic "tail" and a hydrophobic "head", make the fluorescent beads hydrophilic and thus water soluble (acting like soap), otherwise they would aggregate and resist resist mixing with water. The setup is displayed in Figure \ref{fig:settup}.
 
+To connect the chip to a DEP source, thin wires were soldered to the electrodes using indium. It was chosen as a solder due to its low melting point ($156 \celsius$), its ability to adhere to glass and the fact that tin-based solders can scavenge gold and ruin the electrodes. Through the soldered wires the conductivity of the electrodes could easily be confirmed. To produce the electric fields for DEP, a KEITHLEY 2410-c high voltage generator was connected to a custom-made signal generator circuit that was controlled by an Arduino. The Arduino allowed the controlling of the signal frequency (up to $\SI{30}{\kilo \Hz}$) and the pulse amount. The circuit, displayed in Figure \ref{fig:circuit},  was slightly modified from the original one created by Ján Borovsky to allow usage of smaller currents.
 \begin{figure}[!h]
     \centering
     \includegraphics[width=1.0\textwidth]{optical/setup222.png}
@@ -905,9 +952,7 @@ The aim of the experimental setup was to observe whether the deflection of cells
     \label{fig:settup}
 \end{figure}
 
-To connect the chip to a DEP source, thin wires were soldered to the electrodes using indium. It was chosen as a solder due to its low melting point ($156 \celsius$), its ability to adhere to glass and the fact that tin-based solders can scavenge gold and ruin the electrodes. Through the soldered wires the conductivity of the electrodes could easily be confirmed. To produce the electric fields for DEP, a KEITHLEY 2410-c high voltage generator was connected to a custom-made signal generator circuit that was controlled by an Arduino. The Arduino allowed the controlling of the signal frequency (up to $\SI{30}{\kilo \Hz}$) and the pulse amount. The circuit, displayed in Figure \ref{fig:circuit},  was slightly modified from the original one created by Ján Borovsky to allow usage of smaller currents.
-
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=1.0\textwidth]{images/circuit.pdf}
     \caption{The schematic of the circuit used to generate DEP signal.}
@@ -918,6 +963,7 @@ To connect the chip to a DEP source, thin wires were soldered to the electrodes 
 \label{sec:results}
 \subsection{Fabrication of the chip}
 After numerous trials and errors, eventually a successful chip with smooth channels, correct channel depth and working electrodes was manufactured. A significant improvement in etch-mask and channel quality was achieved compared to the initial fabrication experiment. The resulting smooth channel surface and the lack of pinholes can bee seen in Figure \ref{fig:godbad}. 
+\vaali
 \begin{figure}[!h]
     \centering
     \begin{subfigure}{1.0\textwidth}
@@ -934,7 +980,7 @@ After numerous trials and errors, eventually a successful chip with smooth chann
 
     \caption{Optical images of the chips surface before (a) and after (b) the development and optimization of the fabrication steps. The amount of pinholes were reduced and channel roughness decreased.} \label{fig:godbad}
 \end{figure}  
-
+\vaali
 
 Decreased channel roughness was achieved by annealing the chips after the inlet/outlet drilling and by adding HCl to the HF etchant in a ratio of 10:1 (HF:HCl). Minimizing channel roughness is important when laminar flow is to be maintained and clogging of the channels avoided. The pinhole density was reduced by improving the cleaning procedure of the chip and by using a multilayer Au mask with a Cr adhesion layer. 
 
@@ -958,61 +1004,57 @@ Conductive electrodes that could withstand piranha treatment and the annealing t
 \subsection{Overview of the process}
 \label{sec:xxx2}
 
-\newcommand{\vaali}
-    {
-    \vskip  0.05in
-    }
-
-
 Here the complete realisation of the working microfluidic chip is presented. A more precise recipe is presented in appendix \ref{sec:appendix2}. The fabrication steps for a successful chip are shown in Figure \ref{fig:processFULL}.
 
 \noindent
-1) Soda Lime-glass microscope coverslips are used as substrate, with holes with a diameter of $\SI{100}{\micro \metre}$ for inlets and outlets drilled prior to the cleanroom processing. The glass chip is cleaned and treated with Piranha-solution prior to thin film deposition. 
+\hyperref[fig:process1]{1)} Soda Lime-glass microscope coverslips are used as substrate, with holes with a diameter of $\SI{100}{\micro \metre}$ for inlets and outlets drilled prior to the cleanroom processing. The glass chip is cleaned and treated with Piranha-solution prior to thin film deposition. 
 \vaali
 
 \noindent
-2) Using E-beam evaporation, a of $\SI{100}{\nano \metre}$ Cr thin film is evaporated to act as an etch mask. Next, PMMA of about $\SI{250}{\nano \metre}$ is spun before e-beam exposure.
+\hyperref[fig:process2]{2)} Using E-beam evaporation, a of $\SI{100}{\nano \metre}$ Cr thin film is evaporated to act as an etch mask. Next, PMMA of about $\SI{250}{\nano \metre}$ is spun before e-beam exposure.
 \vaali
 
 \noindent
-3) The electrode design is then exposed with electron beam lithography and developed. 
+\hyperref[fig:process3]{3)} The electrode design is then exposed with electron beam lithography and developed. 
 \vaali
 
 \noindent
-4) The Cr-mask is etched followed by a dip into HF-HCl (10:1) solution to etch shallow grooves for the electrodes. After etching, a RIE $\mathrm{O_2}$ etch is used to activate the glass and clean etching residue from electrode channels. 
+\hyperref[fig:process4]{4)} The Cr-mask is etched followed by a dip into HF-HCl (10:1) solution to etch shallow grooves for the electrodes. After etching, a RIE $\mathrm{O_2}$ etch is used to activate the glass and clean etching residue from electrode channels. 
 \vaali
 
 \noindent
-5) Electrodes are then evaporated; a metal sandwich of $\SI{10}{\nano \metre}$ Ti +$\SI{50}{\nano \metre}$ Au +$\SI{10}{\nano \metre}$ Ti +$\SI{100}{\nano \metre}$ $\mathrm{SiO}_2$). 
+\hyperref[fig:process5]{5)} Electrodes are then evaporated; a metal sandwich of $\SI{10}{\nano \metre}$ Ti +$\SI{50}{\nano \metre}$ Au +$\SI{10}{\nano \metre}$ Ti +$\SI{100}{\nano \metre}$ $\mathrm{SiO}_2$). 
 \vaali
 
 \noindent
-6) Lift-off is then carried out and the Cr-mask etched away. 
+\hyperref[fig:process6]{6)} Lift-off is then carried out and the Cr-mask etched away. 
 \vaali
 
 \noindent
-7) A tougher RIE $\mathrm{O_2}$ treatment is used to activate the glass surface and $\SI{50}{\nano \metre}$ Cr + $(150 + 150) \,\nano \metre$ Au is evaporated in an $45^{\circ}$ angle while the wafer is rotated ensuring deposition to the walls of the trenches. 
+\hyperref[fig:process7]{7)} A tougher RIE $\mathrm{O_2}$ treatment is used to activate the glass surface and $\SI{50}{\nano \metre}$ Cr + $(150 + 150) \,\nano \metre$ Au is evaporated in an $45^{\circ}$ angle while the wafer is rotated ensuring deposition to the walls of the trenches. 
 \vaali
 
 \noindent
-8) Now $\SI{2.2}{\micro \metre}$ of PMMA is spun to cover the shallow channels of the electrodes completely. 
+\hyperref[fig:process8]{8)} Now $\SI{2.2}{\micro \metre}$ of PMMA is spun to cover the shallow channels of the electrodes completely. 
 \vaali
 
 \noindent
-9) Alignment, exposure, and development of the Channels-layout is performed. 
+\hyperref[fig:process9]{9)} Alignment, exposure, and development of the Channels-layout is performed. 
 \vaali
 
 \noindent
-10) The Au and Cr masks are etched followed by a 55s HF-HCl etch of the channels. After removing the e-beam resist the gold mask is removed by etching the underlining Cr. 
+\hyperref[fig:process10]{10)} The Au and Cr masks are etched followed by a 55s HF-HCl etch of the channels. After removing the e-beam resist the gold mask is removed by etching the underlining Cr. 
 \vaali
-
-\noindent
-11) Finally, the chip and its cover are cleaned and activated in Piranha so it can be bonded. The bonding is performed in a furnace at $\SI{585}{\celsius}$ for 2h. The bonded chip is then treated with a RIE oxide etch to reveal the electrode pads for soldering and the chip is ready.
 
 %Make numbers in figures go 1,2,3 instead of a b c
 \renewcommand{\thesubfigure}{\arabic{subfigure}}
 
-\begin{figure}[h]
+
+\noindent
+\hyperref[fig:process11]{11)} Finally, the chip and its cover are cleaned and activated in Piranha so it can be bonded. The bonding is performed in a furnace at $\SI{585}{\celsius}$ for 2h. The bonded chip is then treated with a RIE oxide etch to reveal the electrode pads for soldering and the chip is ready.
+
+
+\begin{figure}[H]
     \centering
     \begin{subfigure}{0.48\textwidth}
         \centering
@@ -1025,9 +1067,9 @@ Here the complete realisation of the working microfluidic chip is presented. A m
         \includegraphics[width=\linewidth]{steps/2.Cr-Pmma.png} 
         \caption{$\SI{100}{\nano \metre}$ Cr + $\SI{250}{\nano \metre}$ PMMA} \label{fig:process2}
     \end{subfigure}
-\end{figure}
-
-\begin{figure}\ContinuedFloat
+%\end{figure}
+    \hfill
+%\begin{figure}\ContinuedFloat
     \centering       
     \begin{subfigure}{0.48\textwidth}
         \centering
@@ -1064,7 +1106,10 @@ Here the complete realisation of the working microfluidic chip is presented. A m
         \includegraphics[width=\linewidth]{steps/8.pmma-thick.png} 
         \caption{$\SI{2.2}{\micro \metre}$ PMMA} \label{fig:process8}
     \end{subfigure}
-   
+\end{figure}
+
+\begin{figure}\ContinuedFloat
+    \centering    
     \begin{subfigure}{0.48\textwidth}
         \centering
         \includegraphics[width=\linewidth]{steps/9.developed2.png} 
@@ -1076,11 +1121,7 @@ Here the complete realisation of the working microfluidic chip is presented. A m
         \includegraphics[width=\linewidth]{steps/10.etched.png} 
         \caption{Liftoff by etching Cr} \label{fig:process10}
     \end{subfigure}
-\end{figure}
 
-\begin{figure}\ContinuedFloat
-    \centering    
-    \vspace{1cm}
     \begin{subfigure}{\textwidth}
     \centering
         \includegraphics[width=\linewidth]{steps/11.Finished.png} 
@@ -1095,25 +1136,25 @@ Here the complete realisation of the working microfluidic chip is presented. A m
 
 \subsection{DEP using fluorescent beads}
 
-As the first measurement the flow through the channels was measured. Visible flow of the beads was observed between  $3-\SI{40}{\milli \bar}$ of pressure, higher pressures requiring a high speed camera due to the velocity of the beads. The huge variation was the result of pressure leaks within the tubes containing the beads and their holder. Because of clogs and gas leakage between the testing tube containing the beads and its holder the exact pressure within the channels remained unclear. Especially after testing with larger $10-\SI{14}{\micro \metre}$  Fluorescent Nile Red particles, clogging was observed at high (over $\SI{50}{\milli \bar}$) pressures. Even though all visible clogs within the channels were removed by injecting bubbles into the tubing using a pipette, clogs remained in the outlet tubes. This was obvious from the pressure difference present in the outlet channels. 
+As the first measurement the flow through the channels was measured. Visible flow of the beads was observed between  $3-\SI{40}{\milli \bar}$ of pressure, higher pressures requiring a high speed camera due to the velocity of the beads (Figure \ref{fig:flow}). The huge variation was the result of pressure leaks within the tubes containing the beads and their holder. Because of clogs and gas leakage between the testing tube containing the beads and its holder the exact pressure within the channels remained unclear. Especially after testing with larger $10-\SI{14}{\micro \metre}$  Fluorescent Nile Red particles, clogging was observed at high (over $\SI{50}{\milli \bar}$) pressures. Even though all visible clogs within the channels were removed by injecting bubbles into the tubing using a pipette, clogs remained in the outlet tubes. This was obvious from the pressure difference present in the outlet channels. 
 
-Despite having minor problems with pressure control, laminar flow in front of the electrodes was achieved which was sufficient for testing DEP deflection. The laminar flow was obvious from the beads keeping constantly the same “lane” they were travelling and the applicability of a Poiseuille flow due to the beads speed difference based on their distance from the channel edges \textcolor{red}{[Supplementary video1]}. When the outlet pressures were similar, the beads travelled into the channel corresponding to their “lane”. When testing the effect of DEP, the beads were moved slowly back and forth in front of the electrodes to clearly see whether they experienced any deflection\textcolor{red}{[Supplementary video2]}. Square waves with a peak to peak voltage of $\SI{1}{\kilo \volt}$ were driven through the electrodes at frequencies of $\SI{1}{\kilo \Hz}$, $\SI{10}{\kilo \Hz}$ and $\SI{30}{\kilo \Hz}$, without any observable effect on the beads. The main reason is believed to be originating from faulty electrodes. The right electrode was soldered multiple times which likely led to the destruction of the connection pads. Although no current could be measured across the faulty electrode, the tests were still run in hopes that at least one of the two bonding pads could be still operational, which would be enough to generate the necessary electric fields. Tian et al. have demonstrated an electrophoretic microtrap with the same fluorescent particles used in this thesis, electrodes at a $\SI{20}{\micro \metre}$ distance from channel edge and using electrodes at a potential of  700 to -700 V \cite{tian2018handy}. Although our electrodes were at a $\SI{30}{\micro \metre}$ distance, we are working in the same order of magnitude with dimensions and voltages. In our design the distance between the electrodes was $\SI{200}{\micro \metre}$ to spread the electric field gradient over a larger area (Figure \ref{fig:flow}). The purpose was to allow the fast travelling particles to experience DEP force over a longer distance compared to a stronger, short distance effect.
-
-\begin{figure}[!h]
+\begin{figure}[h]
     \centering
     \includegraphics[width=1.0\textwidth]{optical/floww.png}
     \caption{(Left) Operational chip with electrode dimensions. (Right) The green square area imaged through a filter to visualise fluorescent beads flowing to the outlet corresponding to their lane.}
     \label{fig:flow}
 \end{figure}
 
-To get the deflection of the beads to work the first step would me to manufacture a new chip and successfully solder the connecting wires to the connection pads. Oher troubleshooting ideas would be to redesign the signal generating circuit to produce higher frequencies (up to $\SI{100}{\kilo \Hz}$) with higher voltages (amplitude of $\SI{800}{V}$) to increase the DEP Force. Unfortunately, the manufacture of a new chip after the first successful one was not possible due to limited access to the cleanroom as a result of the COVID-19 pandemic.
+Despite having minor problems with pressure control, laminar flow in front of the electrodes was achieved which was sufficient for testing DEP deflection. The laminar flow was obvious from the beads keeping constantly the same “lane” they were travelling and the applicability of a Poiseuille flow due to the beads speed difference based on their distance from the channel edges \textcolor{red}{[Supplementary video1]}. When the outlet pressures were similar, the beads travelled into the channel corresponding to their “lane”. When testing the effect of DEP, the beads were moved slowly back and forth in front of the electrodes to clearly see whether they experienced any deflection\textcolor{red}{[Supplementary video2]}. Square waves with a peak to peak voltage of $\SI{1}{\kilo \volt}$ were driven through the electrodes at frequencies of $\SI{1}{\kilo \Hz}$, $\SI{10}{\kilo \Hz}$ and $\SI{30}{\kilo \Hz}$, without any observable effect on the beads. The main reason is believed to be originating from faulty electrodes. The right electrode was soldered multiple times which likely led to the destruction of the connection pads. Although no current could be measured across the faulty electrode, the tests were still run in hopes that at least one of the two bonding pads could be still operational, which would be enough to generate the necessary electric fields. Tian et al. have demonstrated an electrophoretic microtrap with the same fluorescent particles used in this thesis, electrodes at a $\SI{20}{\micro \metre}$ distance from channel edge and using electrodes at a potential of  700 to -700 V \cite{tian2018handy}. Although our electrodes were at a $\SI{30}{\micro \metre}$ distance, we are working in the same order of magnitude with dimensions and voltages. In our design the distance between the electrodes was $\SI{200}{\micro \metre}$ to spread the electric field gradient over a larger area (Figure \ref{fig:flow}). The purpose was to allow the fast travelling particles to experience DEP force over a longer distance compared to a stronger, short distance effect.
+
+To get the deflection of the beads to work the first step would be to manufacture a new chip and successfully solder the connecting wires to the connection pads. Oher troubleshooting ideas would be to redesign the signal generating circuit to produce higher frequencies (up to $\SI{100}{\kilo \Hz}$) with higher voltages (amplitude of $\SI{800}{V}$) to increase the DEP Force. Unfortunately, the manufacture of a new chip after the first successful one was not possible due to limited access to the cleanroom as a result of the COVID-19 pandemic.
 
 
 \subsection{Future design improvements}
 
 Considering the future development of the chip design and the DEP sorting multiple improvements can be made. To eliminate the pressure difference at the Y junction, the pressure stabilising channels could be etched together with the electrode-channels (depth $\SI{2}{\micro \metre}$). This would allow the pressure to stabilise, without letting the particles change their exit route through the pressure stabilising channels. The solution would only require a slightly increased electron beam exposure time with no extra fabrication steps. The etching of shallow channels separately from the main channels allows design improvements for pressure and flow control. Besides pressure stabilising channels, the flow speed could be tuned. At the area of spectroscopic analysis, shallow side-channels separating from and flowing back to the main channel could be etched. The alternative route for the liquid would slow down the flow in the main channel in the desired area, thus creating a "speed trap" and allowing more time for analysis.
 
-To increase the effectiveness of the DEP force, electrodes could be fabricated on both sides of the channels and tune the frequencies such that one side would push and the other pull the particles. To get the electrodes closer to the channel centre, which is limited by the mask adhesion, the channel width could be minimised to a point where sorting is still achieved. Placing the electrodes closer posed the danger of the HF etching the electrodes. Even a small amount of HF breaching the electrode channels will quickly etch the evaporated $\mathrm{SiO_2}$ layer protecting the electrodes. The stress in the mask and the small adhesion area between the electrodes and the channels caused the Cr adhesion layer in the mask to get under etched. Further improving mask adhesion would allow for electrodes to be placed closer and granting a possibility for a higher DEP force.
+To increase the effectiveness of the DEP force, electrodes could be fabricated on both sides of the channels and tune the frequencies such that one side would push and the other pull the particles. To get the electrodes closer to the channel centre, which is limited by the mask adhesion, the channel width could be minimised to a point where sorting is still achieved. Placing the electrodes closer posed the danger of the HF etching the electrodes. Even a small amount of HF breaching the electrode channels will quickly etch the evaporated $\mathrm{SiO_2}$ layer protecting the electrodes. The stress in the mask and the small adhesion area between the electrodes and the channels caused the Cr adhesion layer in the mask to get under etched. Further improving mask adhesion would allow for electrodes to be placed closer and granting a possibility for a stronger DEP force.
 
 
 
@@ -1172,8 +1213,10 @@ Altogether, the developed fabrication recipe and the setup for testing grants a 
 
 \section{Appendix}
 \label{sec:appendix2}
-Steps marked between with the same colour must be done consecutively during the same day.
-*Developer1 = MIBK:IPA*
+Steps marked with the same colour must be done consecutively during the same day.
+
+\noindent (Developer1 = MIBK:IPA)
+\vaali
 
 1. (\textbf{Drilling}) Drill chip inlets and outlets using a Laser or mechanical drill bits.
 
@@ -1181,7 +1224,7 @@ Steps marked between with the same colour must be done consecutively during the 
 
 \textcolor{orange}{3. (\textbf{Cleaning})} Take two flat beakers with Acetone and put one on a hotplate to boil. In the cool acetone, scrub chips with cotton tips holding them down with tweezers. Rinse with fresh acetone and put into the boiling one and Sonicate for 2 min. Repeat this step until no visible contamination/dust particles are present when dried with $\mathrm{N_2}$. Then Sonicate in IPA for 1 min and rinse with fresh IPA and put into $\mathrm{dH_2 O}$.
 
-\textcolor{orange}{4. (\textbf{Activation})} Prepare a big and a small beaker filled with $\mathrm{dH_2 O}$ and a beaker for piranha. Set hotplate to $\SI{100}{\celsius}$. Use acid gloves and metal tweezers! Pour Sulphuric acid ($\mathrm{H_2 SO_4}$) FIRST! and then Hydrogen Peroxide ($\mathrm{H_2 O_2}$) in a ration of 3:1. (For a flat beaker $\SI{6}{\milli \litre}$ $\mathrm{H_2 SO_4}$ and $\SI{2}{\milli \litre}$ $\mathrm{H_2 O_2}$ is enough to cover the chips). Pipet $\mathrm{H_2 O_2}$ slowly to avoid a too strong reaction and fast release of gases. Wait until the exothermic reaction has cooled and put it on the hot plate. Dry chips with $\mathrm{N_2}$ and put in piranha for 30 min, lifting them with tweezers from time to time to remove bubbles. Dip chips into $\mathrm{dH_2 O}$ and rinse under flowing $\mathrm{dH_2 O}$ properly. Put into beaker with $\mathrm{dH_2 O}$. When all chips are rinsed, Put back to piranha for 5 min. When done, wash the chips under flowing $\mathrm{dH_2 O}$ thoroughly, making sure that no piranha is left in the drilled holes. Contain chips in $\mathrm{dH_2 O}$.
+\textcolor{orange}{4. (\textbf{Activation})} Prepare a big and a small beaker filled with $\mathrm{dH_2 O}$ and a beaker for piranha. Set hotplate to $\SI{100}{\celsius}$. Use acid gloves and metal tweezers! Pour Sulphuric acid ($\mathrm{H_2 SO_4}$) FIRST! and then Hydrogen Peroxide ($\mathrm{H_2 O_2}$) in a ratio of 3:1. (For a flat beaker $\SI{6}{\milli \litre}$ $\mathrm{H_2 SO_4}$ and $\SI{2}{\milli \litre}$ $\mathrm{H_2 O_2}$ is enough to cover the chips). Pipet $\mathrm{H_2 O_2}$ slowly to avoid a too strong reaction and fast release of gases. Wait until the exothermic reaction has cooled and put it on the hot plate. Dry chips with $\mathrm{N_2}$ and put in piranha for 30 min, lifting them with tweezers from time to time to remove bubbles. Dip chips into $\mathrm{dH_2 O}$ and rinse under flowing $\mathrm{dH_2 O}$ properly. Put into beaker with $\mathrm{dH_2 O}$. When all chips are rinsed, Put back to piranha for 5 min. When done, wash the chips under flowing $\mathrm{dH_2 O}$ thoroughly, making sure that no piranha is left in the drilled holes. Contain chips in $\mathrm{dH_2 O}$.
 
 \textcolor{orange}{5. (\textbf{Evaporation, Mask})} Prepare evaporator fully; Clean crucibles and target materials ready, chamber de-vacuumed. In laminar flow room, dry chips with $\mathrm{N_2}$ and put on hot plate $130\celsius$ for 2 min to evaporate any moisture on chip surface. Put chips in evaporator (Care! High chance of contaminating chips!). Evaporate $\SI{100}{\nano \metre}$ of Cr with a slow rotation of the substrate.
 
@@ -1207,7 +1250,7 @@ Steps marked between with the same colour must be done consecutively during the 
 
 \textcolor{orange}{15. (\textbf{Exposure, Channels})} Same procedure as in step 5. Preform wright field alignment and expose Channel layout, using a area dose of $\SI{450}{\micro \coulomb \per \centi\metre^2}$. Develop in Developer1 for 55s and then stir in IPA for 10s to stop and flush any developer on the chip. 
 
-16. (\textbf{Etching}) Protect the electrodes by covering them with tape. The mask ($\SI{50}{\nano \metre}$ Cr + $\SI{200}{\nano \metre}$ Au) is etched by submerging the chip in Au-etchant for 25s and gently shaking, stop in $\mathrm{dH_2 O}$. Next, dip in Cr-etchant  for 10s 40$\celsius$ gently shaking then dipping and rinsing with $\mathrm{dH_2 O}$. Check under microscope, make sure Cr  etchant didn’t under etch the Au mask by inspecting the chip upside-down under a microscope. Put on HF-protective gear and prepare chemicals and equipment for HF-etch. Pour 18 ml of HF and pipette (glass) 2 ml of HCL and mix them with HF-tweezers. Dip the chip in HF for 55s gently stirring and stop in $\mathrm{dH_2 O}$. Rinse in $\mathrm{dH_2 O}$ and remove PMMA in Acetone. Lift-off Au-mask using hot Cr-etchant. Mechanical help with tweezers should be applied to remove Au-mask. Rinse in $\mathrm{dH_2 O}$.
+16. (\textbf{Etching}) Protect the electrodes by covering them with tape. The mask ($\SI{50}{\nano \metre}$ Cr + $\SI{200}{\nano \metre}+\SI{100}{\nano \metre}$ Au) is etched by submerging the chip in Au-etchant for 25s and gently shaking, stop in $\mathrm{dH_2 O}$. Next, dip in Cr-etchant  for 10s at 40$\celsius$ gently shaking then dipping and rinsing with $\mathrm{dH_2 O}$. Check under microscope, make sure Cr  etchant didn’t under etch the Au mask by inspecting the chip upside-down under a microscope. Put on HF-protective gear and prepare chemicals and equipment for HF-etch. Pour 18 ml of HF and pipette (glass) 2 ml of HCL and mix them with HF-tweezers. Dip the chip in HF for 55s gently stirring and stop in $\mathrm{dH_2 O}$. Rinse in $\mathrm{dH_2 O}$ and remove PMMA in Acetone. Lift-off Au-mask using hot Cr-etchant. Mechanical help with tweezers should be applied to remove Au-mask. Rinse in $\mathrm{dH_2 O}$.
 
 17. (\textbf{TDAB}) This step is extremely susceptible to contamination, try to minimize contamination at all means (wear proper face mask etc.). Remember which side of the glass is to be bonded to avoid contaminating it. The chip and the $18\times18 \; \milli \metre^2$ coverslip is prepared for bonding.
 
@@ -1215,9 +1258,8 @@ Steps marked between with the same colour must be done consecutively during the 
 Take 2x cover glass. Scrub and sonicate (5 min) in hot acetone. Redo with fresh acetone and then rinse and sonicate (1 min) in IPA. Blow dry with $\mathrm{N_2}$. Preform activation as in step 4. Keep to be bonded side upwards. Sonicate in $\mathrm{dH_2 O}$ for 5 min and put into fresh $\mathrm{dH_2 O}$.
 
 \textbf{For chip with channels:}
-(If “blisters” are present in electrodes, sonication will destroy them!) Rinse and Sonicate upside down (electrodes facing beaker bottom) for 30s in acetone. Rinse and sonicate 10s in IPA. (Sonication time is a trade-off between successful TDAB and destroyed electrodes). Keep in $\mathrm{dH_2 O}$ until activation. Dry with $\mathrm{N_2}$ and Treat in fresh Room temperature piranha for (7 + 3) min rinsing with $\mathrm{dH_2 O}$ in between. Keep to be bonded side upwards. Before rinsing put in $\mathrm{dH_2 O}$ beaker first! Any piranha solution between tweezers and chip can cause it to slip and drop during rinsing! Contain chips in $\mathrm{dH_2 O}$.\newline
-
-Rinse the chips in $\mathrm{dH_2 O}$ and dry with $\mathrm{N_2}$ under laminar flow hood and put them on hotplate 130$\celsius$ for 2 min in laminar flow room. Cool chips on a clean Al-block. With the help of a tweezer, grab the back of the cover glass and place it on top of the channels-chip. To remove all newton-rings the glasses can be pushed together with your thumb. A force at full strength can be applied, IF the chip is on a completely flat solid surface. If newton rings still remain, or the glasses don’t stick together, the whole process step 17 needs to be redone. A properly bonded glass looks as of being one unit. Place the chip cover upwards into the stainless steel holder and put the weight on top. Place the holder in the furnace and set dwell time 585$\celsius$ for 2h under nitrogen flow.
+(If “blisters” are present in electrodes, sonication will destroy them!) Rinse and Sonicate upside down (electrodes facing beaker bottom) for 30s in acetone. Rinse and sonicate 10s in IPA. (Sonication time is a trade-off between successful TDAB and destroyed electrodes). Keep in $\mathrm{dH_2 O}$ until activation. Dry with $\mathrm{N_2}$ and Treat in fresh Room temperature piranha for (7 + 3) min rinsing with $\mathrm{dH_2 O}$ in between. Keep to be bonded side upwards. Before rinsing put in $\mathrm{dH_2 O}$ beaker first! Any piranha solution between tweezers and chip can cause it to slip and drop during rinsing! Contain chips in $\mathrm{dH_2 O}$. \vaali
+ \noindent Rinse the chips in $\mathrm{dH_2 O}$ and dry with $\mathrm{N_2}$ under laminar flow hood and put them on hotplate 130$\celsius$ for 2 min in laminar flow room. Cool chips on a clean Al-block. With the help of a tweezer, grab the back of the cover glass and place it on top of the channels-chip. To remove all newton-rings the glasses can be pushed together with your thumb. A force at full strength can be applied, IF the chip is on a completely flat solid surface. If newton rings still remain, or the glasses don’t stick together, the whole process step 17 needs to be redone. A properly bonded glass looks as of being one unit. Place the chip cover upwards into the stainless steel holder and put the weight on top. Place the holder in the furnace and set dwell time 585$\celsius$ for 2h under nitrogen flow.
 
 18.(\textbf{Finish}) Lastly, the protective layer ($\mathrm{SiO_2}$) on top of the electrodes will be removed. Treat the chip with RIE Oxide Etch (O2 -flash at 30$\celsius$ for 4 min (Etches $\SI{42}{\nano \metre \per \min}$). This will remove the top layer of protective $\mathrm{SiO_2}$ on the electrode pads and make them conductive.
 

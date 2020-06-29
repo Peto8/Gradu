@@ -6,10 +6,12 @@
 
 \usepackage{caption}
 \captionsetup[figure]{format=plain, font=footnotesize, labelfont=bf,labelsep=period}
+%\captionsetup[table]{format=plain, font=footnotesize, labelfont=bf,labelsep=period}
+\captionsetup[table]{font=footnotesize}
 \usepackage{subcaption}
 
 \usepackage{float} % for allowing [H] at figures
-
+\usepackage{setspace} % to add custo linespacing
 
 
 
@@ -81,11 +83,13 @@ Master's Thesis\\
 Department of Physics, University of Jyväskylä, 2020, \pageref{LastPage}~pages
 
 \bigskip
+{\setstretch{1.0}
 
 \noindent Microfluidics grant the possibility for the analysis of microbiological particles such cells, viruses, proteins, and DNA. It can fulfil the strict requirements for temperature, pressure, and chemical composition set by samples in vivo environment. The aim was to develop the fabrication of a microfluidic chip that would be capable of single cell sorting, fluorescently labelled cancer cells to be more precise. Cells flowing through the system would be analysed using spectroscopy to detect fluorescence. Depending on the result, a dielectrophoretic force would be exerted on the target cell guiding it to a corresponding channel to be collected or discarded. Achieving a high throughput device that could analyse thousands of cells a second while sorting individual cancer cells from blood samples would have a significant impact on cancer research.
 
-Glass, being transparent and chemically inert, is an optimal material for spectroscopic analysis and as a microfluidic environment. Thus, a fabrication recipe for a glass (Soda-lime) microfluidic chip including electrodes was developed. Using electron beam lithography and thin film deposition, such a chip was realised with minimised defects. The electrodes consisted of a sandwich of Ti, Au, Ti and $\mathrm{SiO_2}$. They could withstand the highly corrosive Piranha treatment for surface activation and the temperature of $\SI{585}{\celsius}$ required for the glass bonding. The cleaning procedure of the chip, etch mask, and etching parameters were optimized to minimize pinhole generation and channel roughness. As an etch mask, thin film layers of $\SI{50}{\nano \metre}$ Cr and  $\SI{200}{\nano \metre} + \SI{100}{\nano \metre}$ Au were used. It enabled a near defect free etching of $\SI{30}{\micro \metre}$ deep channels in HF while protecting the underlining electrodes. An experimental setup was assembled to demonstrate deflection of fluorescent polystyrene particles illustrating cells. It was unsuccessful most likely due to a faulty electrode. The fabrication of a new chip was unfortunately not possible because of the facility lockdown during a pandemic. However, the fabrication recipe and design improvement ideas presented here grant a good foundation for future continuations on this project.
+Glass, being transparent and chemically inert, is an optimal material for spectroscopic analysis and as a microfluidic environment. Thus, a fabrication recipe for a glass (Soda-lime) microfluidic chip including electrodes was developed. Using electron beam lithography and thin film deposition, such a chip was realised with minimised defects. The electrodes consisted of a sandwich of Ti, Au, Ti and $\mathrm{SiO_2}$. They could withstand the highly corrosive Piranha treatment for surface activation and the temperature of $\SI{585}{\celsius}$ required for the glass bonding. The cleaning procedure of the chip, etch mask, and etching parameters were optimized to minimize pinhole generation and channel roughness. As an etch mask, thin film layers of $\SI{50}{\nano \metre}$ Cr and  $\SI{200}{\nano \metre} + \SI{100}{\nano \metre}$ Au were used. It enabled a near defect free etching of $\SI{30}{\micro \metre}$ deep channels in HF while protecting the underlining electrodes. An experimental setup was assembled to demonstrate deflection of fluorescent polystyrene particles illustrating cells. The proper flow of fluorescent particles was established, but the sorting was unsuccessful most likely due to a faulty electrode. The fabrication of a new chip was unfortunately not possible because of the facility lockdown due to the covid-19 pandemic. However, the fabrication recipe and design improvement ideas presented here grant a good foundation for future continuations on this project.
 
+}
 
 
 \bigskip
@@ -101,21 +105,23 @@ Glass, being transparent and chemically inert, is an optimal material for spectr
 
 % Bibliographic information
 Peter Balogh\\
-\Otsikko \\
+Syöpäsolujen erottelu dielektroforeesilla mikrofluidisessa ympäristössä  \\
 Pro gradu -tutkielma \\
 Fysiikan laitos, Jyväskylän yliopisto, 2020, \pageref{LastPage}~pages.
 
 \bigskip
 
-% Abstract text
-\begin{otherlanguage}{english}
-\noindent This should be written in English.
-\end{otherlanguage}
+{\setstretch{1.0}
+\noindent Mikrofluidiikka mahdollistaa mikrobiologisten partikkeleiden, kuten solujen, viruksien, proteiinien ja DNA:n analysoinnin. Se pystyyy täyttämään näiden tiukat elinolo-vaatimukset, jotka sisältävät ympäristön paineen, lämpötilan ja kemiallisen koostumuksen. Tarkoituksena oli kehittää valmistusmenetelmä mikrofluidiselle sirulle, mikä pystyisi erottelemaan yksittäisiä fluoresenssilla merkattuja syöpäsoluja. Sirussa kulkevia soluja tarkasteltaisiin spektroskopian menetelmin ja mikäli solu ilmaisisi fluoresenssia, dielektroforeesinen voima ohjaisi sen erilleen talteen otettavaksi. Valmistamalla tällainen siru, joka pystyisi analysoimaan verinäytteestä tuhansia soluja sekunnissa ja erotella niistä yksittäiset syöpäsolut, pystyttäisiin vaikuttamaan merkittävästi syöpätutkimuken kehitykseen. 
+
+Lasi on optimaalinen valinta tällaiselle sirulle, sillä sen läpinäkyvyys ja kemiallinen vakaus mahdollistaa spektroskopian ja mikrofluidisen ympäristön tarjoamisen. Tästä syystä siru oli kehitetty käyttämällä substraattina Soda-Lime lasia. Käyttämällä elektronisuihkulitografiaa, fysikaalista kalvonkasvatusmenetelmää sekä muita mikrofabrikaation työkaluja, sirun valmistus saatiin kehitettyä. Dielectroforeesia varten valmistettiin elektrodit, jotka koostuivat Ti, Au ,Ti ja $\mathrm{SiO_2}$ kerroksista. Ne olivat tarpeeksi kestäviä selvitääkseen lasien bondaukseen tarvittavan korkean lämpötilan ($\SI{585}{\celsius}$) sekä hyvin syövyttävän Piraija liuoksen. Sirun puhdistusmenetelmät, etsausmaski sekä etsausparametrit optimoitiin tasaisen ja virheettömän pinnan aikaansaamiseksi. Etsausmaskina käytettiin $\SI{50}{\nano \metre}$ Cr ja $\SI{200}{\nano \metre} + \SI{100}{\nano \metre}$ Au, joka kesti $\SI{30}{\micro \metre}$ syvien kanavien etsauksen vetyfluoridilla ja pystyi suojelemaan sen alla olevia elektrodeja. Koejärjestely suoritettiin dielektroforeettisen erottelun havainnollistamiseksi fluoresoivilla polystyreeni partikkeleilla. Partikkelit saatiin onnistuneesti virtaamaan kanavien läpi, mutta niiden dielectroforeettinen ohjaaminen epäonnistui. Tähän syynä oli luultavasti hajonnut elektrodi. Uuden sirun valmistus ei ollut mahdollista laitoksen laitoksen suljettua covid-19 pandemian vuoksi. Sirun valmistusohjeet ja niiden parantamsehdotukset takaavat kuitenkin vahvan perustan projektin jatkamiselle. 
+
+}
 
 \bigskip 
 
 % Keywords
-\noindent Keywords: Thesis, abstract, writing, instructions
+\noindent Avainsanat: Mikrofluidiikka, Lasin märkäetsaus, Dielektroforeesi, Solujen lajittelu, Valmistus
 
 % --------------------------------------------------------------------------
 % ESIPUHE
@@ -152,13 +158,13 @@ Fysiikan laitos, Jyväskylän yliopisto, 2020, \pageref{LastPage}~pages.
 \section{Introduction}
 \label{sec:introduction}
 
-Microfluidics is a field where systems operate with smaller quantities of fluids than nanolitre ($\SI{0.001}{\milli \metre}^3$). Working with such small volumes allows high speed and precise localisation for analysing small particles. Today, microfluidics is mainly used for molecular analysis, but it started off in the 1950’s being a part of ink jet printer manufacturing \cite{gervais_microfluidic_2011}. From there on microfluidics developed after the cold war to field-deployable systems for detection of biological and chemical hazards. In 1980 the rapid growth of molecular biology genomics pushed the development for high throughput DNA sequencing. Finally, the development of the silicon microelectronics contributed with their influence. Photolithography methods could be used to used for microfluidics which allowed further complexity being added on chips, such as electronical detection mechanisms. \cite{whitesides_origins_2006}
+Microfluidics is a field where systems operate with smaller quantities of fluids than nanolitre ($\SI{0.001}{\milli \metre}^3$). Working with such small volumes allows high speed and precise localisation for analysing small particles. Today, microfluidics is mainly used for molecular analysis, but it started off in the 1950’s being a part of ink jet printer manufacturing \cite{gervais_microfluidic_2011}. From there on microfluidics developed after the cold war to field-deployable systems for detection of biological and chemical hazards. In 1980 the rapid growth of molecular biology genomics pushed the development for high throughput DNA sequencing. Finally, the development of the silicon microelectronics contributed with their influence. Photolithography methods could be used for fabricating microfluidics which allowed further complexity being added on chips, such as electronical detection mechanisms. \cite{whitesides_origins_2006}
 
 Microfluidics give the possibility for cell separation and analysis. Resulting from the small volumes, laminar and high flow speed is achievable. Thus, single cells can be guided through channels and analysis with a high throughput. One important application for this is the separation of individual cancer cells from blood. For cancer treatment, thorough analysis of the cells is required to find out which drugs can work on the specific cancer of an individual. The cells could be screened from blood thus requiring no physical operation, which is important for tumours in difficult areas (e.g. the brain). Fast sorting is required because of their low concentration in blood, circulating cancer cells can be as rare as one in $10^8$ blood cells \cite{huang_enrichment_2013}. This sets the requirement fast analysis; the throughput should be over the kHz range to be practical. 
 
-There are multiple ways for sorting and detecting cells. Optical, thermal, chemical, acoustic, mechanical, magnetic and electrical techniques have been used for cell sorting \cite{ahn_dielectrophoretic_2006,zhang_towards_2015, voldman_electrical_2006}. To differentiate between cells their intrinsic properties, such as size, refractivity or electrical properties can be exploited. One method is to label a cell with a biological marker.  For example, an antibody attached to a fluorophore can label specific proteins or cells selectively. The availability of various biological labels allows cells to be differentiated by fluorescence, radioactivity or by a change in their electromagnetic properties \cite{wilhelm_universal_2008}. Dielectrophoresis is a phenomenon where a force can be exerted on a polarisable particle using a non-uniform electric field. It allows control of unlabelled cells and is the one the fastest sorting methods \cite{zhang_towards_2015}.
+There are multiple ways for sorting and detecting cells. Optical, thermal, chemical, acoustic, mechanical, magnetic and electrical techniques have been used for cell sorting \cite{ahn_dielectrophoretic_2006,zhang_towards_2015, voldman_electrical_2006}. To differentiate between cells their intrinsic properties, such as size, refractivity or electrical properties can be exploited. One method is to label a cell with a biological marker.  For example, an antibody attached to a fluorophore can label specific proteins or cells selectively. The availability of various biological labels allows cells to be differentiated by fluorescence, radioactivity or by a change in their electromagnetic properties \cite{wilhelm_universal_2008}. Dielectrophoresis is a phenomenon where a force can be exerted on a polarisable particle using a non-uniform electric field. It allows control of unlabelled cells and is one of the fastest sorting methods \cite{zhang_towards_2015}.
 
-A highly popular method for microfluidic device fabrication is “soft lithography”. It includes the use of polymers such as Polydimethylsiloxane (PDMS) to create mold of microstructures. Although it is an inexpensive and fast method capable of creating complex structures like valves and pumps, it has its limitations \cite{xia_soft_1998,tian2008introduction, pethig_review_2010, grover_monolithic_2003}. PDMS can swell because of organic solvents and be damaged \cite{lee_solvent_2003}. Polymers also have limited chemical, mechanical and thermal resistance. In addition, they restrict low wavelength light ($\SI{400}{\nano \metre}$) required for laser induced fluorescence spectroscopy \cite{tian2008introduction,stankova_optical_2016}. Amongst the huge spectrum of microfluidic devices, rarely a pure glass device is manufactured because soft lithography methods being much easier and cheaper. Glass based microfluidics have three main advantages in biological analysis, they are chemically thermally and mechanically stable and are transparent in the visible light wavelength region. The mechanical stability allows to create high pressure, thus high throughput systems. The chemicals stability together with thermal stability allows various solvent usage and cleaning possibility of clogged devices for repeatable use \cite{ofner_high-throughput_2017}. The isolating and heat dissipation properties of glass also allow for high-voltage and frequency dielectrophoretic sorting \cite{effenhauser_high-speed_1994}.
+A highly popular method for microfluidic device fabrication is “soft lithography”. It includes the use of polymers such as Polydimethylsiloxane (PDMS) to create a mold of microstructures. Although it is an inexpensive and fast method capable of creating complex structures like valves and pumps, it has its limitations \cite{xia_soft_1998,tian2008introduction, pethig_review_2010, grover_monolithic_2003}. PDMS can swell because of organic solvents and thereby damage the structures. \cite{lee_solvent_2003}. Polymers also have limited chemical, mechanical and thermal resistance. In addition, they restrict low wavelength light ($\SI{400}{\nano \metre}$) required for laser induced fluorescence spectroscopy \cite{tian2008introduction,stankova_optical_2016}. Amongst the huge spectrum of microfluidic devices, rarely a pure glass device is manufactured because soft lithography methods being much easier and cheaper. Glass based microfluidics have three main advantages in biological analysis, they are chemically, thermally and mechanically stable and are transparent in the visible light wavelength region. The mechanical stability allows to create high pressure, thus high throughput systems. The chemicals stability together with thermal stability allows various solvent usage and cleaning possibility of clogged devices for repeatable use \cite{ofner_high-throughput_2017}. The isolating and heat dissipation properties of glass also allow for high-voltage and frequency dielectrophoretic sorting \cite{effenhauser_high-speed_1994}.
 Sorting cells with a $100 \percent$ accuracy \cite{takahashi_non-destructive_2004, thomas_imagebased_2019} or high throughput methods \cite{zhang_towards_2015} have been developed in the past. Sciambi and Abate have even manufactured a device capable of $\SI{30}{\kilo \Hz}$ sorting with over $99 \percent$ accuracy \cite{sciambi2015accurate}. Regardless, high speed together with $100\percent$ accuracy has not yet been shown.
 
 Dielectrophoretic droplet sorting in a glass device has been demonstrated by Ján Borovský for sorting carbon nanotubes at a femtolitre scale \cite{borovsky}. The aim of this thesis is to upscale such a device to be capable of single cell, high throughput, dielectrophoretic sorting. It would be the a part of a microfluidic chip complex, where cells are pre-sorted to higher concentrations using inertial sorting (capable of sorting $\num{3e8}$ cells/s \cite{edd_microfluidic_2020}) and then individual sorting done with dielectrophoresis. Here, the fabrication process  is developed to realise a microfluidic chip suitable for dielectrophoretic sorting using fluorescence spectroscopy. The process is conducted using basic microfabrication methods; e-beam lithography, thin film evaporation, and wet etching.
@@ -189,8 +195,8 @@ The flow in microfluidic channels can be described by the Poiseuille equation. I
     Q = -\frac{\pi r^4}{8 \mu} \frac{dP}{dz}
  \end{equation}
  %
- where $r$ is the radius of the pipe radius, $\mu$ the fluid viscosity and $P$ is the pressure along the pipe axis $z$ \cite{tian2008introduction}. Although the profile of the manufactured channels in this thesis is different from a circular pipe, this gives an understanding of the features governing the velocity of a laminar flow. For precise flow control the channel dimensions and the inlet/outlet pressures play an important role. 
- Given an incompressible fluid, the microfluidic channels can be modelled by the laws electric currents. The hydrodynamic resistance $R_{hyd}$ of a constant flow rate can be expressed as 
+ where $r$ is the radius of the pipe, $\mu$ the fluid viscosity and $P$ is the pressure along the pipe axis $z$ \cite{tian2008introduction}. Although the profile of the manufactured channels in this thesis is different from a circular pipe, this gives an understanding of the features governing the velocity of a laminar flow. For precise flow control the channel dimensions and the inlet/outlet pressures play an important role. 
+ Given an incompressible fluid, the microfluidic channels can be modelled by the laws of electric currents. The hydrodynamic resistance $R_{hyd}$ of a constant flow rate can be expressed as 
  %
  \begin{equation}
      \label{eq:P}
@@ -204,7 +210,7 @@ The flow in microfluidic channels can be described by the Poiseuille equation. I
 
 \subsection{Fluorescent detection}
 \label{sec:x2}
-The absorption of electromagnetic radiation into an atom or excites it to a higher energy level. An excited electron returning to its lower energy state will emit its excess energy as a photon. The emitted light is called fluorescence. The electron loses a small amount of energy to vibrational relaxation during the short lifetime of the excited state before emitting a photon and returning to its ground state. This is called the Stokes shift and causes the emitted photon to have a higher wavelength than the exiting one (Figure \ref{fig:atom}). This phenomenon is often used in biology to detect and label cells, cell organelles and even single molecules. Fluorescent molecules (fluorophores) are commercially available with a wide variety of excitation/emission wavelengths, molecular structure, and quantum yield (photons emitted per absorbed ). The main advantage of fluorescence is the shift in emission wavelength. A lower wavelength monochromatic light can be used illuminate the sample whilst only the emitted light is detected by filtering the lower wavelengths (Figure \ref{fig:mic}). Fluorescent labels can have almost $100 \; \percent$ accurate binding specificity and can have increased fluorescence up to an order of magnitude when in the correct binding site or environment, in example, within the cell. These labels are organic and deliverable within a cell granting the possibility for live cell labelling and imaging. \cite{toseland2013fluorescent}
+The absorption of electromagnetic radiation into an atom or excites it to a higher energy level. An excited electron returning to its lower energy state will emit its excess energy as a photon. The emitted light is called fluorescence. The electron loses a small amount of energy to vibrational relaxation during the short lifetime of the excited state before emitting a photon and returning to its ground state. This is called the Stokes shift and causes the emitted photon to have a longer wavelength than the exiting one (Figure \ref{fig:atom}). This phenomenon is often used in biology to detect and label cells, cell organelles and even single molecules. Fluorescent molecules (fluorophores) are commercially available with a wide variety of excitation/emission wavelengths, molecular structure, and quantum yield (photons emitted per absorbed). The main advantage of fluorescence is the shift in emission wavelength. A shorter wavelength monochromatic light can be used illuminate the sample whilst only the emitted light is detected by filtering the shorter wavelengths out (Figure \ref{fig:mic}). Fluorescent labels can have almost $100 \; \percent$ accurate binding specificity and can have increased fluorescence up to an order of magnitude when in the correct binding site or environment, for example, within the cell. These labels are organic and deliverable within a cell granting the possibility for live cell labelling and imaging. \cite{toseland2013fluorescent}
  
 
 \begin{figure}[h]
@@ -228,10 +234,10 @@ The absorption of electromagnetic radiation into an atom or excites it to a high
         \includegraphics[width=\linewidth]{images/microsco.pdf} 
         \caption{} \label{fig:mic}
     \end{subfigure}
-    \caption{a) Basic principle of fluorescence. b) The excitation/emission wavelength of a fluorescent dye (Alexa Fluor 555) as an example. c) The simplified idea of fluoresce imaging.} \label{fig:fluore}
+    \caption{a) Basic principle of fluorescence. b) The excitation/emission wavelength of a fluorescent dye (Alexa Fluor 555) as an example. c) The simplified idea of fluorescence imaging.} \label{fig:fluore}
 \end{figure}
 
-A characteristic binding site is required achieve targeted protein labelling, but cancer cells include mostly the same proteins as a healthy cell. To distinguish them from normal cells the Warburg phenomenon can be exploited. It is a fundamental characteristic of cancer cells in which fermentation is preferred over phosphorylation as an energy acquiring mechanism \cite{warburg1927metabolism}. As a result, the glucose intake of cancer cells is significantly higher compared to regular cells. Using labelled glucose molecules that are altered to prevent their metabolization, the labelled glucose will accumulate in high-glucose-using cells. This is a common method used in positron emission tomography (PET) scans with a radioactive labels to detect tumours. There are also glucose labels like 2-NBDG (2-[N-(7-nitrobenz-2-oxa-1, 3-diazol-4-yl)amino]-2-deoxy-D-Glucose) which can be used for fluorescent detection of cancer cells \cite{cai20132}. Because of the short lifetime (nano seconds) of the excited state in fluorophores, fluorescence is a suitable method for fast throughput imaging.
+A characteristic binding site is required to achieve targeted protein labelling, but cancer cells include mostly the same proteins as a healthy cell. To distinguish them from normal cells the Warburg phenomenon can be exploited. It is a fundamental characteristic of cancer cells in which fermentation is preferred over phosphorylation as an energy acquiring mechanism \cite{warburg1927metabolism}. As a result, the glucose intake of cancer cells is significantly higher compared to regular cells. Using labelled glucose molecules that are altered to prevent their metabolization, the labelled glucose will accumulate in high-glucose-using cells. This is a common method used in positron emission tomography (PET) scans with radioactive labels to detect tumours. There are also glucose labels like 2-NBDG (2-[N-(7-nitrobenz-2-oxa-1, 3-diazol-4-yl)amino]-2-deoxy-D-Glucose) which can be used for fluorescent detection of cancer cells \cite{cai20132}. Because of the short lifetime (nano seconds) of the excited state in fluorophores, fluorescence is a suitable method for fast throughput imaging.
 
 
 \newpage
@@ -241,7 +247,8 @@ A characteristic binding site is required achieve targeted protein labelling, bu
 \label{sex:x3.1}
 
 Dielectrophoresis (DEP) is a phenomenon, where a non-uniform electric field can cause a force on a polarizable particle. This phenomenon can be used to move and separate label-free particles. A uniform electric field would cause a uniform charge-distribution on an polarizable particle therefore creating a net-force equal to zero. Respectively, a non-uniform electric field will cause the positive and negative charge accumulation inside the particle to be uneven, causing a net force (Figure \ref{fig:DEP1}b). The direction and the magnitude of the force will depend on the particle’s and mediums polarizability and the electric field \cite{shafiee_contactless_2009}. The term dielectrophoresis was already introduced in 1951 by Herbert A. Pohl \cite{pohl_motion_1951}. It has since gained popularity in microsystems because of its simplicity and favourable scalability $F_{dep} \propto V^{2}/L^{3}$. Here $V$ is the applied voltage and $L$ the distance from particle to electrodes. Meaning, on a smaller system, less voltage is required to achieve the same force $F_{dep}$ \cite{castellanos_electrohydrodynamics_2003}.
-\begin{figure}[h]%
+\vaali
+\begin{figure}[H]%
     \centering
     \includegraphics[width=.324\linewidth]{images/pooolar.pdf}\quad\includegraphics[width=.61\linewidth]{images/merged.pdf}
     \qquad
@@ -250,15 +257,16 @@ Dielectrophoresis (DEP) is a phenomenon, where a non-uniform electric field can 
     \caption{Visualisation of DEP. A) A Polarised sphere has a dipole moment $(\vec{p})$. B) The net force in a uniform and non-uniform electric field C) Particle and medium permittivity effect on electric field }%
     \label{fig:DEP1}%
 \end{figure}
+\vaali
 
-There are multiple mathematical models describing DEP \cite{jubery_dielectrophoretic_2014}. They vary on their complexity and demand on computational power. Here we will be presenting a simplified and general method for the DEP force calculations which has been presented by a number review articles \cite{cottet_mydep_2019, morgan_single_2007,li_review_2014,voldman_electrical_2006}. The force experienced by a dielectric particle can be expressed as
+There are multiple mathematical models describing DEP \cite{jubery_dielectrophoretic_2014}. They vary on their complexity and demand on computational power. Here we will be presenting a simplified and general method for the DEP force calculations which has been presented by a number of review articles \cite{voldman_electrical_2006, li_review_2014, cottet_mydep_2019, morgan_single_2007}. The force experienced by a dielectric particle can be expressed as
 %
 \begin{equation}
    \label{eq:F_dielec}
    \vec{F}_{\mathrm{DEP}} = \vec{p} \vec{\nabla} \vec{E}\;,
 \end{equation}
 %
-where $\vec{p}$  is the dipole moment vector, and $(\vec{\nabla} \vec{E})$ the gradient of electric field. The dipole moment depends on the shape of the particle, for a perfect dielectric uniform sphere, it can be expressed as
+where $\vec{p}$  is the dipole moment vector, and $(\vec{\nabla} \vec{E})$ the gradient of the electric field. The dipole moment depends on the shape of the particle, for a perfect dielectric uniform sphere, it can be expressed as
 %
 \begin{equation}
    \label{eq:dipmoment}
@@ -272,14 +280,14 @@ Here $R$ is the radius of the particle, $\epsilon_{f}$ the absolute permittivity
    f_{CM} = \left(\frac{\epsilon_{p}^* - \epsilon_{f}^*}{\epsilon_{p}^* + 2\epsilon_{f}^*} \right)\;,
 \end{equation}
 %
-Where and $\epsilon^*$ the complex absolute permittivity of the particle (p) and the surrounding fluid (f). They are related to conductivity $\sigma$ and the angular frequency $\omega=2\pi f$ of the electric field as 
+Where $\epsilon^*$ the complex absolute permittivity of the particle (p) and the surrounding fluid (f). They are related to conductivity $\sigma$ and the angular frequency $\omega=2\pi f$ of the electric field as 
 %
 \begin{equation}
    \label{eq:complex}
    \epsilon^* = \epsilon - \frac{i \sigma}{\omega}\;,
 \end{equation}
 %
-$i$ being $\sqrt{-1}$. Combining equations (1) and (2) we get and expression for the force
+$i$ being $\sqrt{-1}$. Combining equations (\ref{eq:F_dielec}) and (\ref{eq:dipmoment}) we get and expression for the force
 %
 \begin{equation}
    \label{eq:F_DEP_norm}
@@ -293,7 +301,7 @@ For an AC potential the time average of the force can be expressed as
    \langle F_{\mathrm{DEP}}\rangle = 2 \pi \epsilon_f R^3 \mathrm{Re}[f_{CM}] \vec{\nabla} (E^2_{RMS}) ,
 \end{equation}
 %
-where $E_{RMS}$ is the root mean square value of the electric field $E=\mathrm{Re}[E_0 e^{i \omega t}]$. When the CM factor (Eq.\ref{eq:complex}) is expanded we can see the frequency dependence.
+where $E_{RMS}$ is the root mean square value of the electric field $E=\mathrm{Re}[E_0 e^{i \omega t}]$. When the CM factor (Eq. \ref{eq:CM})  is expanded (Eq.\ref{eq:complex}) we can see the frequency dependence.
 %
 \begin{equation}
    \label{eq:CM_open}
@@ -310,11 +318,6 @@ Examining the electric field at low  $(\omega = 0)$ or a high frequencies $(\ome
    \label{eq:watinf}
    f_{CM} = \frac{\epsilon_p - \epsilon_f} {\epsilon_p + 2\epsilon}, \;\mathrm{when } \;\omega \rightarrow \infty\;
 \end{equation}
-
-
-
-
-
 At high frequency, the particle acts like a capacitor and is dominated by its permittivity. Whereas, at very low frequencies the current in the particle moves in phase with the electric field thus the conduction is the dominating factor \cite{cetin_dielectrophoresis_2011, li_review_2014, pethig_review_2010}. 
 From the CM factor (Eq.\ref{eq:CM}) we can also see that the permittivity of the particle and the surrounding medium determines whether force is pushing or pulling towards the region of stronger electric field. If the particle is more polarizable $(\epsilon_p>\epsilon_f)$ a positive force (pDEP) is pushing towards he higher field and vice versa (Figure \ref{fig:DEP1}c). We can also see from $\epsilon_p>>\epsilon_f$ and  $\epsilon_p<<\epsilon_f $ that the positive DEP force (pDEP) can be twice the magnitude of the negative DEP force (nDEP).
 The most important points arising from these equations are:
@@ -326,23 +329,21 @@ The most important points arising from these equations are:
     \item The Force is zero in a uniform field $(\nabla E=0)$.
     \item The force depends non-linearly on the field magnitude $(E^2)$ and showing that both an AC and CD field can cause a DEP force.
     \item The dependence on particle volume $\propto R^3$ allows separation of particles based on size.
-    \item Due to conductivity and permittivity dependence of the medium and particle, the DEP force can be pulling or  pushing. By changing the frequency, there is a crossover-frequency where pDEP changes to nDEP can be achieved. \cite{zhang_dielectrophoresis_2010}
+    \item Due to conductivity and permittivity dependence of the medium and particle, the DEP force can be pulling or  pushing. By changing the frequency, there is a crossover-frequency where pDEP changing to nDEP can be achieved. \cite{zhang_dielectrophoresis_2010}
 \end{enumerate}
-The simplifications made when deriving Eq.\ref{eq:F_DEP} need to be taken into consideration, meaning that the particle needs to be a perfect homogeneous dielectric sphere with no net charge. In addition, the polarisation of the particle is assumed as a simple dipole moment, even though a non-uniform field is causing the polarisation.  The medium around the particle is considered infinite and not affected by the particle itself. \cite{pethig_review_2010}
-
-In this thesis the aim is to use DEP for cell sorting. They have various shapes and are not uniform. Cells contain membranes, cytoplasm and organelles. In order to have higher accuracy for simulations more precise mathematical models can be introduced at the cost of computational time \cite{jubery_dielectrophoretic_2014, cetin_dielectrophoresis_2011, pethig_review_2010, cottet_mydep_2019}. But, even with its simplifications, this model is sufficient to describe the our DEP system because the underlying physics are present.
+The simplifications made when deriving Eq.\ref{eq:F_DEP} need to be taken into consideration, meaning that the particle needs to be a perfect homogeneous dielectric sphere with no net charge. In addition, the polarisation of the particle is assumed as a simple dipole moment, even though a non-uniform field is causing the polarisation.  The medium around the particle is considered infinite and not affected by the particle itself. \cite{pethig_review_2010} In this thesis the aim is to use DEP for cell sorting. They have various shapes and are not uniform. Cells contain membranes, cytoplasm and organelles. In order to have higher accuracy for simulations more precise mathematical models can be introduced at the cost of computational time \cite{jubery_dielectrophoretic_2014, cetin_dielectrophoresis_2011, pethig_review_2010, cottet_mydep_2019}. But, even with its simplifications, this model is sufficient to describe the DEP system and the underlying physics.
 
 \subsubsection{Single shell model}
 \label{sec:x3.2}
 
-The CM factor for a mammalian cell has characteristic properties. For example, a white blood cell has been demonstrated \cite{voldman_electrical_2006}. At low frequencies ($<\SI{100}{\kilo \Hz}$) the cell is less polarizable than a typical ionic solution thus causing a nDEP effect. Similarly when going to MHz frequencies, the conductivities of the solution and the cell will matter more, thus resulting in a pDEP in low conductivity solutions ($\SI{5.5e-6}{ \siemens \per \metre}$ for Di water \cite{pashley2005gassed}). At GHz range, the the permittivities will be mainly compared (Eq.\ref{eq:watinf}) and likely to cytoplasmic proteins, the permittivity of the cell is low compared to water and results in a negative DEP.  Although the frequency depends highly on the cell and medium properties, the “single-shell” model (Figure \ref{fig:single_shell}) predicts this two times cross over frequency \cite{cetin_dielectrophoresis_2011,pethig_review_2010, voldman_electrical_2006, cottet_mydep_2019}. The single-shell model uses a CM factor where a shell (cf. cell membrane) is accounted for with its own properties. In the single shell model the complex permittivity is
+The CM factor for a mammalian cell has characteristic properties. For example, a white blood cell has been demonstrated \cite{voldman_electrical_2006}. At low frequencies ($<\SI{100}{\kilo \Hz}$) the cell is less polarizable than a typical ionic solution thus causing a nDEP effect. Similarly when going to MHz frequencies, the conductivities of the solution and the cell will matter more, thus resulting in a pDEP in low conductivity solutions ($\SI{5.5e-6}{ \siemens \per \metre}$ for DI water \cite{pashley2005gassed}). At GHz range, the permittivities will be mainly compared (Eq.\ref{eq:watinf}) and likely to cytoplasmic proteins, the permittivity of the cell is low compared to water and results in a negative DEP.  Although the frequency depends highly on the cell and medium properties, the “single-shell” model (Figure \ref{fig:single_shell}) predicts these two cross over frequencies \cite{cetin_dielectrophoresis_2011,pethig_review_2010, voldman_electrical_2006, cottet_mydep_2019}. The single-shell model uses a CM factor where a shell (cf. cell membrane) is accounted for with its own properties. In the single shell model the complex permittivity is
 %
 \begin{equation}
    \label{eq:shellmodel}
    \epsilon^*=\epsilon_{mem} \left[ \frac{\left( \frac{r}{r-d}\right)^3 + 2\left(\frac{\epsilon_{CP}^* - \epsilon_{mem}^*}{\epsilon_{CP}^* + 2\epsilon_{mem}^*} \right)}{\left( \frac{r}{r-d}\right)^3 -\left(\frac{\epsilon_{CP}^* - \epsilon_{mem}^*}{\epsilon_{CP}^* + 2\epsilon_{mem}^*} \right)}        \right] \;,
 \end{equation}
 %
-where $r$ , $d$ the thickness of the membrane, $\epsilon_{CP}^*$ and  $\epsilon_{mem}^*$ are the complex permittivities of the cytoplasm an the membrane. A simulation of the CM factor using the single shell model for HT-29 cells is shown in Figure \ref{fig:single_shell}. The result is from a Java  simulator published by Cottlet et Al \cite{cottet_mydep_2019}.
+where $r$ is the cell radius, $d$ the thickness of the membrane, $\epsilon_{CP}^*$ and  $\epsilon_{mem}^*$ are the complex permittivities of the cytoplasm an the membrane. A simulation of the CM factor using the single shell model for HT-29 cells is shown in Figure \ref{fig:single_shell}. The result is from a Java  simulator published by Cottlet et al \cite{cottet_mydep_2019}.
 
 \begin{figure}[h]%
     \centering
@@ -350,7 +351,7 @@ where $r$ , $d$ the thickness of the membrane, $\epsilon_{CP}^*$ and  $\epsilon_
     \qquad
     \begin{minipage}{1.2in}
     \end{minipage}%
-    \caption{(Left) CM factor for Human colon cancer cells (HT-29) has been simulated with MyDEP tool \cite{cottet_mydep_2019}. The values used in the simulation are presented in table \ref{tab:cell_table}. A change in cell radius and a change in media was also simulated for comparison. (Right) The single shell model.}%
+    \caption{(Left) CM factor for Human colon cancer cells (HT-29) has been simulated with MyDEP tool \cite{cottet_mydep_2019}. The values used in the simulation are presented in Table \ref{tab:cell_table}. A change in cell radius and a change in media was also simulated for comparison. (Right) The single shell model.}%
     \label{fig:single_shell}%
 \end{figure}
 
@@ -359,10 +360,10 @@ For comparison, a simulation was also done with the same cell having a larger ra
 
 \begin{table}[h]
    \centering
-   \caption{The literacy values for HT-29 Human colon cancer cells \cite{wu_dielectrophoretic_2012}.}
+   \caption{The literacy values of the simulated HT-29 cell's permittivity ($\sigma$), conductivity ($\epsilon$) and radius ($r$) \cite{wu_dielectrophoretic_2012}. The subscripts refer to the cytoplasm (CP), cell membrane (mem) and the surrounding medium (m). }
    \label{tab:cell_table}
    \begin{tabular}{cccccc} \toprule
-      $\sigma_m$ (S/m)    & $\epsilon_{mem}$ & $\epsilon_{mem}$ & $\sigma_m$ (S/m) & $\sigma_m$ (S/m) & $R$ ($\mathrm{\micro\metre})$\\ \midrule
+      $\sigma_m$ (S/m)    & $\epsilon_{mem}$ & $\epsilon_{CP}$ & $\sigma_{mem}$ (S/m) & $\sigma_{CP}$ (S/m) & $r$ ($\mathrm{\micro\metre})$\\ \midrule
       $0.01$              &  $4.68$        &  $68.31$       & $6.63e-6$        & $0.279$          & $6.6$\\
         \bottomrule
    \end{tabular}
@@ -374,7 +375,7 @@ For comparison, a simulation was also done with the same cell having a larger ra
 For successful high throughput cell sorting, the correct parameters are needed to be chosen to our DEP system by accounting for all the challenges and advantages. The electrodes for DEP can be manufactured to be in contact with the sample fluid or contactless. DEP can be achieved using AC or DC currents. The field strength can be chosen by varying the potential or the dimensions of the electrodes. For nDEP or pDEP the correct frequency needs to be chosen for the AC alternative. As an outcome, the DEP force needs to out scale drag force, buoyancy force, electrothermal forces and Brownian motion (not a problem for >1um particles) \cite{cetin_dielectrophoresis_2011}.
 
 For DEP applications, the most common way is placing the electrodes in contact with the liquid. This allows the particles to be closer to the electrodes thus perceiving a higher gradient which allows for better control precision. \cite{voldman_electrical_2006}. Unfortunately, contact with the sample fluid can lead to many problems, especially with biological samples. Electrode polarization, dissolution, bubble formation, contamination of the fluid and fouling can affect the operation. Especially in DC systems electrochemical effects can produce $\mathrm{H_2}$ and $\mathrm{O_2}$ gas. Joule (resistive) heating causes a problem, already at $4\celsius$ above body temperature ($37\celsius$) it can lead to mammalian cell death. \cite{voldman_electrical_2006,cetin_dielectrophoresis_2011,shafiee_contactless_2009}.
-Using contactless electrodes, bubble formation, contamination and  fouling are completely eliminated. The medium is then only in contact is the substrate. This also reduces heating from a high intensity light, e.g. Fluorescence inducing light, absorbed by the electrodes. For contactless electrodes AC is the better choice, because DC would require higher voltages for sufficient DEP, which leads to joule heating. A high frequency electric field is also less stressing on a cell membrane, which have voltage sensitive proteins, than that of a DC field \cite{voldman_electrical_2006}.
+Using contactless electrodes, bubble formation, contamination and  fouling are completely eliminated. The medium is then only in contact with the substrate. This also reduces heating from a high intensity light, e.g. fluorescence inducing light, absorbed by the electrodes. For contactless electrodes AC is the better choice, because DC would require higher voltages for sufficient DEP, which leads to joule heating. A high frequency electric field is also less stressing on a cell membrane, which have voltage sensitive proteins, than that of a DC field \cite{voldman_electrical_2006}.
 
 
 
@@ -609,7 +610,7 @@ Wet etching of glass is difficult due to its chemical stability and it is mainly
 \end{equation}
 
 The challenge with HF is that it is a highly dangerous chemical and for safety reasons, boiling and sonication is not recommended. Additionally, only a few mask materials are chemically inert to it.  Using solely a photoresist mask for HF etching has been reported \cite{lin2001fast,guanglong2012microfluidic}, but the most common mask for HF glass etching is the combination of Au and Cr, which are both inert to HF \cite{iliescu2005characterization,tay2006defect}. Other combinations like WTi/Cu and Cr/Cu have also been demonstrated as being able to act as a masking material \cite{Hgglund2013CharacterizationOM,iliescu2008wet}.
-From equation \ref{eq:HF_etch} we can see that the reaction depends highly on the concentration of HF. But the formula is applicable only for pure quartz glass. The glass used in this thesis was Soda Lime, which was chosen because of its low cost and high etch rate compared to other glasses \cite{srivannavit2004design}. It consists of multiple components which are presented in Table \ref{tab:soda_lime}. 
+From Eq.\ref{eq:HF_etch} we can see that the reaction depends highly on the concentration of HF. But the formula is applicable only for pure quartz glass. The glass used in this thesis was Soda Lime, which was chosen because of its low cost and high etch rate compared to other glasses \cite{srivannavit2004design}. It consists of multiple components which are presented in Table \ref{tab:soda_lime}. 
 \begin{table}[h]
     \centering
     \caption{The composition of soda-lime glass slides according to manufacturer \cite{Soda_lime_ONLINE}.}
@@ -763,12 +764,11 @@ The channel roughness was addressed first. It seemed to have a sort of randomnes
 \vaali
 \centerline{$\mathrm{ CaO \rightarrow CaF_2,\; MgO \rightarrow MgF, \; Al_2 O_3 \rightarrow AlF_3}$}
 \vaali
-By adding HCl into the etchant, these products can be made soluble:
+\noindent By adding HCl into the etchant, these products can be made soluble:
 \vaali
 \centerline{$\mathrm{CaF_2 \rightarrow CaCl_2, \; MgF \rightarrow MgCl_2, \; AlF_3 \rightarrow AlCl_3}$}
 \vaali
-
-Iliescu et al. (2005) found the optimal ratio for HF:HCl to be 10:1 concerning surface roughness and etch rate \cite{iliescu2005characterization}. Due to practical convenience (beaker size) $\SI{48}{\percent}$ HF was mixed with $\SI{37}{\percent}$ HCl (Appendix \ref{sec:chemicals}) in a ratio 9:1 ($\SI{18}{\milli \litre}:\SI{2}{\milli \litre}$). This caused a significant improvement in surface roughness. These roughness defects were still present in the thinner channels and at the outlines of the channels that were isotopically etched under the mask. This is probably a result from fresh etchant not being able to reach small corners and areas as efficiently, thus the mixing of the insoluble products with the bulk solution was slowed. Gentle mixing was applied during HF-etching to overcome the problem. The gentle wiggling of the chip during etching did yield better results but to totally overcome the problem sonication would be required. Sonication was not applied due to safety reasons of the toxic HF.
+\noindent Iliescu et al. (2005) found the optimal ratio for HF:HCl to be 10:1 concerning surface roughness and etch rate \cite{iliescu2005characterization}. Due to practical convenience (beaker size) $\SI{48}{\percent}$ HF was mixed with $\SI{37}{\percent}$ HCl (Appendix \ref{sec:chemicals}) in a ratio 9:1 ($\SI{18}{\milli \litre}:\SI{2}{\milli \litre}$). This caused a significant improvement in surface roughness. These roughness defects were still present in the thinner channels and at the outlines of the channels that were isotopically etched under the mask. This is probably a result from fresh etchant not being able to reach small corners and areas as efficiently, thus the mixing of the insoluble products with the bulk solution was slowed. Gentle mixing was applied during HF-etching to overcome the problem. The gentle wiggling of the chip during etching did yield better results but to totally overcome the problem sonication would be required. Sonication was not applied due to safety reasons of the toxic HF.
 
 
 \begin{flushleft}\textbf{Mask quality} \end{flushleft}
@@ -1074,7 +1074,7 @@ Here the complete realisation of the working microfluidic chip is presented. A m
     \begin{subfigure}{0.48\textwidth}
         \centering
         \includegraphics[width=\linewidth]{steps/3.Developed.bmp.png} 
-        \caption{PMMA developed} \label{fig:process3}
+        \caption{PMMA exposed and developed} \label{fig:process3}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.48\textwidth}
@@ -1092,7 +1092,7 @@ Here the complete realisation of the working microfluidic chip is presented. A m
     \begin{subfigure}{0.48\textwidth}
         \centering
         \includegraphics[width=\linewidth]{steps/6.-lift_off.png} 
-        \caption{Lift-off} \label{fig:process6}
+        \caption{Lift-off and etching Cr} \label{fig:process6}
     \end{subfigure}
  
     \begin{subfigure}{0.48\textwidth}
@@ -1113,7 +1113,7 @@ Here the complete realisation of the working microfluidic chip is presented. A m
     \begin{subfigure}{0.48\textwidth}
         \centering
         \includegraphics[width=\linewidth]{steps/9.developed2.png} 
-        \caption{ Development} \label{fig:process9}
+        \caption{Exposure and development} \label{fig:process9}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.48\textwidth}
@@ -1145,7 +1145,7 @@ As the first measurement the flow through the channels was measured. Visible flo
     \label{fig:flow}
 \end{figure}
 
-Despite having minor problems with pressure control, laminar flow in front of the electrodes was achieved which was sufficient for testing DEP deflection. The laminar flow was obvious from the beads keeping constantly the same “lane” they were travelling and the applicability of a Poiseuille flow due to the beads speed difference based on their distance from the channel edges \textcolor{red}{[Supplementary video1]}. When the outlet pressures were similar, the beads travelled into the channel corresponding to their “lane”. When testing the effect of DEP, the beads were moved slowly back and forth in front of the electrodes to clearly see whether they experienced any deflection\textcolor{red}{[Supplementary video2]}. Square waves with a peak to peak voltage of $\SI{1}{\kilo \volt}$ were driven through the electrodes at frequencies of $\SI{1}{\kilo \Hz}$, $\SI{10}{\kilo \Hz}$ and $\SI{30}{\kilo \Hz}$, without any observable effect on the beads. The main reason is believed to be originating from faulty electrodes. The right electrode was soldered multiple times which likely led to the destruction of the connection pads. Although no current could be measured across the faulty electrode, the tests were still run in hopes that at least one of the two bonding pads could be still operational, which would be enough to generate the necessary electric fields. Tian et al. have demonstrated an electrophoretic microtrap with the same fluorescent particles used in this thesis, electrodes at a $\SI{20}{\micro \metre}$ distance from channel edge and using electrodes at a potential of  700 to -700 V \cite{tian2018handy}. Although our electrodes were at a $\SI{30}{\micro \metre}$ distance, we are working in the same order of magnitude with dimensions and voltages. In our design the distance between the electrodes was $\SI{200}{\micro \metre}$ to spread the electric field gradient over a larger area (Figure \ref{fig:flow}). The purpose was to allow the fast travelling particles to experience DEP force over a longer distance compared to a stronger, short distance effect.
+Despite having minor problems with pressure control, laminar flow in front of the electrodes was achieved which was sufficient for testing DEP deflection. The laminar flow was obvious from the beads keeping constantly the same “lane” they were travelling and the applicability of a Poiseuille flow due to the beads speed difference based on their distance from the channel edges [\href{https://youtu.be/iNh1GMUPQsE}{Video1}, \href{https://youtu.be/Xz-v59IJdyM}{Video2}]. When the outlet pressures were similar, the beads travelled into the channel corresponding to their “lane”. When testing the effect of DEP, the beads were moved slowly back and forth in front of the electrodes to clearly see whether they experienced any deflection [\href{https://youtu.be/15CEVs_O_H0}{Video3}]. Square waves with a peak to peak voltage of $\SI{1}{\kilo \volt}$ were driven through the electrodes at frequencies of $\SI{1}{\kilo \Hz}$, $\SI{10}{\kilo \Hz}$ and $\SI{30}{\kilo \Hz}$, without any observable effect on the beads. The main reason is believed to be originating from faulty electrodes. The right electrode was soldered multiple times which likely led to the destruction of the connection pads. Although no current could be measured across the faulty electrode, the tests were still run in hopes that at least one of the two bonding pads could be still operational, which would be enough to generate the necessary electric fields. Tian et al. have demonstrated an electrophoretic microtrap with the same fluorescent particles used in this thesis, electrodes at a $\SI{20}{\micro \metre}$ distance from channel edge and using electrodes at a potential of  700 to -700 V \cite{tian2018handy}. Although our electrodes were at a $\SI{30}{\micro \metre}$ distance, we are working in the same order of magnitude with dimensions and voltages. In our design the distance between the electrodes was $\SI{200}{\micro \metre}$ to spread the electric field gradient over a larger area (Figure \ref{fig:flow}). The purpose was to allow the fast travelling particles to experience DEP force over a longer distance compared to a stronger, short distance effect.
 
 To get the deflection of the beads to work the first step would be to manufacture a new chip and successfully solder the connecting wires to the connection pads. Oher troubleshooting ideas would be to redesign the signal generating circuit to produce higher frequencies (up to $\SI{100}{\kilo \Hz}$) with higher voltages (amplitude of $\SI{800}{V}$) to increase the DEP Force. Unfortunately, the manufacture of a new chip after the first successful one was not possible due to limited access to the cleanroom as a result of the COVID-19 pandemic.
 

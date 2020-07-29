@@ -27,7 +27,7 @@
 \usepackage{xcolor}
 
 
-\addbibresource{sourcee.bib}
+\addbibresource{sourcee.bib} 
 
 %----------------------------------------------------------------------------------------
 % KANSILEHDEN MUOTOILU JA TEKSTI
@@ -43,7 +43,7 @@
 {\noindent\LARGE\bfseries \Otsikko\\[0.5\baselineskip]}\\[2\baselineskip]
 %
 % Tutkielman tyyppi ja päiväys
-{\large Master's thesis, \today}\\[3.5\baselineskip]
+{\large Master's thesis, 1.7.2020}\\[3.5\baselineskip]
 %
 % Tutkielman tekijä 
 {\normalsize Author:}\\[0.5\baselineskip] 
@@ -126,18 +126,23 @@ Lasi on optimaalinen valinta tällaiselle sirulle, sillä sen läpinäkyvyys ja 
 % --------------------------------------------------------------------------
 % ESIPUHE
 % --------------------------------------------------------------------------
-%\section*{Preface}
-%\addcontentsline{toc}{section}{Preface}
+\section*{Acknowledgements}
+\addcontentsline{toc}{section}{Acknowledgements}
 
-%Esipuheen teksti tulee tähän.
+First, I would like to thank the University of Jyväskylä for granting the facilities of the Nanoscience centre where I could conduct my experiments and work with my passion. It gave me the possibility to work with a subject regarding my favourite disciplines, Biology and Physics. My biggest thanks go to my supervisor Andreas Johansson who granted me such an interesting subject, shared his great expertise, and was always ready to help and guide me through all the challenges.
 
-%\bigskip
+A lot of credit goes for many others as well. Süha Uğur Öçal helped me jumpstart my research and thought me many skills I needed for this project. Guidance and shared expertise were also granted to me by Gianmario Scotti, Jyrki Manninen, Veli-Mikko Puupponen and Marja Tiirola. I would like to express my gratitude for the colleagues and friends who made my time in the cleanroom enjoyable. Working with all these wonderful people, I could truly see that the cornerstone of conducting scientific research is collaboration.
+
+I also owe a special thanks for my family and my lovely girlfriend Nina Nakari, who supported me and made my thesis writing during a pandemic feel like a wonderful time. Lastly, I would like to thank my friend, Oskar Celik, who studied with me through the hard times and the good: Shâttâl hâttâk patron adam.
+
+
+\bigskip
 
 %Jyväskylässä "DATE HERE"
 
 %\bigskip
 
-%Peter Balogh
+Peter Balogh
 
 % --------------------------------------------------------------------------
 % SISÄLLYS
@@ -162,9 +167,9 @@ Microfluidics is a field where systems operate with smaller quantities of fluids
 
 Microfluidics give the possibility for cell separation and analysis. Resulting from the small volumes, laminar and high flow speed is achievable. Thus, single cells can be guided through channels and analysis with a high throughput achieved. One important application for this is the separation of individual cancer cells from blood. For cancer treatment, thorough analysis of the cells is required to find out which drugs can work on the specific cancer of an individual. The cells could be screened from blood thus requiring no physical operation, which is important for tumours in difficult areas (e.g. the brain). Fast sorting is required because of their low concentration in blood, circulating cancer cells can be as rare as one in $10^8$ blood cells \cite{huang_enrichment_2013}. This sets the requirement fast analysis; the throughput should be over the kHz range to be practical. 
 
-There are multiple ways for sorting and detecting cells. Optical, thermal, chemical, acoustic, mechanical, magnetic and electrical techniques have been used for cell sorting \cite{ahn_dielectrophoretic_2006,zhang_towards_2015, voldman_electrical_2006}. To differentiate between cells their intrinsic properties, such as size, refractivity or electrical properties can be exploited. One method is to label a cell with a biological marker.  For example, an antibody attached to a fluorophore can label specific proteins or cells selectively. The availability of various biological labels allows cells to be differentiated by fluorescence, radioactivity or by a change in their electromagnetic properties \cite{wilhelm_universal_2008}. Dielectrophoresis is a phenomenon where a force can be exerted on a polarisable particle using a non-uniform electric field. It allows control of unlabelled cells and is one of the fastest sorting methods \cite{zhang_towards_2015}.
+There are multiple ways for sorting and detecting cells. Optical, thermal, chemical, acoustic, mechanical, magnetic and electrical techniques have been used for cell sorting \cite{voldman_electrical_2006, ahn_dielectrophoretic_2006,zhang_towards_2015}. To differentiate between cells their intrinsic properties, such as size, refractivity or electrical properties can be exploited. One method is to label a cell with a biological marker.  For example, an antibody attached to a fluorophore can label specific proteins or cells selectively. The availability of various biological labels allows cells to be differentiated by fluorescence, radioactivity or by a change in their electromagnetic properties \cite{wilhelm_universal_2008}. Dielectrophoresis is a phenomenon where a force can be exerted on a polarisable particle using a non-uniform electric field. It allows control of unlabelled cells and is one of the fastest sorting methods \cite{zhang_towards_2015}.
 
-A highly popular method for microfluidic device fabrication is “soft lithography”. It includes the use of polymers such as Polydimethylsiloxane (PDMS) to create a mold of microstructures. Although it is an inexpensive and fast method capable of creating complex structures like valves and pumps, it has its limitations \cite{xia_soft_1998,tian2008introduction, pethig_review_2010, grover_monolithic_2003}. PDMS can swell because of organic solvents and thereby damage the structures. \cite{lee_solvent_2003}. Polymers also have limited chemical, mechanical and thermal resistance. In addition, they restrict low wavelength light ($\SI{400}{\nano \metre}$) required for laser induced fluorescence spectroscopy \cite{tian2008introduction,stankova_optical_2016}. Amongst the huge spectrum of microfluidic devices, rarely a pure glass device is manufactured because soft lithography methods being much easier and cheaper. Glass based microfluidics have three main advantages in biological analysis, they are chemically, thermally and mechanically stable and are transparent in the visible light wavelength region. The mechanical stability allows to create high pressure, thus high throughput systems. The chemicals stability together with thermal stability allows various solvent usage and cleaning possibility of clogged devices for repeatable use \cite{ofner_high-throughput_2017}. The isolating and heat dissipation properties of glass also allow for high-voltage and frequency dielectrophoretic sorting \cite{effenhauser_high-speed_1994}.
+A highly popular method for microfluidic device fabrication is “soft lithography”. It includes the use of polymers such as Polydimethylsiloxane (PDMS) to create a mold of microstructures. Although it is an inexpensive and fast method capable of creating complex structures like valves and pumps, it has its limitations \cite{pethig_review_2010,xia_soft_1998,tian2008introduction, grover_monolithic_2003}. PDMS can swell because of organic solvents and thereby damage the structures. \cite{lee_solvent_2003}. Polymers also have limited chemical, mechanical and thermal resistance. In addition, they restrict low wavelength light ($\SI{400}{\nano \metre}$) required for laser induced fluorescence spectroscopy \cite{tian2008introduction,stankova_optical_2016}. Amongst the huge spectrum of microfluidic devices, rarely a pure glass device is manufactured because soft lithography methods being much easier and cheaper. Glass based microfluidics have three main advantages in biological analysis, they are chemically, thermally and mechanically stable and are transparent in the visible light wavelength region. The mechanical stability allows to create high pressure, thus high throughput systems. The chemicals stability together with thermal stability allows various solvent usage and cleaning possibility of clogged devices for repeatable use \cite{ofner_high-throughput_2017}. The isolating and heat dissipation properties of glass also allow for high-voltage and frequency dielectrophoretic sorting \cite{effenhauser_high-speed_1994}.
 Sorting cells with a $100 \percent$ accuracy \cite{takahashi_non-destructive_2004, thomas_imagebased_2019} or high throughput methods \cite{zhang_towards_2015} have been developed in the past. Sciambi and Abate have even manufactured a device capable of $\SI{30}{\kilo \Hz}$ sorting with over $99 \percent$ accuracy \cite{sciambi2015accurate}. Regardless, high speed together with $100\percent$ accuracy has not yet been shown.
 
 Dielectrophoretic droplet sorting in a glass device has been demonstrated by Ján Borovský for sorting carbon nanotubes at a femtolitre scale \cite{borovsky}. The aim of this thesis is to upscale such a device to be capable of single cell, high throughput, dielectrophoretic sorting. It would be the a part of a microfluidic chip complex, where cells are pre-sorted to higher concentrations using inertial sorting (capable of sorting $\num{3e8}$ cells/s \cite{edd_microfluidic_2020}) and then individual sorting done with dielectrophoresis. Here, the fabrication process  is developed to realise a microfluidic chip suitable for dielectrophoretic sorting using fluorescence spectroscopy. The process is conducted using basic microfabrication methods; e-beam lithography, thin film evaporation, and wet etching.
@@ -318,7 +323,7 @@ Examining the electric field at low  $(\omega = 0)$ or a high frequencies $(\ome
    \label{eq:watinf}
    f_{CM} = \frac{\epsilon_p - \epsilon_f} {\epsilon_p + 2\epsilon}, \;\mathrm{when } \;\omega \rightarrow \infty\;
 \end{equation}
-At high frequency, the particle acts like a capacitor and is dominated by its permittivity. Whereas, at very low frequencies the current in the particle moves in phase with the electric field thus the conduction is the dominating factor \cite{cetin_dielectrophoresis_2011, li_review_2014, pethig_review_2010}. 
+At high frequency, the particle acts like a capacitor and is dominated by its permittivity. Whereas, at very low frequencies the current in the particle moves in phase with the electric field thus the conduction is the dominating factor \cite{pethig_review_2010, li_review_2014, cetin_dielectrophoresis_2011}. 
 From the CM factor (Eq.\ref{eq:CM}) we can also see that the permittivity of the particle and the surrounding medium determines whether force is pushing or pulling towards the region of stronger electric field. If the particle is more polarizable $(\epsilon_p>\epsilon_f)$ a positive force (pDEP) is pushing towards he higher field and vice versa (Figure \ref{fig:DEP1}c). We can also see from $\epsilon_p>>\epsilon_f$ and  $\epsilon_p<<\epsilon_f $ that the pDEP can be twice the magnitude of the negative DEP force (nDEP).
 The most important points arising from these equations are:
 
@@ -1206,7 +1211,7 @@ Altogether, the developed fabrication recipe and the setup for testing grants a 
  \end{table}
 
 
-\section{Appendix}
+\section{Appendix, Fabrication recipe}
 \label{sec:appendix2}
 Steps marked with the same colour must be done consecutively during the same day.
 
